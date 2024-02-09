@@ -1,0 +1,698 @@
+.master_seeall_section {
+    position: relative;
+    margin-top: 115px;
+}
+
+.master_seeall_slider {
+    position: relative;
+}
+
+.master_seeall_slider img {
+    height: 50vh;
+    width: 100%;
+    display: block;
+}
+
+.master_seeall_slider .master_seeall_content {
+    position: absolute;
+    top: 27%;
+    left: 12rem;
+    color: #fff;
+
+}
+
+.master_seeall_content h1 {
+    font-size: 44px;
+    font-weight: 700;
+    text-transform: uppercase;
+    margin: 10px 0 10px;
+    max-width: 800px;
+}
+
+.master_seeall_content p {
+    font-size: 20px;
+    line-height: 28px;
+    max-width: 600px;
+}
+
+/* master_faculty */
+.master_faculty_section {
+    padding: 50px 0px;
+}
+
+.master_faculty_section h2 {
+    color: #333;
+    font-size: 30px;
+    font-weight: 500;
+}
+
+.master_faculty_section p {
+    color: #333;
+    font-size: 16px;
+    font-weight: 400;
+    padding-top: 5px;
+}
+
+.master_seeall_img {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 40px;
+    padding: 50px 0px 0px 0px;
+}
+
+.master_background {
+    background-color: #F2F3F4;
+    text-align: center;
+    border-radius: 12px;
+}
+
+.master_background img {
+    border-radius: 12px;
+}
+
+.master_seeall_img_content .master_seeall_name {
+    color: #333;
+    font-size: 20px;
+    font-weight: 600;
+    line-height: 28px;
+    padding-bottom: 10px;
+    padding-top: 10px;
+}
+
+.master_seeall_img_content .master_seeall_designation {
+    color: #333;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 21px;
+}
+
+.master_seeall_img_content .master_seeall_study {
+    color: #707070;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 20px;
+}
+
+.master_seeall_left_img {
+    overflow: hidden;
+    cursor: pointer;
+}
+
+.master_background {
+    overflow: hidden;
+}
+
+.master_background img {
+    transition: all .8s;
+}
+
+.master_background img:hover {
+    transform: scale(1.2);
+}
+
+.readmore_dtn button {
+    margin-top: 10px;
+    background: transparent;
+    color: #a10606;
+    font-size: 16px;
+    font-weight: 500;
+}
+
+
+/* doubt */
+.doubt_section {
+    border: 1px solid #EBEBEB;
+    background: #FCFBFB;
+}
+
+.parent_doubt {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.left_img_doubt {
+    width: 20%;
+}
+
+.left_img_doubt img {
+    transition: all .8s;
+    cursor: pointer;
+}
+
+.left_img_doubt:hover img {
+    transform: scale(1.2);
+}
+
+.center_content_button {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 45%;
+}
+
+.center_content_button .center_doubt_title .doubt_sub_title {
+    color: #333;
+    font-size: 36px;
+    font-weight: 700;
+}
+
+.center_content_button .center_doubt_title p {
+    color: #666;
+    font-weight: 400;
+    font-size: 16px;
+}
+
+.center_content_button .center_btn button {
+    background: #DD0E0E;
+    font-weight: 600;
+    color: #fff;
+    width: 150px;
+    height: 50px;
+    border-radius: 25px;
+}
+
+.right_img_doubt {
+    width: 20%;
+    overflow: hidden;
+}
+
+.right_img_doubt img {
+    transition: all .8s;
+    cursor: pointer;
+}
+
+.right_img_doubt:hover img {
+    transform: scale(1.2);
+}
+
+
+
+/* Our Master slider */
+.ournextian_faculty_section {
+    padding-top: 3rem;
+}
+
+.ournextian_faculty_section .container {
+    position: relative;
+}
+
+.nextian_faculty_title {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    width: calc(100% - 80px);
+    position: absolute;
+}
+
+.ournextian_faculty_section_slider {
+    padding-top: 3rem;
+}
+
+.ournextian_faculty_section_slider .swiper {
+    position: static;
+}
+
+.neaxtian_faculty_heading h3 {
+    font-size: 28px;
+    font-weight: 700;
+    color: #333;
+}
+
+.nextian_faculty_title .nextian_faculty_btn {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.nextian_faculty_title .nextian_faculty_btn button {
+    background: none;
+
+}
+
+.ournextian_faculty_img img {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    margin-top: -60px;
+}
+
+.ournextian_faculty_img {
+    display: block;
+    text-align: center;
+}
+
+.ournextian_faculty_card {
+    margin: 100px 0;
+    border: 1px solid #e8e8e8;
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+    border-radius: 10px;
+}
+
+.ournextian_faculty_title {
+    padding: 0px 20px;
+    min-height: 280px;
+}
+
+.ournextian_faculty_title h4 {
+    font-size: 22px;
+    font-weight: 500;
+    line-height: 26px;
+    color: #000;
+    padding-top: 25px;
+    padding-bottom: 8px;
+}
+
+.ournextian_faculty_title span {
+    font-size: 14px;
+    font-weight: 400;
+    color: #707070;
+    text-transform: uppercase;
+    padding-top: 18px;
+}
+
+.ournextian_faculty_title p {
+    font-size: 14px;
+    font-weight: 400;
+    color: #707070;
+    padding: 25px 0 20px;
+    letter-spacing: 0.4px;
+}
+
+.ournextian_faculty_button {
+    position: absolute;
+    z-index: 10;
+    top: 0%;
+    left: 94%;
+    display: flex;
+    align-items: center;
+    gap: 0.2rem;
+    flex-direction: row-reverse;
+    cursor: pointer;
+}
+
+.ournextian_faculty_button .button-next-slide {
+    color: #333;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background: transparent;
+    border: 1px solid #DFDFDF;
+    display: grid;
+    place-items: center;
+}
+
+.ournextian_faculty_button .button-prev-slide {
+    color: #333;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background: transparent;
+    border: 1px solid#DFDFDF;
+    display: grid;
+    place-items: center;
+}
+
+
+/* Add your styles for the modal and other components here */
+.faculty_modal {
+    display: none;
+    position: fixed;
+    top: 8%;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    justify-content: center;
+    align-items: center;
+    z-index: 1;
+}
+
+.faculty_modal_content {
+    background-color: #fefefe;
+    padding: 0px 5px 20px;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+
+.faculty_modal_header {
+    text-align: right;
+}
+
+.faculty_modal_close {
+    font-size: 30px;
+    cursor: pointer;
+    padding-right: 12px;
+}
+
+.show {
+    display: flex;
+}
+
+.master_faculty_content {
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    gap: 60px;
+    padding: 0px 80px 15px;
+    min-width: 77vw;
+    min-height: 51vh;
+}
+
+.faculty_image_left {
+    width: 30%;
+    text-align: center;
+    background-color: #F5F5F7;
+    border-radius: 10px;
+}
+
+.faculty_description_right {
+    width: 100%;
+}
+
+.faculty_master_title h2 {
+    color: #222;
+    font-weight: 700;
+    font-size: 45px;
+}
+
+.faculty_master_title .faculty_degree {
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 22px;
+    max-width: 500px;
+    color: #222;
+    padding: 10px 0;
+}
+
+.faculty_master_title .faculty_medal {
+    font-size: 30px;
+    font-weight: 700;
+    color: #222;
+    padding-bottom: 30px;
+}
+
+.faculty_master_title p {
+    font-size: 15px;
+    line-height: 23px;
+    color: #707070;
+    padding-bottom: 8px;
+}
+
+.faculty_btn button {
+    background: transparent;
+    font-size: 16px;
+    font-weight: 500;
+    text-transform: capitalize;
+    margin-top: 10px;
+    text-decoration: underline;
+}
+
+
+@media screen and (max-width: 1440px) {
+    .master_seeall_slider img {
+        height: 60vh;
+    }
+}
+
+@media screen and (max-width: 1024px) {
+    .master_seeall_section {
+        margin-top: 75px;
+    }
+
+    .center_content_button .center_doubt_title .doubt_sub_title {
+        color: #333;
+        font-size: 20px;
+        font-weight: 700;
+    }
+
+    .center_content_button .center_doubt_title p {
+        color: #666;
+        font-weight: 400;
+        font-size: 10px;
+    }
+
+    .center_content_button .center_btn button {
+        width: 120px;
+        height: 40px;
+    }
+
+    .master_seeall_slider .master_seeall_content {
+        left: 3rem;
+        top: 22%;
+    }
+
+    .master_seeall_content h1 {
+        max-width: 650px;
+        font-size: 35px;
+        line-height: 44px;
+    }
+
+    .master_seeall_content p {
+        font-size: 18px;
+        line-height: 24px;
+        max-width: 560px;
+    }
+
+    .ournextian_faculty_button {
+        left: 92%;
+        top: 2%;
+    }
+
+    .faculty_master_title h2 {
+        font-size: 32px;
+    }
+
+    .faculty_master_title .faculty_medal {
+        font-size: 24px;
+    }
+
+    .faculty_master_title p {
+        font-size: 10px;
+        line-height: 14px;
+    }
+
+    .faculty_master_title p {
+        font-size: 10px;
+        line-height: 14px;
+        padding-bottom: 0px;
+    }
+
+    .master_seeall_img_content .master_seeall_name {
+        font-size: 18px;
+        padding-bottom: 0px;
+    }
+
+    .master_seeall_img_content .master_seeall_designation {
+        font-size: 14px;
+        padding-top: 0px;
+    }
+
+    .master_seeall_img_content .master_seeall_study {
+        font-size: 12px;
+        line-height: 16px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .center_content_button .center_doubt_title .doubt_sub_title {
+        color: #333;
+        font-size: 20px;
+        font-weight: 700;
+    }
+
+    .center_content_button .center_doubt_title p {
+        color: #666;
+        font-weight: 400;
+        font-size: 10px;
+    }
+
+    .center_content_button .center_btn button {
+        width: 120px;
+        height: 40px;
+    }
+
+    .left_img_doubt {
+        width: 100%;
+        text-align: center;
+    }
+
+    .center_content_button {
+        width: 100%;
+        padding: 20px 0;
+    }
+
+    .right_img_doubt {
+        width: 100%;
+        text-align: center;
+    }
+
+    .ournextian_faculty_section .ournextian_faculty_button {
+        position: absolute;
+        top: 0%;
+        left: 89%;
+    }
+
+    .nextian_faculty_title .nextian_faculty_btn {
+        align-items: flex-start;
+        margin-top: 9px;
+    }
+
+    .faculty_master_title h2 {
+        font-size: 25px;
+    }
+
+    .faculty_master_title .faculty_medal {
+        font-size: 18px;
+        padding-bottom: 15px;
+    }
+
+    .faculty_master_title .faculty_degree {
+        font-size: 12px;
+        line-height: 15px;
+    }
+
+    .faculty_master_title p {
+        font-size: 9px;
+        line-height: 14px;
+        padding-bottom: 0px;
+    }
+
+    .master_faculty_section p {
+        font-size: 9px;
+        line-height: 14px;
+        padding-bottom: 0px;
+    }
+
+    .master_seeall_img_content .master_seeall_name {
+        font-size: 16px;
+        padding-bottom: 0px;
+    }
+
+    .master_seeall_img_content .master_seeall_designation {
+        font-size: 11px;
+        padding-top: 0px;
+    }
+
+    .master_seeall_img_content .master_seeall_study {
+        font-size: 10px;
+        line-height: 14px;
+        padding-top: 0px;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .ournextian_faculty_section .ournextian_faculty_button {
+        position: absolute;
+        top: 0%;
+        left: 80%;
+    }
+
+    .ournextian_faculty_section .neaxtian_faculty_heading h3 {
+        font-size: 11px;
+    }
+
+    .ournextian_faculty_section_slider {
+        padding-top: 2rem;
+    }
+
+    .master_seeall_img {
+        grid-template-columns: repeat(1, 1fr);
+    }
+
+    .master_seeall_content h1 {
+        font-size: 30px;
+        line-height: 34px;
+    }
+
+    .master_seeall_content p {
+        max-width: 310px;
+        font-size: 14px;
+        line-height: 20px;
+    }
+
+    .master_seeall_slider .master_seeall_content {
+        left: 2rem;
+    }
+
+    .nextian_faculty_title .nextian_faculty_btn {
+        align-items: flex-start;
+    }
+
+    .master_faculty_content {
+        flex-direction: column;
+        gap: 20px;
+        max-width: 80vw;
+        padding: 0 40px 10px;
+    }
+
+    .faculty_image_left {
+        width: 100%;
+    }
+
+    .faculty_image_left img {
+        width: 150px;
+        height: 150px;
+    }
+
+    .faculty_description_right {
+        width: 100%;
+    }
+
+    .faculty_master_title h2 {
+        font-size: 16px;
+    }
+
+    .faculty_master_title .faculty_medal {
+        font-size: 12px;
+        padding-bottom: 5px;
+    }
+
+    .faculty_master_title .faculty_degree {
+        font-size: 7px;
+        padding: 5px 0;
+        line-height: 10px;
+    }
+
+    .faculty_master_title p {
+        font-size: 7px;
+        line-height: 12px;
+        padding-bottom: 0px;
+    }
+
+    .faculty_modal {
+        top: 6%;
+    }
+
+    .master_seeall_left_img .master_background {
+        transition: none;
+    }
+
+    .master_seeall_left_img:hover .master_background {
+        transform: none;
+    }
+
+    .master_seeall_img_content .master_seeall_name {
+        font-size: 18px;
+        padding-bottom: 0px;
+    }
+
+    .master_seeall_img_content .master_seeall_designation {
+        font-size: 14px;
+        padding-top: 0px;
+    }
+
+    .master_seeall_img_content .master_seeall_study {
+        padding-top: 5px;
+    }
+}
+
+@media screen and (max-width: 400px) {
+    .master_faculty_content {
+        padding: 0 0 10px;
+    }
+
+    .nextian_faculty_title .nextian_faculty_btn button {
+        margin-right: -10px;
+    }
+}

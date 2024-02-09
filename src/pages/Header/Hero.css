@@ -1,0 +1,451 @@
+.slider_header {
+  position: relative;
+  margin-top: -141px;
+}
+
+/* .image_slider::before{
+     content: '';
+     position: absolute;
+     top: 0;
+     left: 0;
+     height: 100%;
+     width: 100%;
+     background: rgba(0, 0, 0, 0.6);
+ } */
+.image_slider {
+  position: relative;
+}
+
+.image_slider img {
+  height: 90vh;
+  width: 100%;
+  display: block;
+}
+
+.image_slider .title_content {
+  position: absolute;
+  top: 42%;
+  right: 21rem;
+  color: #fff;
+}
+
+.title_content h3 {
+  font-size: 16px;
+  text-transform: uppercase;
+  margin-bottom: 10px;
+  letter-spacing: 0.8px;
+  font-weight: 500;
+}
+
+.title_content h1 {
+  font-size: 40px;
+  font-weight: 700;
+  text-transform: uppercase;
+  margin: 10px 0 10px;
+  max-width: 480px;
+  letter-spacing: 0.5px;
+}
+
+.title_content h1 span {
+  /* font-size: 40px; */
+}
+
+.title_content p {
+  font-size: 20px;
+  max-width: 600px;
+  letter-spacing: 0.1px;
+}
+
+.image_btn {
+  padding: 1rem 2rem;
+  background: #fff;
+  font-size: 13px;
+  color: #333;
+  margin-top: 15px;
+  border-radius: 50px;
+  font-weight: 600;
+}
+
+.image_btn:hover {
+  background: #ec1c24 !important;
+  color: #fff;
+}
+
+/*_____________________Swiper Css_________________*/
+.swiper_button .button-next-slide {
+  color: #000;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: #fff;
+  display: grid;
+  place-items: center;
+  position: absolute;
+  z-index: 10;
+  top: 52%;
+  left: 32%;
+}
+
+.swiper_button .button-prev-slide {
+  color: #000;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: #fff;
+  display: grid;
+  place-items: center;
+  position: absolute;
+  z-index: 10;
+  top: 52%;
+  right: 4%;
+}
+
+.slider_header .swiper-pagination {
+  position: absolute;
+}
+
+.swiper-horizontal>.swiper-pagination-bullets .swiper-pagination-bullet,
+.swiper-pagination-horizontal.swiper-pagination-bullets .swiper-pagination-bullet-active {
+  background-color: #000;
+}
+
+/*_____________________form_________________*/
+.header_from {
+  position: absolute;
+  top: 30%;
+  left: 5%;
+  z-index: 10;
+  background: #fff;
+  width: 350px;
+  height: 365px;
+  padding: 25px 0;
+  /* box-shadow: 0px 9px 10px 10px rgba(148, 139, 139, 0.5);
+    transition:  border 0.3s, border-radius 0.3s, box-shadow 0.3s; */
+  border-radius: 25px;
+}
+
+.header_from .text {
+  color: #333;
+  font-size: 16px;
+  font-weight: 700;
+  margin-left: 18px;
+}
+
+.inputs {
+  margin-top: 15px;
+}
+
+/* .input_error {
+  margin-bottom: 25px;
+} */
+.input_error .p {
+  /* margin-bottom: 6px; */
+  /* padding: 20px 0; */
+  color: #ec1c24;
+}
+
+.input_form {
+  display: flex;
+  align-items: center;
+  margin: auto;
+  margin-top: 20px;
+  width: 280px;
+  height: 45px;
+  background: #eaeaea;
+  border-radius: 6px;
+  margin-bottom: 30px;
+  position: relative;
+}
+
+.error {
+  position: absolute;
+  bottom: -25px;
+  left: 10px;
+  color: #ec1c24;
+}
+
+.input_form img {
+  margin: 0 15px;
+  width: 15px;
+}
+
+.input_form input:hover {
+  background: #e8e8e8
+}
+
+.input_form input {
+  height: 45px;
+  width: 400px;
+  background: transparent;
+  border: none;
+  outline: none;
+  color: #797979;
+  font-size: 14px;
+}
+
+.submit_container {
+  margin: auto;
+  display: flex;
+  justify-content: center;
+}
+
+.submit_container .submit {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 280px;
+  height: 45px;
+  color: #fff;
+  background: #ec1c24 !important;
+  border-radius: 44px;
+  font-size: 18px;
+  font-weight: 700;
+  cursor: pointer;
+  line-height: 24px;
+}
+
+.header_mobile_section {
+  display: none;
+}
+
+/* ============================Responsive Tablet========================*/
+@media screen and (max-width: 1440px) {
+  .image_slider img {
+    height: 70vh;
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .slider_header {
+    display: none;
+  }
+
+  .header_mobile_section {
+    display: block;
+  }
+
+  .header_main_container {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+  }
+
+  .header_register_form {
+    position: relative;
+    max-width: 700px;
+    width: 100%;
+    background: #fff;
+    padding: 25px;
+    border-radius: 8px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+    background-color: #fff !important;
+  }
+
+  .header_register_form h2 {
+    font-size: 1.5rem;
+    color: #000 !important;
+    font-weight: 500;
+    text-align: center;
+  }
+
+  .header_register_form form {
+    margin-top: 30px;
+  }
+
+  .header_form .input_box {
+    width: 100%;
+    /* margin-top: 20px; */
+  }
+
+  .header_input_box label {
+    color: #333;
+  }
+
+  .header_form .header_input_box input {
+    position: relative;
+    height: 50px;
+    width: 100%;
+    outline: none;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    font-size: 1rem;
+    color: #707070;
+    padding: 0 15px;
+    margin-top: 8px;
+  }
+
+  .header_form .header_input_box p {
+    color: #fff;
+    font-weight: 700;
+  }
+
+  .header_form .header_input_box textarea {
+    position: relative;
+    /* height: 50px; */
+    width: 100%;
+    outline: none;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    font-size: 1rem;
+    color: #707070;
+    padding: 15px 15px 0px;
+    margin-top: 8px;
+  }
+
+  .header_input_btn button {
+    height: 55px;
+    width: 100%;
+    background-color: #DA0303 !important;
+    border: none;
+    outline: none;
+    color: #fff;
+    border-radius: 10px;
+    font-size: 16px;
+    font-weight: 700;
+    margin-top: 10px;
+  }
+
+  /* mobile_slider */
+  .header_mobile_slider {
+    position: relative;
+    margin-top: 0px;
+  }
+
+  .header_mobile_offers_slider {
+    position: relative;
+  }
+
+  .header_mobile_offers_slider img {
+    height: 70vh;
+    width: 100%;
+    display: block;
+  }
+
+  .header_mobile_offers_slider .header_mobile_offers_content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #fff;
+  }
+
+  .header_mobile_offers_content h3 {
+    font-size: 16px;
+    margin-bottom: 10px;
+    font-weight: 500;
+  }
+
+  .header_mobile_offers_content h1 {
+    font-size: 35px;
+    font-weight: 700;
+    text-transform: uppercase;
+    margin: 10px 0 10px;
+    /* max-width: 600px; */
+    letter-spacing: 0.5px;
+    line-height: 40px;
+  }
+
+  .header_mobile_offers_content p {
+    font-size: 20px;
+    max-width: 600px;
+    letter-spacing: 0.1px;
+  }
+
+  .header_mobile_offers_btn {
+    padding: 0.8rem 1.5rem;
+    background: #fff;
+    font-size: 11px;
+    color: #333;
+    margin-top: 0px;
+    border-radius: 50px;
+    font-weight: 600;
+  }
+
+  .header_mobile_offers_btn:hover {
+    background: #EC1C24 !important;
+    color: #fff;
+  }
+
+  /*_____________________Swiper Css_________________*/
+  .header_mobile_offers_button .button-next-slide {
+    color: #000;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background: #fff;
+    display: grid;
+    place-items: center;
+    position: absolute;
+    z-index: 10;
+    top: 45%;
+    left: 2%;
+  }
+
+  .header_mobile_offers_button .button-prev-slide {
+    color: #000;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background: #fff;
+    display: grid;
+    place-items: center;
+    position: absolute;
+    z-index: 10;
+    top: 45%;
+    right: 2%;
+  }
+
+  .header_mobile_slider .swiper-pagination {
+    position: absolute;
+    /* left: 10%; */
+  }
+
+  .swiper-horizontal>.swiper-pagination-bullets .swiper-pagination-bullet,
+  .swiper-pagination-horizontal.swiper-pagination-bullets .swiper-pagination-bullet-active {
+    background-color: #000;
+  }
+
+  .month_plan_button .button_left {
+    top: 16px;
+    right: 50px;
+  }
+
+  .header_mobile_offers_btn {
+    font-size: 12px;
+    font-weight: 600;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .header_mobile_offers_slider img {
+    height: 50vh;
+  }
+
+  .header_mobile_offers_btn {
+    font-size: 12px;
+    font-weight: 600;
+  }
+}
+
+
+@media screen and (max-width: 550px) {
+  .header_mobile_offers_content h1 {
+    font-size: 17px;
+    line-height: 22px;
+  }
+
+  .header_mobile_slider .swiper-pagination {
+    display: none;
+  }
+
+  .header_mobile_offers_slider img {
+    height: 30vh;
+  }
+
+  .header_mobile_offers_btn {
+    padding: 0.5rem 1rem;
+    font-size: 10px;
+  }
+}

@@ -1,0 +1,76 @@
+.video_section{padding-bottom: 4rem;}
+.video_section .container{position: relative;}
+.video_main_slider .swiper{position: static;}
+.video_subtitle{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    padding-top: 15px;
+    padding-bottom: 30px;
+    max-width: calc(100% - 63px);
+    position: relative;
+}
+.video_left p{color: #707070; font-size: 16px; margin-bottom: 0; font-weight: 400;}
+.video_btn{
+    display: flex;
+    justify-content: flex-end;
+}
+.video_btn .video_button{background:none; text-decoration: underline; color: #222; font-size: 14px; font-weight: 400;}
+.video_button{
+    position: absolute;
+    z-index: 10;
+    top: 4%;
+    left: 94%;
+    display: flex;
+    align-items: center;
+    gap: 0.2rem;
+    flex-direction: row-reverse;
+}
+.video_button .button-next-slide{
+    color: #333;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background: transparent;
+    border: 1px solid #DFDFDF;
+    display: grid;
+    place-items: center;
+    /* position: absolute;
+    z-index: 10;
+    top: 0%;
+    left: 95%; */
+}
+.video_button .button-prev-slide{
+    color: #333;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background: transparent;
+    border: 1px solid#DFDFDF;
+    display: grid;
+    place-items: center;
+    /* position: absolute;
+    z-index: 10;
+    top: 0%;
+    right: 0%; */
+}
+
+/* ============================Responsive Tablet========================*/
+@media screen and (max-width: 1024px){
+
+}
+@media screen and (max-width: 768px){
+  .video_button{
+      position: absolute;
+      top: 5%;
+      left: 89%;
+    }
+  
+}
+@media screen and (max-width: 500px){
+  .video_button{
+    position: absolute;
+    top: 5%;
+    left: 80%;
+  }
+  .video_section{padding-bottom: 0;}
+}

@@ -1,0 +1,237 @@
+.allfaq_section {
+    background-image: url('/images/aboutUs/about.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    position: relative;
+    margin-top: 115px;
+}
+
+.allfaq_title {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: self-start;
+    padding: 124px 0;
+    color: #fff;
+}
+
+.allfaq_title h2 {
+    text-transform: uppercase;
+    font-size: 44px;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+}
+
+.allfaq_title p {
+    font-size: 18px;
+    font-weight: 400;
+    padding-top: 6px;
+    max-width: 700px;
+    line-height: 22px;
+}
+
+
+/* Tab styles */
+.allfaq_tab_section {
+    padding: 4rem 0 3rem;
+}
+
+.allfaq_tab_section .allfaq_tabs {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    gap: 50px;
+    align-items: center;
+    border-bottom: 1px solid #DEDEDE;
+}
+
+.allfaq_tab_section .tab {
+    cursor: pointer;
+    padding: 15px 0px;
+}
+
+.allfaq_tab_section .tab a {
+    color: #333;
+    font-size: 16px;
+}
+
+.allfaq_tab_section .tab:hover {
+    color: #333;
+    font-weight: 700;
+    font-size: 16px;
+    transition: 0.3s ease;
+}
+
+.allfaq_tab_section .tab.active {
+    border-bottom: 3px solid #DD0E0E;
+    color: #333;
+    font-weight: 700;
+    font-size: 16px;
+}
+
+/* Content styles */
+.allfaq_tab_section .allfaq_tab-content {
+    margin-top: 10px;
+}
+
+.allfaq_tab_title h3 {
+    font-size: 36px;
+    font-weight: 600;
+    color: #333;
+}
+
+.allfaq_tab_title p {
+    font-size: 16px;
+    font-weight: 400;
+    color: #222;
+    padding: 10px 0 30px;
+}
+
+.tab_parent {
+    border: 1px solid #EAEAEA;
+    padding: 50px;
+    border-radius: 12px;
+    margin-top: 50px;
+}
+
+.tab_parent .tab_child {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.tab_parent .tab_child .tab_child_img_left {
+    width: 40%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.tab_parent .tab_child .tab_child_content_right {
+    width: 60%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.tab_parent .tab_sub_content h2 {
+    padding-bottom: 30px;
+    color: #333;
+    font-weight: 700;
+    font-size: 32px;
+}
+
+.tab_parent .tab_sub_content .tab_bold {
+    font-weight: 500;
+    color: #707070;
+    font-size: 16px;
+    line-height: 22px;
+    padding-bottom: 20px;
+}
+
+.tab_parent .tab_sub_content p {
+    font-weight: 400;
+    color: #707070;
+    font-size: 14px;
+    line-height: 22px;
+}
+
+.tab_parent .tab_sub_content .tab_btn button {
+    width: 150px;
+    height: 50px;
+    font-size: 16px;
+    color: #fff;
+    background: #DD0E0E;
+    border-radius: 25px;
+    margin-top: 30px;
+    font-weight: 500;
+}
+
+.allfaq_accordion-item {
+    border-bottom: 1px solid #dedede;
+}
+
+.allfaq_accordion-header {
+    display: flex;
+    justify-content: space-between;
+    padding: 15px 0;
+    cursor: pointer;
+    background-color: #fff;
+    font-weight: 700;
+    font-size: 16px;
+    color: #333;
+}
+
+.allfaq_accordion-content {
+    padding: 10px;
+    background: #e7e7e7;
+    margin-left: 10px;
+    border-radius: 5px;
+    margin-top: -7px;
+}
+
+.allfaq_accordion-icon {
+    font-size: 23px;
+}
+
+@media screen and (max-width: 1024px) {
+    .allfaq_section {
+        margin-top: 75px;
+    }
+
+    .allfaq_tab_section .allfaq_tabs {
+        gap: 30px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .allfaq_tab_section .allfaq_tabs {
+        gap: 20px;
+    }
+
+    .allfaq_tab_section .tab a {
+        font-size: 12px;
+    }
+}
+
+@media screen and (max-width: 550px) {
+    .allfaq_tab_section .allfaq_tabs {
+        gap: 6.5px;
+    }
+
+    .allfaq_tab_section .tab a {
+        font-size: 7px;
+    }
+
+    .allfaq_tab_title h3 {
+        font-size: 25px;
+    }
+
+    .allfaq_tab_title p {
+        line-height: 22px;
+    }
+
+    .allfaq_title p {
+        font-size: 15px;
+        line-height: 19px;
+    }
+}
+
+@media screen and (max-width: 350px) {
+    .allfaq_tab_section .allfaq_tabs {
+        gap: 4px;
+    }
+
+    .allfaq_tab_section .tab a {
+        font-size: 6px;
+    }
+
+    .allfaq_tab_title h3 {
+        font-size: 22px;
+    }
+
+    .allfaq_tab_title p {
+        line-height: 22px;
+    }
+}

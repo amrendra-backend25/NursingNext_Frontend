@@ -1,0 +1,533 @@
+.course_section {
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  min-height: 55vh;
+  position: relative;
+  margin-top: 105px;
+}
+
+.course_title {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: self-start;
+  padding: 124px 0;
+  color: #fff;
+}
+
+.course_title h2 {
+  text-transform: uppercase;
+  font-size: 44px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+}
+
+.subscription_img {
+  height: 35px;
+  width: 35px;
+}
+
+.subscription_contet {
+  /* margin-top: -45px;
+  margin-left: 50px; */
+  font-size: 15px;
+}
+
+.subscription_contet .subscription_heading {
+  padding-top: 30px;
+}
+
+.subscription_contet h4 {
+  padding: 10px 0 10px;
+  font-size: 22px;
+  font-weight: 700;
+  color: #333;
+}
+
+.subscription_contet h6 {
+  font-size: 14px;
+  padding-top: 8px;
+  font-weight: 500;
+  color: #333;
+}
+
+.course_title p {
+  text-transform: uppercase;
+  font-size: 20px;
+  font-weight: 400;
+  padding-top: 4px;
+  letter-spacing: 0.5px;
+}
+
+.subscription_plan {
+  padding: 5rem 0;
+}
+
+.subscription_title h2 {
+  padding-bottom: 4rem;
+  font-size: 28px;
+  font-weight: 700;
+  color: #333;
+}
+
+.subscription_parent {
+  display: grid;
+  gap: 25px;
+  grid-template-columns: repeat(4, 1fr);
+}
+
+.subscription_child {
+  box-shadow: 0px 2px 4px 0px #00000029;
+  padding: 30px 15px 30px 25px;
+  border-radius: 10px;
+}
+
+.subscription_contet .subscription_heading {
+  font-size: 20px;
+  font-weight: 600;
+  color: #333;
+}
+
+.subscription_contet p {
+  font-size: 16px;
+  font-weight: 400;
+  color: #666;
+  line-height: 24px;
+  padding: 5px 0;
+}
+
+.subscription_btn button {
+  margin-top: 20px;
+  background: none;
+  color: #222;
+}
+
+.subscription_btn {
+  padding-top: -90px;
+}
+
+.master_slider {
+  background: #fcfbfb;
+}
+
+.master_head_2 {
+  display: flex;
+  max-width: calc(100% - 52px);
+}
+
+.master_head_2 .master_two_part_2 p {
+  color: #707070;
+}
+
+.master_head_2 .master_two_part_2 {
+  width: 77%;
+}
+
+.master_see {
+  display: flex;
+  width: 23%;
+  justify-content: end;
+  margin-left: -35px;
+  margin-top: 10px;
+}
+
+.master_see .master_button-2 {
+  background: none;
+  color: #222;
+  font-size: 16px;
+  font-weight: 400;
+  text-decoration: underline;
+}
+
+.master_slider .master_slider_main .swiper {
+  padding: 2rem 0.5rem;
+  /* position: static; */
+}
+
+.master_slider .container {
+  position: relative;
+}
+
+.master_slider_main .swiper {
+  position: static;
+}
+
+.mastermind_card {
+  /* text-align: center;   */
+  border-radius: 15px;
+  /* display: flex; flex-direction: column;
+           align-items: center; 
+           justify-content: center; */
+  /* box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px; */
+}
+
+.mastermind_img {
+  position: relative;
+}
+
+.mastermind_img img {
+  border-radius: 15px;
+  border: 1px solid #e8e8e8;
+}
+
+.mm_container {
+  padding: 4rem 0;
+}
+
+.mm_container h3 {
+  font-size: 28px;
+  font-weight: 700;
+  color: #333;
+  padding-bottom: 15px;
+}
+
+.master_head {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  max-width: calc(100% - 52px);
+  position: relative;
+}
+
+.master_two_part p {
+  color: #707070;
+  font-size: 16px;
+  margin-bottom: 0;
+  font-weight: 400;
+}
+
+.master_btn {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.mastermind_img .overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 7px;
+  right: 0;
+  opacity: 0;
+  transition: opacity 0.4s ease-in-out;
+  background: #dd0e0ebd;
+  cursor: pointer;
+  border-radius: 15px;
+}
+
+.mastermind_img .content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+  text-align: center;
+}
+
+.mastermind_title {
+  padding-left: 10px;
+}
+
+.mastermind_title h4 {
+  color: #333;
+  font-weight: 700;
+  font-size: 20px;
+  padding: 10px 0 5px;
+}
+
+.mastermind_title p {
+  color: #666;
+  font-weight: 400;
+  font-size: 16px;
+}
+
+.mastermind_img .content a {
+  color: #fff;
+  font-size: 20px;
+  padding: 0 10px;
+}
+
+.mastermind_img:hover .overlay {
+  opacity: 1;
+}
+
+/* master-right-button*/
+.master_button_main {
+  display: flex;
+  align-items: center;
+  gap: 0.2rem;
+  flex-direction: row-reverse;
+}
+
+.master_button_main.master_see {
+  top: 24.5%;
+  right: 6.5%;
+}
+
+.master_button_main .master_right_button {
+  top: 21%;
+  left: 80%;
+}
+
+.master_button_main .master_right_button {
+  position: absolute;
+  z-index: 10;
+  top: 17%;
+  left: 94%;
+  display: flex;
+  align-items: center;
+  gap: 0.2rem;
+  flex-direction: row-reverse;
+}
+
+.master_button_main .master_right_button .button-next-slide {
+  color: #333;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background: transparent;
+  border: 1px solid #dfdfdf;
+  display: grid;
+  place-items: center;
+}
+
+.master_button_main .master_right_button .button-prev-slide {
+  color: #333;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background: transparent;
+  border: 1px solid#DFDFDF;
+  display: grid;
+  place-items: center;
+}
+
+.master_button_main .master_see_main {
+  position: absolute;
+  top: 17.7%;
+  right: 6.5%;
+  text-decoration: underline;
+}
+
+.master_button_main .master_see_main .master_button-2 {
+  background: transparent;
+  text-decoration: underline;
+}
+
+
+.ournextian_section {
+  padding-top: 3rem;
+}
+
+.ournextian_section .container {
+  position: relative;
+}
+
+.nextian_title {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  width: calc(100% - 80px);
+  position: absolute;
+}
+
+.ournextian_section_slider {
+  padding-top: 3rem;
+}
+
+.ournextian_section_slider .swiper {
+  position: static;
+}
+
+.neaxtian_heading h3 {
+  font-size: 28px;
+  font-weight: 700;
+  color: #333;
+}
+
+.nextian_title .nextian_btn {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.nextian_title .nextian_btn button {
+  background: none;
+  text-decoration: underline;
+}
+
+.ournextian_img img {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  margin-top: -60px;
+}
+
+.ournextian_img {
+  display: block;
+  text-align: center;
+}
+
+.ournextian_card {
+  margin: 100px 0;
+  border: 1px solid #e8e8e8;
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+  border-radius: 10px;
+}
+
+.ournextian_title {
+  padding: 0px 20px;
+  min-height: 270px;
+}
+
+.ournextian_title h4 {
+  font-size: 22px;
+  font-weight: 500;
+  line-height: 26px;
+  color: #000;
+  padding-top: 25px;
+  padding-bottom: 8px;
+}
+
+.ournextian_title span {
+  font-size: 14px;
+  font-weight: 400;
+  color: #707070;
+  text-transform: uppercase;
+  padding-top: 18px;
+}
+
+.ournextian_title p {
+  font-size: 13px;
+  font-weight: 400;
+  color: #707070;
+  padding: 25px 0 20px;
+  letter-spacing: 0.4px;
+}
+
+.ournextian_button {
+  position: absolute;
+  z-index: 10;
+  top: 0%;
+  left: 94%;
+  display: flex;
+  align-items: center;
+  gap: 0.2rem;
+  flex-direction: row-reverse;
+}
+
+.ournextian_button .button-next-slide {
+  color: #333;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background: transparent;
+  border: 1px solid #dfdfdf;
+  display: grid;
+  place-items: center;
+  /* position: absolute;
+          z-index: 10;
+          top: 0%;
+          left: 95%; */
+}
+
+.ournextian_button .button-prev-slide {
+  color: #333;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background: transparent;
+  border: 1px solid#DFDFDF;
+  display: grid;
+  place-items: center;
+  /* position: absolute;
+          z-index: 10;
+          top: 0%;
+          right: 0%; */
+}
+
+/* @media screen and (max-width: 1400px) { .master_button2{top: 22%;}} */
+@media screen and (max-width: 1024px) {
+  .subscription_parent {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .master_head_2 {
+    max-width: calc(100% - 30px);
+  }
+
+  .master_two_part_2 {
+    width: 60%;
+  }
+
+  .courses .ournextian_section .ournextian_button {
+    position: absolute;
+    top: 2%;
+  }
+
+  .master_see {
+    margin-top: -35px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .subscription_parent {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .master_head_2 {
+    flex-direction: column;
+  }
+
+  .master_see {
+    margin-left: 0;
+    justify-content: start;
+  }
+
+  .courses .ournextian_section .ournextian_button {
+    position: absolute;
+    top: 2%;
+    left: 89%;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .subscription_parent {
+    grid-template-columns: repeat(1, 1fr);
+  }
+
+  .master_head_2 .master_two_part_2 p {
+    font-size: 12px;
+    margin-bottom: 15px;
+  }
+
+  .neaxtian_heading h3 {
+    font-size: 15px;
+  }
+
+  .courses .ournextian_button {
+    position: absolute;
+    top: 1%;
+    left: 80%;
+  }
+
+  .master_button_main .master_see_main {
+    top: 24.5%;
+    right: 6.5%;
+  }
+
+  .master_two_part_main p {
+    max-width: 300px;
+    font-size: 12px;
+  }
+
+  .master_button_main .master_right_button {
+    top: 21%;
+    left: 80%;
+  }
+}
+
+@media screen and (max-width: 350px) {
+  .master_button2 {
+    left: 77%;
+    top: 37%;
+  }
+}

@@ -1,0 +1,217 @@
+/* Top Nav */
+nav {
+  position: relative;
+  z-index: 99;
+}
+.activenav, .navbar {
+  background-color: #fff;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 99;
+  box-shadow: rgba(221, 221, 221, 0.2) 0px 7px 29px 0px;
+  transition: all 0.3s ease;
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+}
+.activenav .tn_right a, .navbar .tn_right a {
+  color: #000;
+}
+.activenav .manu_nav a, .navbar .manu_nav a {
+  color: #000;
+}
+.activenav .manu_nav a:hover, .navbar .manu_nav a:hover {
+  color: #000;
+}
+.activenav .nav_notification, .navbar .nav_notification {
+  color: #000;
+}
+.activenav .fa_down, .navbar .fa_down {
+  color: #000;
+}
+.activenav .login_btn p button, .navbar .login_btn p button {
+  color: #fff;
+  background-color: #ec1c24 !important;
+}
+
+.tn_container {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  padding: 15px 0 15px;
+}
+.tn_right {
+  display: flex;
+  gap: 1rem;
+}
+.tn_right a {
+  color: #fff;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 13px;
+  font-weight: 300;
+}
+
+/* ______________ manubar____________________ */
+.nav_container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  /* margin-bottom: 5px; */
+}
+.manubar_section .nav_logo img {
+  width: 200px;
+}
+.manu_nav {
+  display: flex;
+  text-transform: capitalize;
+  /* padding-right: 1rem; */
+  align-items: center;
+}
+.nav_menu {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  position: relative;
+}
+.nav_menu a {
+  font-weight: 400;
+  color: #fff;
+  position: relative;
+}
+.nav_menu a:hover {
+  border-radius: 50px;
+  background: #ffffff36;
+  font-weight: 500;
+  transition: 0.4s ease;
+  color: #fff;
+  padding: 0.5rem 1rem;
+}
+.sub_menu {
+  list-style: none;
+  padding: 10px 0;
+  margin: 0;
+  position: absolute;
+  top: 100%; /* Position the submenu below the parent item */
+  left: auto;
+  background-color: #fff; /* Adjust the background color as needed */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  z-index: 1;
+  display: none; /* Hide the submenu by default */
+  border-radius: 6px;
+}
+
+.nav_menu:hover .sub_menu {
+  display: block; /* Show the submenu when the parent is hovered */
+}
+
+.sub_menu li {
+  padding: 10px;
+}
+
+.sub_menu a {
+  color: #000;
+  text-decoration: none;
+}
+
+.sub_menu a:hover {
+  background-color: #555; /* Adjust the background color on hover */
+}
+.nav_notification {
+  font-size: 1.2rem;
+  color: #fff;
+}
+.login_btn p button {
+  padding: 0.5rem;
+  background-color: #ffffff4f !important;
+  border-radius: 50px;
+  border: none;
+  color: #fff;
+  margin-left: 10px;
+  font-size: 12px;
+}
+.fa_down {
+  color: #fff;
+  position: relative;
+  top: 4px;
+}
+.login_btn {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding-left: 15px;
+}
+.login_btn span {
+  padding: 0.5rem 1rem;
+  background-color: #0000004f !important;
+  border-radius: 50px;
+  border: none;
+  color: #fff;
+  margin-left: 10px;
+}
+
+.nm_nav {
+  display: none;
+}
+
+/* ____________________ Responsive tablet ___________________________ */
+@media (max-width: 1024px) {
+  .tn_right {
+    display: none;
+  }
+  .nav_container {
+    display: none;
+  }
+  .nm_nav {
+    display: block;
+    position: absolute;
+    top: 0.5rem;
+    left: 0;
+    width: 100%;
+    height: 5rem;
+    z-index: 99;
+    transition: all 0.5s ease;
+  }
+  .nm_container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0.5rem 1rem;
+  }
+  .menu_btn {
+    color: #000;
+    font-size: 1.4rem;
+    cursor: pointer;
+  }
+  .nav_menu {
+    position: fixed;
+    top: 4.6rem;
+    right: 0;
+    background: #ec1c24 !important;
+    height: 28rem;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    padding: 2rem 0;
+    transition: all 0.5s ease;
+    transform: translateX(-150%);
+  }
+  .nav_menu li a:hover {
+    color: #000;
+  }
+  .login_btn {
+    display: none;
+  }
+  .header {
+    padding-bottom: 45px;
+  }
+  .activenav .manu_nav a {
+    color: #fff;
+  }
+
+  /* Simpllify */
+  .parent_simplify {
+    grid-template-columns: 1fr;
+  }
+}

@@ -1,0 +1,532 @@
+.nextian_seeall_section {
+    position: relative;
+    margin-top: 115px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    /* min-height: 75vh; */
+    padding: 75px 0;
+}
+
+.nextian_seeall_parent {
+    display: flex;
+    align-items: center;
+}
+
+.nextian_seeall_left {
+    width: 50%;
+}
+
+.nextian_seeall_left h2 {
+    font-size: 44px;
+    font-weight: 700;
+    line-height: 60px;
+    color: #fff;
+    letter-spacing: 0.5px;
+}
+
+.nextian_seeall_left p {
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 22px;
+    color: #fff;
+}
+
+
+
+/* card_slider */
+.nextian_seeall_right_slider .swiper {
+    width: 270px;
+    height: 300px;
+}
+
+.nextian_seeall_right_slider .swiper-slide {
+    /* display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 18px;
+    font-size: 22px;
+    font-weight: bold;
+    color: #fff; */
+    border-radius: 15px;
+}
+
+.nextian_seeall_right_slider .swiper-slide:nth-child(1n) {
+    background-color: rgb(18, 8, 255);
+}
+
+.nextian_seeall_right_slider .swiper-slide:nth-child(2n) {
+    background-color: rgb(0, 140, 255);
+}
+
+.nextian_seeall_right_slider .swiper-slide:nth-child(3n) {
+    background-color: rgb(206, 17, 17);
+}
+
+.nextian_seeall_right_slider .swiper-slide:nth-child(4n) {
+    background-color: rgb(211, 122, 7);
+}
+
+.nextian_seeall_right_slider .swiper-slide:nth-child(5n) {
+    background-color: rgb(118, 163, 12);
+}
+
+.nextian_seeall_right_slider .swiper-slide:nth-child(6n) {
+    background-color: rgb(180, 10, 47);
+}
+
+.nextian_seeall_right_slider .swiper-slide:nth-child(7n) {
+    background-color: rgb(35, 99, 19);
+}
+
+.nextian_seeall_right_slider .swiper-slide:nth-child(8n) {
+    background-color: rgb(0, 68, 255);
+}
+
+.nextian_seeall_right_slider .swiper-slide:nth-child(9n) {
+    background-color: rgb(218, 12, 218);
+}
+
+.nextian_seeall_right_slider .swiper-slide:nth-child(10n) {
+    background-color: rgb(54, 94, 77);
+}
+
+.nextian_seeall_right {
+    width: 55%;
+}
+
+.nextian_slider_subtitle {
+    padding-top: 30px;
+}
+
+.nextian_slider_subtitle .nextian_heading {
+    text-align: center;
+    font-size: 20px;
+    font-weight: 700;
+    color: #ffffff;
+}
+
+.nextian_slider_parent_seeall {
+    display: flex;
+    padding-top: 50px;
+}
+
+.nextian_slider_seeall_img {
+    width: 70%;
+}
+
+.nextian_slider_seeall_content {
+    width: 30%;
+    margin-left: -20px;
+}
+
+.nextian_slider_seeall_content .nextian_name {
+    color: #fff;
+    font-size: 13px;
+    font-weight: 600;
+    line-height: 18px;
+    margin-top: -22px;
+    margin-left: -50px;
+}
+
+.nextian_slider_seeall_content .nextian_rank {
+    color: #fff;
+    font-size: 18px;
+    font-weight: 700;
+    margin-top: 25px;
+}
+
+
+/* proud nextian year */
+.our_proud_nextian_section {
+    padding: 0px 0px 60px;
+    cursor: pointer;
+}
+
+.our_proud_nextian_title h3 {
+    font-size: 32px;
+    font-weight: 700;
+    color: #333;
+    padding-top: 60px;
+}
+
+.our_proud_nextian_parent {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 30px;
+    margin-top: 30px;
+}
+
+.our_proud_nextian_card {
+    padding: 30px 0px 0px;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    border-radius: 10px;
+}
+
+.our_proud_nextian_content {
+    padding: 10px 20px 30px 33px;
+}
+
+.our_proud_nextian_content .our_proud_name {
+    font-size: 20px;
+    font-weight: 600;
+    text-transform: capitalize;
+    color: #333;
+}
+
+.our_proud_nextian_content .our_proud_rank {
+    font-size: 15px;
+    font-weight: 400;
+    color: #707070;
+    padding-top: 5px;
+    font-weight: bold;
+}
+
+.our_proud_nextian_content .our_proud_rank span {
+    font-weight: 800;
+}
+
+.our_proud_nextian_content .our_proud_view {
+    font-size: 15px;
+    font-weight: 400;
+    color: #707070;
+    line-height: 22px;
+    padding-top: 8px;
+}
+
+.proud_nextian_btn button {
+    background: transparent;
+    color: #ad0303;
+    font-size: 14px;
+    font-weight: bold;
+    cursor: pointer;
+    padding-top: 18px;
+}
+
+.our_proud_nextian_img {
+    overflow: hidden;
+    width: 150px;
+    height: 150px;
+    margin: auto;
+}
+
+.our_proud_nextian_img img {
+    transition: .6s;
+}
+
+.our_proud_nextian_img img:hover {
+    transform: scale(1.2);
+}
+
+
+
+/* Add your styles for the modal and other components here */
+.nextian_modal {
+    display: none;
+    position: fixed;
+    top: 10%;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(120, 120, 120, 0.2);
+    justify-content: center;
+    align-items: center;
+    z-index: 3;
+}
+
+.nextian_modal_content {
+    background-color: #fefefe;
+    padding: 0px 20px 20px;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+
+.nextian_modal_header {
+    text-align: right;
+}
+
+.nextian_modal_close {
+    font-size: 30px;
+    cursor: pointer;
+}
+
+.show {
+    display: flex;
+}
+
+.master_nextian_content {
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    gap: 60px;
+    /* padding: 0px 80px 15px; */
+    max-width: 75vw;
+    min-height: 50vh;
+}
+
+.nextian_image_left {
+    width: 30%;
+    text-align: center;
+    background-color: #F5F5F7;
+    border-radius: 10px;
+}
+
+.nextian_description_right {
+    width: 70%;
+}
+
+.nextian_master_title h2 {
+    color: #222;
+    font-weight: 700;
+    font-size: 45px;
+}
+
+.nextian_master_title .nextian_degree {
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 22px;
+    max-width: 500px;
+    color: #222;
+    padding: 10px 0;
+}
+
+.nextian_master_title .nextian_medal {
+    font-size: 30px;
+    font-weight: 700;
+    color: #716d6d;
+    padding-bottom: 30px;
+}
+
+.nextian_master_title p {
+    font-size: 15px;
+    line-height: 23px;
+    color: #707070;
+    padding-bottom: 8px;
+    padding-right: 100px;
+}
+
+.faculty_btn button {
+    background: transparent;
+    font-size: 16px;
+    font-weight: 500;
+    text-transform: capitalize;
+    margin-top: 10px;
+    text-decoration: underline;
+}
+
+/* success slider */
+.nextian_success_slider_section {
+    background: #EBEBEB;
+}
+
+/* .nextian_success_slider_section .swiper-wrapper {
+    z-index: -99;
+    position: relative;
+} */
+
+.nextian_title_slider_child {
+    text-align: center;
+    padding: 50px;
+}
+
+.nextian_title_heading h4 {
+    font-size: 32px;
+    font-weight: 700;
+    line-height: 36px;
+    color: #333;
+    padding-bottom: 10px;
+}
+
+.nextian_success_img_content .nextian_name {
+    font-size: 20px;
+    font-weight: 500;
+    line-height: 26px;
+    color: #222;
+    padding-top: 10px;
+}
+
+.nextian_success_img_content .nextian_rank {
+    font-size: 16px;
+    font-weight: 400;
+    color: #707070;
+    line-height: 20px;
+    padding: 10px 0px;
+}
+
+.nextian_success_img_content .nextian_content {
+    font-size: 15px;
+    font-weight: 400;
+    color: #707070;
+    line-height: 20px;
+    max-width: 800px;
+    margin: auto;
+    padding-bottom: 10px;
+}
+
+.nextian_title_slider_parent .swiper-button-prev {
+    border: 1px solid #d0d0d0;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+}
+
+.nextian_title_slider_parent .swiper-button-next {
+    border: 1px solid #d0d0d0;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+}
+
+.nextian_title_slider_parent .swiper-button-next:after {
+    color: #555;
+    font-size: 16px;
+    font-weight: 600;
+}
+
+.nextian_title_slider_parent .swiper-button-prev:after {
+    color: #555;
+    font-size: 16px;
+    font-weight: 600;
+}
+
+
+
+@media screen and (max-width: 1024px) {
+    .nextian_seeall_section {
+        margin-top: 75px;
+    }
+
+    .nextian_master_title h2 {
+        font-size: 32px;
+    }
+
+    .nextian_master_title .faculty_medal {
+        font-size: 24px;
+    }
+
+    .nextian_master_title p {
+        font-size: 10px;
+        line-height: 14px;
+    }
+
+    .nextian_master_title p {
+        font-size: 10px;
+        line-height: 14px;
+        padding-bottom: 0px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .nextian_seeall_left h2 {
+        font-size: 35px;
+    }
+
+    .nextian_master_title h2 {
+        font-size: 25px;
+    }
+
+    .nextian_master_title .nextian_medal {
+        font-size: 18px;
+        padding-bottom: 15px;
+    }
+
+    .nextian_master_title .nextian_degree {
+        font-size: 12px;
+        line-height: 15px;
+    }
+
+    .nextian_master_title p {
+        font-size: 9px;
+        line-height: 14px;
+        padding-bottom: 0px;
+    }
+
+    .master_nextian_section p {
+        font-size: 9px;
+        line-height: 14px;
+        padding-bottom: 0px;
+    }
+
+    .our_proud_nextian_content .our_proud_view {
+        padding-right: 0px;
+        text-align: justify;
+        line-height: 18px;
+    }
+
+    .our_proud_nextian_parent {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media screen and (max-width: 550px) {
+
+    .nextian_seeall_section {
+        padding: 50px 0;
+    }
+
+    .nextian_seeall_parent {
+        flex-direction: column-reverse;
+        gap: 40px;
+    }
+
+    .nextian_seeall_left {
+        width: 100%;
+    }
+
+    .nextian_seeall_right {
+        width: 100%;
+    }
+
+    .master_nextian_content {
+        flex-direction: column;
+        gap: 20px;
+        max-width: 80vw;
+        padding: 0 40px 10px;
+    }
+
+    .nextian_image_left {
+        width: 100%;
+    }
+
+    .nextian_image_left img {
+        width: 150px;
+        height: 150px;
+    }
+
+    .nextian_description_right {
+        width: 100%;
+    }
+
+    .nextian_master_title h2 {
+        font-size: 16px;
+    }
+
+    .nextian_master_title .nextian_medal {
+        font-size: 12px;
+        padding-bottom: 5px;
+    }
+
+    .nextian_master_title .nextian_degree {
+        font-size: 7px;
+        padding: 5px 0;
+        line-height: 10px;
+    }
+
+    .nextian_master_title p {
+        font-size: 7px;
+        line-height: 12px;
+        padding-bottom: 0px;
+    }
+
+    .nextian_modal {
+        top: 6%;
+    }
+
+    .our_proud_nextian_parent {
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+    }
+}

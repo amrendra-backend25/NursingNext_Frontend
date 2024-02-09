@@ -1,0 +1,62 @@
+.feedback_section {
+  background-color: #fcfbfb;
+  grid: auto;
+}
+.feedback_title {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  height: 180px;
+  align-items: center;
+}
+.feedback_input {
+  display: flex;
+  justify-content: center;
+  position: relative;
+}
+.input_form1 input {
+  width: 590px;
+  height: 60px;
+  border: 1px solid #dcdcdc;
+  border-radius: 30px;
+  padding-left: 30px;
+  text-transform: capitalize;
+  font-size: 14px;
+  font-weight: 400;
+  color: #707070;
+}
+.input_form1 .submit_btn {
+  position: absolute;
+  right: 17px;
+  top: 8px;
+  bottom: 0;
+  height: 44px;
+  width: 110px;
+  border-radius: 25px;
+  background-color: #dd0e0e;
+  color: #fff;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+
+/* ============================Responsive Tablet========================*/
+@media screen and (max-width: 1024px){
+  .input_form1 input{
+      width: 480px;
+  }
+}
+@media screen and (max-width: 768px){
+  .feedback_title{
+      grid-template-columns: 1fr;
+  }
+  .input_form1 .submit_btn {
+    position: absolute;
+    right: 112px;
+  }
+}
+@media screen and (max-width: 500px){
+  .input_form1 input{
+      width: 300px;
+  }
+  .input_form1 .submit_btn{position: absolute; right: 48px;}
+}

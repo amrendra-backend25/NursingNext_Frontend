@@ -1,0 +1,97 @@
+.digital_section {
+  padding: 4rem 0;
+  background: #fcfbfb;
+}
+.digital_title {
+  text-align: center;
+}
+.digital_title h3 {
+  color: #333;
+  font-size: 28px;
+  font-weight: 700;
+}
+.digital_parent {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  margin-top: 50px;
+  gap: 20px;
+}
+.digital_parent .digital_card {
+  display: flex;
+  align-items: center;
+  padding: 10px 15px;
+  /* border: 1px solid #333; */
+  /* box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px; */
+  box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px,
+    rgb(253, 254, 255) 0px 1px 3px 1px;
+  border-radius: 8px;
+  background: #fff;
+}
+.digital_parent .digital_img img {
+  height: 35px;
+  width: 35px;
+  /* border-radius: 50%; */
+  /* border: 1px solid #707070; */
+}
+.digital_parent .digital_title {
+  text-align: left;
+  padding-left: 25px;
+}
+
+
+.digital_parent .digital_title h3 {
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 28px;
+  color: #333;
+}
+.digital_parent .digital_title p {
+  font-size: 16px;
+  font-weight: 400;
+  color: #707070;
+}
+.digital_btn {
+  text-align: center;
+}
+.digital_btn .why_btn {
+  width: 125px;
+  height: 45px;
+  background: #dd0e0e;
+  color: #fff;
+  border-radius: 26px;
+  margin-top: 60px;
+  font-size: 16px;
+  font-weight: 500;
+}
+.digital_btn_submit{text-align: center;}
+.digital_section .digital_btn{
+    height: 44px;
+    width: 110px;
+    border-radius: 25px;
+    background-color: #dd0e0e;
+    color: #fff;
+    font-weight: 500;
+    cursor: pointer;
+    margin-top: 40px;
+}
+
+
+/* ============================Responsive Tablet/Phone========================*/
+@media screen and (max-width: 1024px){
+  .digital_parent {
+      grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media screen and (max-width: 768px){
+  .digital_parent {
+      grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media screen and (max-width: 550px){
+  .digital_parent {
+      grid-template-columns: repeat(1, 1fr);
+  }
+  .digital_title h3{font-size: 22px;}
+}

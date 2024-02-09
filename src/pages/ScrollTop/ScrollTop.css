@@ -1,0 +1,13 @@
+.top-btn{
+    font-size: 2rem;
+    color: #fdfdff;  
+    position: fixed;
+    bottom: 1rem;
+    right: 1.5rem;
+    z-index: 999;
+    cursor: pointer;
+}
+.top-btn--icon{
+    background: red;
+    border-radius: 50%;
+}

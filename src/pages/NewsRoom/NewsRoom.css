@@ -1,0 +1,556 @@
+.news_banner_section {
+  background-image: url("/images/aboutUs/about.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  /* min-height: 45vh; */
+  position: relative;
+  margin-top: 115px;
+}
+
+.news_banner_title {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: self-start;
+  padding: 125px 0;
+  color: #fff;
+}
+
+.news_banner_title h2 {
+  text-transform: uppercase;
+  font-size: 44px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+}
+
+.news_banner_title p {
+  text-transform: uppercase;
+  font-size: 20px;
+  font-weight: 400;
+  padding-top: 4px;
+  letter-spacing: 0.5px;
+}
+
+/* Tab styles */
+.tab_section_news {
+  padding: 3rem 0;
+}
+
+.tab_section_news .tabs {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  gap: 50px;
+  align-items: center;
+  border-bottom: 1px solid #dedede;
+}
+
+.tab_section_news .tab {
+  cursor: pointer;
+  padding: 15px 0px;
+}
+
+.tab_section_news .tab a {
+  color: #333;
+  font-size: 18px;
+}
+
+.tab_section_news .tab:hover {
+  color: #333;
+  font-weight: 700;
+  font-size: 16px;
+  transition: 0.3s ease;
+}
+
+.tab_section_news .tab.active {
+  border-bottom: 3px solid #000;
+  color: #333;
+  font-weight: 700;
+  font-size: 16px;
+}
+
+/* Content styles */
+.tab_section_news .tab-content {
+  margin-top: 10px;
+}
+
+/* tab css */
+.tab_card_content {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+  padding-top: 50px;
+}
+
+.card_border {
+  border: 1px solid #eee;
+  height: 392px;
+  padding: 20px;
+}
+
+.card_border .news_card_title .press {
+  color: #0072db;
+  font-size: 16px;
+  line-height: 24px;
+}
+
+.news_card_title h3 {
+  font-size: 19px;
+  font-weight: 500;
+  color: #000;
+  padding: 17px 0 10px;
+  line-height: 25px;
+}
+
+.news_card_title .para_title {
+  font-size: 15px;
+  color: #666;
+  line-height: 20px;
+  padding-bottom: 15px;
+}
+
+.news_card_title .para_title_1 {
+  font-size: 15px;
+  color: #666;
+  line-height: 20px;
+  border-left: 3px solid #e40000;
+  padding-left: 15px;
+}
+
+.card_border .para_btn button {
+  font-size: 14px;
+  line-height: 16px;
+  font-weight: 500;
+  background: transparent;
+  color: #333;
+  text-transform: capitalize;
+}
+
+.card_border .arrow_redo {
+  padding-top: 130px;
+  text-align: right;
+  color: #707070;
+  font-size: 25px;
+}
+
+.rivision_banner {
+  background-image: url("/images/newsroom/news_banner.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  min-height: 45vh;
+  border-radius: 10px;
+  margin-top: 50px;
+}
+
+.future_education {
+  display: flex;
+  gap: 20px;
+}
+
+.nursing_education {
+  padding-top: 50px;
+}
+
+.future_education .future_education_left {
+  width: 70%;
+  background: #152942;
+}
+
+.future_education .future_education_right {
+  width: 30%;
+}
+
+.future_card {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.future_border {
+  border: 1px solid #eee;
+  padding: 20px 20px 60px;
+  background-color: #dd0e0e;
+}
+
+.future_border .news_future_title .press {
+  color: #fff;
+  font-size: 16px;
+  line-height: 24px;
+}
+
+.news_future_title h3 {
+  font-size: 19px;
+  font-weight: 500;
+  color: #fff;
+  padding: 17px 30px 10px 10px;
+  line-height: 24px;
+}
+
+.news_future_title .para_title_future {
+  font-size: 14px;
+  color: #fff;
+  font-weight: 400;
+  line-height: 20px;
+  border-left: 3px solid #fff;
+  padding-left: 15px;
+}
+
+.news_future_title .para_title_1_future {
+  font-size: 15px;
+  color: #666;
+  line-height: 20px;
+  border-left: 3px solid #e40000;
+  padding-left: 15px;
+}
+
+.future_border_1 {
+  border: 1px solid #eee;
+  padding: 20px 20px 60px;
+}
+
+.future_border_1 .news_future_title .press {
+  color: #0072db;
+  font-size: 16px;
+  line-height: 24px;
+}
+
+.future_border_1 .news_future_title h3 {
+  font-size: 19px;
+  font-weight: 500;
+  color: #000;
+  padding: 17px 30px 10px 10px;
+  line-height: 24px;
+}
+
+.future_border_1 .news_future_title .para_title_1_future {
+  font-size: 15px;
+  color: #666;
+  line-height: 20px;
+  border-left: 3px solid #e40000;
+  padding-left: 15px;
+}
+
+
+/* exams css */
+.news_exam_section {
+  padding-top: 40px;
+}
+
+.news_exam_card_parent {
+  display: flex;
+  gap: 20px;
+}
+
+.exam_image_part_left {
+  width: 33%;
+  border: 1px solid #DBDBDB;
+  border-top-right-radius: 10px;
+  border-top-left-radius: 10px;
+}
+
+.exam_image_part_left .exam_nnl_content {
+  padding: 20px;
+}
+
+.exam_image_part_left .exam_nnl_content .press {
+  color: #0072DB;
+  font-size: 16px;
+  line-height: 22px;
+  font-weight: 400;
+}
+
+.exam_image_part_left .exam_nnl_content .nnl_head {
+  font-size: 20px;
+  line-height: 26px;
+  font-weight: 600;
+  color: #333;
+  padding: 20px 0px 12px;
+}
+
+.exam_image_part_left .exam_nnl_content .download_link {
+  color: #0072db;
+}
+
+.exam_image_part_left .exam_nnl_content .para_title {
+  font-size: 15px;
+  line-height: 22px;
+  font-weight: 400;
+  color: #666;
+}
+
+.exam_image_part_left .exam_nnl_content .para_btn button {
+  background: transparent;
+  font-size: 14px;
+  font-weight: 600;
+  color: #333;
+  text-transform: capitalize;
+  line-height: 16px;
+  padding-top: 10px;
+}
+
+.exam_image_part_left .arrow_redo {
+  padding-right: 15px;
+  text-align: right;
+  font-size: 25px;
+  padding-top: 45px;
+  color: #707070;
+}
+
+.exam_image_right_part {
+  width: 67%;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.exam_nnl_content {
+  height: 350px;
+}
+
+.exam_nnl_right_content {
+  border: 1px solid #dbdbdb;
+}
+
+.exam_right_content {
+  display: flex;
+  justify-content: center;
+  border: 1px solid #DBDBDB;
+}
+
+.exam_right_content .exam_img_left {
+  width: 50%;
+  padding: 20px 20px 0 20px;
+}
+
+.exam_right_content .exam_nnl_content .press {
+  color: #0072DB;
+  font-size: 16px;
+  line-height: 22px;
+  font-weight: 400;
+}
+
+.exam_right_content .exam_nnl_content .nnl_head {
+  font-size: 20px;
+  line-height: 26px;
+  font-weight: 600;
+  color: #333;
+  padding: 20px 0px 12px;
+}
+
+.exam_right_content .exam_nnl_content .para_title {
+  font-size: 15px;
+  line-height: 22px;
+  font-weight: 400;
+  color: #666;
+}
+
+.exam_right_content .exam_nnl_content .para_title_1 {
+  font-size: 15px;
+  color: #666;
+  line-height: 22px;
+  border-left: 3px solid #e40000;
+  padding-left: 15px;
+}
+
+.exam_right_content .arrow_redo {
+  font-size: 25px;
+  text-align: right;
+  color: #707070;
+}
+
+.exam_right_content .exam_nnl_content .para_btn button {
+  background: transparent;
+  font-size: 14px;
+  font-weight: 600;
+  color: #333;
+  text-transform: capitalize;
+  line-height: 16px;
+  padding-top: 10px;
+}
+
+.exam_right_content .exam_img_head {
+  width: 50%;
+}
+
+
+/* ============================Responsive Tablet========================*/
+@media screen and (max-width: 1024px) {
+  .news_banner_section {
+    margin-top: 70px;
+  }
+
+  .tab_section_news .tabs {
+    gap: 40px;
+  }
+
+  .tab_section_news .tab a {
+    font-size: 14px;
+  }
+
+  .card_border {
+    height: 290px;
+  }
+
+  .news_card_title h3 {
+    font-size: 16px;
+    line-height: 20px;
+    padding: 10px 0;
+  }
+
+  .news_card_title .para_title {
+    font-size: 13px;
+    padding-bottom: 12px;
+    line-height: 18px;
+  }
+
+  .news_card_title .para_title_1 {
+    font-size: 13px;
+    line-height: 18px;
+  }
+
+  .card_border .para_btn button {
+    font-size: 13px;
+  }
+
+  .card_border .arrow_redo {
+    padding: 0;
+  }
+
+  .future_education {
+    flex-direction: column;
+  }
+
+  .future_education .future_education_left {
+    width: 100%;
+  }
+
+  .future_education .future_education_right {
+    width: 100%;
+  }
+
+  .future_card {
+    flex-direction: row;
+    width: 100%;
+  }
+
+  /* exams css */
+  .exam_nnl_content {
+    height: 255px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .tab_section_news .tabs {
+    gap: 25px;
+  }
+
+  .tab_section_news .tab a {
+    font-size: 15px;
+  }
+
+  .tab_card_content {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .card_border {
+    height: 330px;
+  }
+
+  .card_border .arrow_redo {
+    padding-top: 70px;
+  }
+
+  .rivision_banner {
+    min-height: 30vh;
+  }
+
+  /* exams css */
+  .news_exam_card_parent {
+    flex-direction: column;
+  }
+
+  .exam_image_part_left {
+    width: 100%;
+    display: flex;
+  }
+
+  .exam_image_part_left .exam_img {
+    width: 50%;
+  }
+
+  .exam_image_part_left .exam_nnl_content {
+    width: 50%;
+  }
+
+  .exam_image_part_left .arrow_redo {
+    padding-top: 285px;
+  }
+
+  .exam_image_right_part {
+    width: 100%;
+  }
+
+  .exam_right_content .arrow_redo {
+    padding-top: 30px;
+  }
+
+}
+
+@media screen and (max-width: 550px) {
+  .tab_section_news .tabs {
+    gap: 25px;
+  }
+
+  .tab_section_news .tab a {
+    font-size: 15px;
+  }
+
+  .tab_card_content {
+    grid-template-columns: repeat(1, 1fr);
+  }
+
+  .future_card {
+    flex-direction: column;
+  }
+
+  .rivision_banner {
+    min-height: 12vh;
+  }
+
+  .exam_image_part_left {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .exam_image_part_left .exam_img {
+    width: 100%;
+  }
+
+  .exam_image_part_left .exam_nnl_content {
+    width: 100%;
+  }
+
+  .exam_right_content {
+    flex-direction: column;
+  }
+
+  .exam_right_content .exam_img_left {
+    width: 100%;
+  }
+
+  .exam_right_content .exam_img_head {
+    width: 100%;
+  }
+
+  .exam_image_part_left .arrow_redo {
+    padding-top: 0px;
+  }
+
+  .exam_nnl_content {
+    height: 300px;
+  }
+}

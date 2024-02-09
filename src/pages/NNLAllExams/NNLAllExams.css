@@ -1,0 +1,233 @@
+.allexam_section {
+    background-image: url('/images/aboutUs/about.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    position: relative;
+    margin-top: 115px;
+}
+
+.allexam_header {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: self-start;
+    padding: 124px 0;
+    color: #fff;
+}
+
+.allexam_header h2 {
+    text-transform: uppercase;
+    font-size: 44px;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+}
+
+.allexam_header p {
+    text-transform: uppercase;
+    font-size: 20px;
+    font-weight: 400;
+    padding-top: 4px;
+    letter-spacing: 0.5px;
+}
+.tab_sub_title h3{ font-size: 32px; color: #333;}
+/* Tab styles */
+.tab_section {
+    padding: 3rem 0;
+}
+
+.tabs {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    gap: 50px;
+    align-items: center;
+    border-bottom: 1px solid #DEDEDE;
+}
+
+.tab {
+    cursor: pointer;
+    padding: 15px 0px;
+}
+
+.tab a {
+    color: #333;
+    font-size: 16px;
+}
+
+.tab:hover {
+    color: #333;
+    font-weight: 700;
+    font-size: 16px;
+    transition: 0.3s ease;
+}
+
+.tab.active {
+    border-bottom: 3px solid #000;
+    color: #333;
+    font-weight: 700;
+    font-size: 16px;
+}
+
+/* Content styles */
+.tab-content {
+    margin-top: 10px;
+}
+
+.tab_parent {
+    border: 1px solid #EAEAEA;
+    padding: 50px;
+    border-radius: 12px;
+    margin-top: 50px;
+}
+
+.tab_parent .tab_child {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.tab_parent .tab_child .tab_child_img_left {
+    width: 40%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.tab_parent .tab_child .tab_child_content_right {
+    width: 60%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.tab_parent .tab_sub_content h2 {
+    padding-bottom: 30px;
+    color: #333;
+    font-weight: 700;
+    font-size: 32px;
+}
+
+.tab_parent .tab_sub_content .tab_bold {
+    font-weight: 500;
+    color: #707070;
+    font-size: 16px;
+    line-height: 22px;
+    padding-bottom: 20px;
+}
+
+.tab_parent .tab_sub_content p {
+    font-weight: 400;
+    color: #707070;
+    font-size: 14px;
+    line-height: 22px;
+}
+
+.tab_parent .tab_sub_content .tab_btn button {
+    width: 150px;
+    height: 50px;
+    font-size: 16px;
+    color: #fff;
+    background: #DD0E0E;
+    border-radius: 25px;
+    margin-top: 30px;
+    font-weight: 500;
+}
+
+.month_offer_section {
+    padding: 2rem 0 4rem;
+}
+
+.month_offer_section .month_offer_title h3 {
+    font-size: 32px;
+    font-weight: 700;
+    color: #333;
+}
+
+.month_offer_parent {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+}
+
+.month_offer_child {
+    padding-top: 30px;
+}
+
+.month_offer_img_box {
+    width: 290px;
+    height: 290px;
+    border: 1px solid #BABFCA;
+    background: linear-gradient(0deg, #F8F8F8, #F8F8F8);
+    border-radius: 8px;
+}
+
+.month_offer_sub_content p {
+    color: #333;
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 28px;
+    padding-top: 20px;
+}
+
+
+
+@media screen and (max-width: 1024px) {
+    .allexam_section {
+        margin-top: 75px;
+    }
+
+    .tab_parent .tab_child .tab_child_img_left {
+        width: 100%;
+    }
+
+    .tab_parent .tab_child .tab_child_content_right {
+        width: 100%;
+        padding-top: 30px;
+    }
+
+    .tabs {
+        gap: 30px;
+    }
+
+    .tab a {
+        font-size: 14px;
+    }
+
+    .month_offer_parent {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .tabs {
+        gap: 15px;
+    }
+
+    .tab a {
+        font-size: 10px;
+    }
+
+    .month_offer_parent {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media screen and (max-width: 450px) {
+    .tabs {
+        gap: 8px;
+    }
+
+    .tab a {
+        font-size: 7px;
+    }
+
+    .month_offer_section .month_offer_title h3 {
+        text-align: center;
+    }
+
+    .month_offer_parent {
+        grid-template-columns: repeat(1, 1fr);
+        place-items: center;
+    }
+}
