@@ -4,7 +4,7 @@ import { Paths } from "../../config/configAPI";
 import axios from "axios";
 import { Link } from "react-router-dom";
 import Simplify from "../Simplify/Simplify";
-
+import { GoDotFill } from "react-icons/go";
 const AllFaq = () => {
   const [activeTab, setActiveTab] = useState(1);
   const handleTabClick = (tabNumber) => {
@@ -156,61 +156,43 @@ const AllFaq = () => {
 
           {/* Content based on active tab */}
           <div className="allfaq_tab-content">
-            {activeTab === 1 && (
-              <section className="allfaq_accordian_section">
-                {accordionData.map((item, index) => (
-                  <div key={index} className="allfaq_accordion-item">
-                    <div
-                      className={`allfaq_accordion-header ${
-                        openAccordion === index ? "open" : ""
-                      }`}
-                      onClick={() => handleAccordionClick(index)}
-                    >
-                      {item.faqHeading}
-                      <span className="allfaq_accordion-icon">
-                        {openAccordion === index ? "-" : "+"}
-                      </span>
-                    </div>
-                    {openAccordion === index && (
-                      <div
-                        className="allfaq_accordion-content"
-                        dangerouslySetInnerHTML={{
-                          __html: item.faqDescription,
-                        }}
-                      />
-                    )}
-                  </div>
-                ))}
-              </section>
-            )}
-          </div>
+            {accordionData.map((record, index) => {
+              const { faqDescription } = record;
+              const sentences = faqDescription.split(". ");
+              return (
+                <>
+                  {activeTab === index + 1 && (
+                    <section className="allfaq_accordian_section">
+                      {accordionData.map((item, index) => (
+                        <div key={index} className="allfaq_accordion-item">
+                          <div
+                            className={`allfaq_accordion-header ${
+                              openAccordion === index ? "open" : ""
+                            }`}
+                            onClick={() => handleAccordionClick(index)}
+                          >
+                            {item.faqHeading}
+                            <span className="allfaq_accordion-icon">
+                              {openAccordion === index ? "-" : "+"}
+                            </span>
+                          </div>
 
-          <div className="allfaq_tab-content">
-            <section className="allfaq_accordian_section">
-              {accordionData.map((item, index) => (
-                <div key={index} className="allfaq_accordion-item">
-                  <div
-                    className={`allfaq_accordion-header ${
-                      openAccordion === index + 1 ? "open" : ""
-                    }`}
-                    onClick={() => handleAccordionClick(index)}
-                  >
-                    {item.faqHeading}
-                    <span className="allfaq_accordion-icon">
-                      {openAccordion === index ? "-" : "+"}
-                    </span>
-                  </div>
-                  {openAccordion === index && (
-                    <div
-                      className="allfaq_accordion-content"
-                      dangerouslySetInnerHTML={{
-                        __html: item.faqDescription,
-                      }}
-                    />
+                          {openAccordion === index && (
+                            <div className="accordion-content">
+                              {sentences.map((sentence, sentenceIndex) => (
+                                <div key={sentenceIndex}>
+                                  <GoDotFill /> {sentence}
+                                </div>
+                              ))}
+                            </div>
+                          )}
+                        </div>
+                      ))}
+                    </section>
                   )}
-                </div>
-              ))}
-            </section>
+                </>
+              );
+            })}
           </div>
         </div>
       </section>

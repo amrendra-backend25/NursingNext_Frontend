@@ -43,7 +43,7 @@ const DynamicAccordion = () => {
         <div className="accordian_title">
           <h3>Frequently Asked Questions</h3>
         </div>
-        {accordionData.slice(0, 7).map((item, index) => {
+        {accordionData.slice(0, 6).map((item, index) => {
           const { faqDescription, faqHeading } = item;
           const sentences = faqDescription.split(". ");
           return (

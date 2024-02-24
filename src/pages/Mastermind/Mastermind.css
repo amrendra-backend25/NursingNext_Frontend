@@ -237,7 +237,7 @@
   opacity: 1;
 }
 
-.master_button2 .master_right_button {
+.master_slider_main .master_button2 .master_right_button {
   position: absolute;
   z-index: 10;
   top: 17%;
@@ -248,7 +248,7 @@
   flex-direction: row-reverse;
 }
 
-.master_button2 .master_right_button .button-next-slide {
+.master_slider_main .master_button2 .master_right_button .button-next-slide {
   color: #333;
   width: 30px;
   height: 30px;
@@ -263,7 +263,7 @@
             left: 95%; */
 }
 
-.master_button2 .master_right_button .button-prev-slide {
+.master_slider_main .master_button2 .master_right_button .button-prev-slide {
   color: #333;
   width: 30px;
   height: 30px;
@@ -278,14 +278,30 @@
             right: 0%; */
 }
 
-.master_button2 .master_see {
+.master_slider_main .master_button2 .master_see {
   position: absolute;
   top: 17.5%;
   right: 6.5%;
 
 }
 
-.master_button2 .master_see .master_button-2 {
+.master_slider_main .master_button2 .master_see .master_button-2 {
   background: transparent;
   cursor: pointer;
+}
+
+@media screen and (max-width: 1024px) {
+  .master_slider_main .master_button2 .master_see {
+    right: 7.5%;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .master_slider_main .master_button2 .master_see {
+    right: 23%;
+  }
+
+  .master_slider_main .master_button2 .master_right_button {
+    left: 78%;
+  }
 }

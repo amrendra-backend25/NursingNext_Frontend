@@ -2,17 +2,20 @@
   background-color: #fcfbfb;
   grid: auto;
 }
+
 .feedback_title {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   height: 180px;
   align-items: center;
 }
+
 .feedback_input {
   display: flex;
   justify-content: center;
   position: relative;
 }
+
 .input_form1 input {
   width: 590px;
   height: 60px;
@@ -24,9 +27,18 @@
   font-weight: 400;
   color: #707070;
 }
+
+.success {
+  font-size: 20px;
+  text-align: center;
+  margin-top: 10px;
+  left: 15px;
+  color: rgb(6, 247, 6);
+}
+
 .input_form1 .submit_btn {
   position: absolute;
-  right: 17px;
+  right: 58px;
   top: 8px;
   bottom: 0;
   height: 44px;
@@ -40,23 +52,56 @@
 
 
 /* ============================Responsive Tablet========================*/
-@media screen and (max-width: 1024px){
-  .input_form1 input{
-      width: 480px;
+@media (min-width: 1024px) and (max-width: 1291px) {
+  .input_form1 input {
+    width: 480px;
   }
 }
-@media screen and (max-width: 768px){
-  .feedback_title{
-      grid-template-columns: 1fr;
+
+@media (min-width: 768px) and (max-width: 1023px) {
+  .input_form1 input {
+    width: 300px;
   }
+
   .input_form1 .submit_btn {
     position: absolute;
-    right: 112px;
+    right: 31px;
   }
 }
-@media screen and (max-width: 500px){
-  .input_form1 input{
-      width: 300px;
+
+@media (min-width: 300px) and (max-width: 767px) {
+  .feedback_title {
+    grid-template-columns: repeat(1, 1fr);
   }
-  .input_form1 .submit_btn{position: absolute; right: 48px;}
+
+  .input_form1 input {
+    width: 320px;
+  }
+
+  .input_form1 .submit_btn {
+    position: absolute;
+    right: 25px;
+  }
 }
+
+/* @media screen and (max-width: 768px) {
+  .input_form1 input {
+    width: 300px;
+  }
+
+  .input_form1 .submit_btn {
+    position: absolute;
+    right: 35px;
+  }
+} */
+
+/* @media screen and (max-width: 500px) {
+  .input_form1 input {
+    width: 300px;
+  }
+
+  .input_form1 .submit_btn {
+    position: absolute;
+    right: 35px;
+  }
+} */

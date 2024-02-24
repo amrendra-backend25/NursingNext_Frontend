@@ -46,6 +46,14 @@
   letter-spacing: 0.1px;
 }
 
+.success {
+  font-size: 20px;
+  text-align: center;
+  margin-top: 17px;
+  left: 15px;
+  color: rgb(6, 247, 6);
+}
+
 .offers_btn {
   padding: 1rem 2rem;
   background: #fff;
@@ -189,11 +197,11 @@
   padding-top: 10px;
 }
 
-.submit_container {
+.register_form .submit_container {
   margin: 0px auto;
 }
 
-.submit_container .submit {
+.register_form .submit_container .submit {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -522,6 +530,8 @@
 
 .lectures_content {
   padding: 0 20px;
+  max-height: 24rem;
+  overflow: scroll;
 }
 
 .lectures_content P {
@@ -607,6 +617,7 @@
   color: #333;
   font-weight: 700;
   padding: 12px 0;
+  cursor: pointer;
 }
 
 .about_support_content p {
@@ -628,7 +639,7 @@
   }
 
   .offers_slider img {
-    height: 60vh;
+    height: 80vh;
   }
 
   /* .mobile_offers_button .button-next-slide{
@@ -644,6 +655,10 @@
 }
 
 @media screen and (max-width: 1024px) {
+  .offers_slider img {
+    height: 80vh;
+  }
+
   .about_support_title {
     grid-template-columns: repeat(2, 1fr);
   }
@@ -723,7 +738,7 @@
   }
 
   .submit_container .submit {
-    width: 290px;
+    width: 300px;
     height: 40px;
   }
 
@@ -739,56 +754,6 @@
     right: 62px;
     top: 16px;
   }
-}
-
-@media screen and (max-width: 768px) {
-  .header_from {
-    position: relative;
-    left: 0;
-    background: #797979;
-    width: 600px;
-    height: 360px;
-  }
-
-  .inputs {
-    gap: 30px;
-  }
-
-  .input_form {
-    width: 400px;
-    height: 50px;
-  }
-
-  .error {
-    position: absolute;
-    bottom: -25px;
-  }
-
-  .plan_validity .validity_month {
-    font-size: 8px;
-  }
-
-  .plan_validity .validity_price {
-    font-size: 12px;
-  }
-
-  .plan_validity .validity_red {
-    font-size: 8px;
-  }
-
-  .month_plan_title h4 {
-    font-size: 15px;
-    line-height: 20px;
-  }
-
-  .month_plan_title p {
-    font-size: 12px;
-  }
-
-  .lectures_content p {
-    font-size: 8px;
-    line-height: 22px;
-  }
 
   .offers_section {
     display: none;
@@ -799,7 +764,7 @@
   }
 
   .main_container {
-    min-height: 100vh;
+    min-height: 55vh;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -814,14 +779,14 @@
     padding: 25px;
     border-radius: 8px;
     box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
-    background-color: #005b83 !important;
+    /* background-color: #005b83 !important; */
   }
 
   .register_form h2 {
     font-size: 1.5rem;
-    color: #fff !important;
-    font-weight: 500;
-    text-align: center;
+    color: #000 !important;
+    font-weight: 600;
+    text-align: left;
   }
 
   .register_form form {
@@ -837,7 +802,7 @@
     color: #333;
   }
 
-  .form .input_box input {
+  .form_header .input_box input {
     position: relative;
     height: 50px;
     width: 100%;
@@ -850,9 +815,35 @@
     margin-top: 8px;
   }
 
-  .form .input_box .input-error {
+  .form_header .input_box textarea {
+    position: relative;
+    /* height: 50px; */
+    width: 100%;
+    outline: none;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    font-size: 1rem;
+    color: #707070;
+    padding: 0 15px;
+    margin-top: 8px;
+    padding-top: 10px;
+  }
+
+  /* .form .input_box .input-error {
     color: red;
     font-weight: 700;
+  } */
+
+  .form_header .input_box .input-error {
+    position: absolute;
+    bottom: -25px;
+    left: 10px;
+    color: #ec1c24;
+  }
+
+  .form_header .input_box {
+    position: relative;
+    margin-bottom: 20px;
   }
 
   .form .input_box textarea {
@@ -884,7 +875,7 @@
   /* mobile_slider */
   .mobile_slider {
     position: relative;
-    margin-top: 75px;
+    margin-top: 72px;
   }
 
   .mobile_offers_slider {
@@ -892,7 +883,7 @@
   }
 
   .mobile_offers_slider img {
-    height: 50vh;
+    height: 40vh;
     width: 100%;
     display: block;
   }
@@ -953,7 +944,7 @@
     place-items: center;
     position: absolute;
     z-index: 10;
-    top: 35%;
+    top: 43%;
     left: 2%;
   }
 
@@ -967,7 +958,7 @@
     place-items: center;
     position: absolute;
     z-index: 10;
-    top: 35%;
+    top: 43%;
     right: 2%;
   }
 
@@ -984,6 +975,70 @@
   .month_plan_button .button_left {
     top: 16px;
     right: 48px;
+  }
+
+  .offer_month_section {
+    padding: 3rem 0;
+  }
+
+  .master_button2 .master_right_button {
+    top: 23%;
+    left: 90%;
+  }
+
+}
+
+@media screen and (max-width: 768px) {
+  .mobile_offers_slider img {
+    height: 40vh;
+  }
+
+  .header_from {
+    position: relative;
+    left: 0;
+    background: #797979;
+    width: 600px;
+    height: 360px;
+  }
+
+  .inputs {
+    gap: 30px;
+  }
+
+  .input_form {
+    width: 400px;
+    height: 50px;
+  }
+
+  .error {
+    position: absolute;
+    bottom: -25px;
+  }
+
+  .plan_validity .validity_month {
+    font-size: 8px;
+  }
+
+  .plan_validity .validity_price {
+    font-size: 12px;
+  }
+
+  .plan_validity .validity_red {
+    font-size: 8px;
+  }
+
+  .month_plan_title h4 {
+    font-size: 15px;
+    line-height: 20px;
+  }
+
+  .month_plan_title p {
+    font-size: 12px;
+  }
+
+  .lectures_content p {
+    font-size: 14px;
+    line-height: 28px;
   }
 
   .mm_container h3 {
@@ -1144,6 +1199,7 @@
 
   .lectures_content p {
     font-size: 10px;
+    line-height: 22px;
   }
 
   .month_plan_title h4 {

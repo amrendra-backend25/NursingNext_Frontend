@@ -53,7 +53,7 @@ const Ournextian = () => {
             <h3>Our Proud Nextians</h3>
             <p>Champions Of Excallence</p>
           </div>
-          <div className="video_subtitle">
+          <div className="nestian_subtitle">
             <div className="video_left"></div>
             <div className="nextian_btn">
               <Link to="see-all-nextians">

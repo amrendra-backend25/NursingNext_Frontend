@@ -2,8 +2,8 @@ import "./NextiansAll.css";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/effect-cards";
-import { EffectCards, Navigation, Autoplay } from "swiper/modules";
-import { SuccessNextian } from "./SuccessNextian";
+import { EffectCards, Autoplay } from "swiper/modules";
+// import { SuccessNextian } from "./SuccessNextian";
 import NextianModel from "./NextianModel";
 import Simplify from "../Simplify/Simplify";
 import "swiper/css/navigation";
@@ -301,7 +301,7 @@ const NextiansAll = () => {
         </div>
       </section>
 
-      <section className="nextian_success_slider_section">
+      {/* <section className="nextian_success_slider_section">
         <div className="container">
           <div className="nextian_success_title_slider">
             <div className="nextian_title_slider_parent">
@@ -335,7 +335,7 @@ const NextiansAll = () => {
             </div>
           </div>
         </div>
-      </section>
+      </section> */}
 
       <Simplify />
     </>

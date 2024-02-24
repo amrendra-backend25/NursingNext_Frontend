@@ -16,23 +16,26 @@
 .master_seeall_slider .master_seeall_content {
     position: absolute;
     top: 27%;
-    left: 12rem;
+    /* left: 5rem; */
     color: #fff;
 
 }
 
 .master_seeall_content h1 {
-    font-size: 44px;
-    font-weight: 700;
+    font-size: 50px;
+    font-weight: 900;
     text-transform: uppercase;
     margin: 10px 0 10px;
     max-width: 800px;
+    color: #000;
 }
 
 .master_seeall_content p {
     font-size: 20px;
     line-height: 28px;
     max-width: 600px;
+    color: #000;
+    font-weight: 500;
 }
 
 /* master_faculty */
@@ -333,6 +336,7 @@
     display: flex;
     flex-direction: column;
     position: relative;
+    max-width: 75vw;
 }
 
 .faculty_modal_header {
@@ -411,13 +415,13 @@
 
 @media screen and (max-width: 1440px) {
     .master_seeall_slider img {
-        height: 60vh;
+        height: 30vh;
     }
 }
 
 @media screen and (max-width: 1024px) {
     .master_seeall_section {
-        margin-top: 75px;
+        margin-top: 72px;
     }
 
     .center_content_button .center_doubt_title .doubt_sub_title {

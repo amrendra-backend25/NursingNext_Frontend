@@ -8,6 +8,9 @@ import PlanMScSNO from "/images/courses/PlanMScSNO.png";
 import Planug from "/images/courses/Planug.png";
 import PlanN from "/images/courses/PlanN.png";
 import PlanTH from "/images/courses/PlanTH.png";
+import PlanMLBLite from "/images/courses/mlbLite.png";
+import PlanMLBPRO from "/images/courses/mlbPro.png";
+import PlanFDP from "/images/courses/fdpicon.png";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import { Navigation, Autoplay } from "swiper/modules";
@@ -101,7 +104,7 @@ const MainCourse = () => {
   return (
     <section className="courses">
       {allBannerCourses.slice(0, 2).map((banner, index) => {
-        const { bannerHeading, bannerSubHeading, bannerImage } = banner;
+        const { bannerImage, bannerHeading, bannerSubHeading } = banner;
         return (
           <>
             <section
@@ -163,6 +166,7 @@ const MainCourse = () => {
                   </Link>
                 </div>
               </div>
+
               <div className="subscription_child">
                 <div className="subscription_img">
                   <img src={PlanC} alt="" />
@@ -198,32 +202,33 @@ const MainCourse = () => {
                   </Link>
                 </div>
               </div>
+
               <div className="subscription_child">
                 <div className="subscription_img">
-                  <img src={PlanA} alt="" />
+                  <img src={PlanMLBLite} alt="" />
                 </div>
                 <div className="subscription_contet">
                   <Link to="/plan-a">
-                    <p className="subscription_heading">Plan A</p>
+                    <p className="subscription_heading">MLB Lite</p>
                   </Link>
 
                   <h5 style={{ paddingTop: "10px", paddingBottom: "10px" }}>
-                    Crash Courses
+                    NORCET Crash Course
                   </h5>
                   <h6 style={{ paddingTop: "10px", paddingBottom: "10px" }}>
-                    (Exam Centric)
+                    (Formarly Fastrack Classess)
                   </h6>
                   <p>
-                    CHO, UPPSC, ESIC, DSSSB, OSSSC, APPSC, TSSSC, NIMHANS,
-                    PGIMER, JIPMER, Kerala PSC, DHS, RRB, ISRO, CNCI, SCTIMST
-                    Exams-Centric Crash Courses For Your!
+                    Previously known as Fastrack Classes, MLB Lite is your sure
+                    shot NORCET preparation crash course with integrated live
+                    classes and Super 60 Test Series.
                   </p>
                 </div>
                 <div className="subscription_btn">
                   <Link to="/plan-a">
                     <button
                       style={{
-                        marginTop: "15px",
+                        marginTop: "20px",
                         color: "red",
                         cursor: "pointer",
                       }}
@@ -233,98 +238,34 @@ const MainCourse = () => {
                   </Link>
                 </div>
               </div>
+
               <div className="subscription_child">
                 <div className="subscription_img">
-                  <img src={PlanQB} alt="" />
+                  <img src={PlanMLBPRO} alt="" />
                 </div>
                 <div className="subscription_contet">
-                  <Link to="/plan-b">
-                    {" "}
-                    <p className="subscription_heading">Plan QB</p>
+                  <Link to="/plan-a">
+                    <p className="subscription_heading">MLB PRO</p>
                   </Link>
 
                   <h5 style={{ paddingTop: "10px", paddingBottom: "10px" }}>
-                    Test Series 4.0
+                    Mastermind Live Batch
                   </h5>
                   <h6 style={{ paddingTop: "10px", paddingBottom: "10px" }}>
-                    (Invest in Practice)
-                  </h6>
-                  <p>360-Degree Approach From NORCET To NCLEX!</p>
-                </div>
-                <div className="subscription_btn">
-                  <Link to="/plan-b">
-                    <button
-                      style={{
-                        marginTop: "85px",
-                        color: "red",
-                        cursor: "pointer",
-                      }}
-                    >
-                      Know More
-                    </button>
-                  </Link>
-                </div>
-              </div>
-              <div className="subscription_child">
-                <div className="subscription_img">
-                  <img src={PlanNP} alt="" />
-                </div>
-                <div className="subscription_contet">
-                  <Link to="/plan-nnl-vsl">
-                    <p className="subscription_heading">Plan NP</p>
-                  </Link>
-
-                  <h5 style={{ paddingTop: "10px", paddingBottom: "10px" }}>
-                    NNL-VSL Pack
-                  </h5>
-                  <h6 style={{ paddingTop: "10px", paddingBottom: "10px" }}>
-                    (Learning Nursing Procuders)
+                    (Live Virtual ClassRoom)
                   </h6>
                   <p>
-                    To Enhance Your Clinical, Behavioral & Leadership Skills
-                    with Simulation Videos Under the Guidance of Trained
-                    Instructors!
+                    Experience learning with NNL's first ever live virtual
+                    classroom for the next level of NORCET preparation! Access
+                    live classes, live tests & live revision for your ultimate
+                    success.
                   </p>
                 </div>
                 <div className="subscription_btn">
-                  <Link to="/plan-nnl-vsl">
+                  <Link to="/plan-a">
                     <button
                       style={{
-                        marginTop: "60px",
-                        color: "red",
-                        cursor: "pointer",
-                      }}
-                    >
-                      Know More
-                    </button>
-                  </Link>
-                </div>
-              </div>
-              <div className="subscription_child">
-                <div className="subscription_img">
-                  <img src={PlanMScSNO} alt="" />
-                </div>
-                <div className="subscription_contet">
-                  <Link to="/plan-msc">
-                    <p className="subscription_heading">Plan MSc/SNO</p>
-                  </Link>
-
-                  <h5 style={{ paddingTop: "10px", paddingBottom: "10px" }}>
-                    Entrance Pack 3.0
-                  </h5>
-                  <h6 style={{ paddingTop: "10px", paddingBottom: "10px" }}>
-                    (The Next Level)
-                  </h6>
-                  <p>
-                    Excel in All the MSc Entrance Exams (AIIMS/NIMHANS/JIPMER/
-                    PGIMER/RAK/WBUHS/ RUHS/ILBS/Others) with Top-Notch Content!
-                  </p>
-                </div>
-                <div className="subscription_btn">
-                  <Link to="/plan-msc">
-                    <button
-                      style={{
-                        marginTop: "35px",
+                        marginTop: "20px",
                         color: "red",
                         cursor: "pointer",
                       }}
@@ -374,29 +315,101 @@ const MainCourse = () => {
 
               <div className="subscription_child">
                 <div className="subscription_img">
-                  <img src={PlanN} alt="" />
+                  <img src={PlanNP} alt="" />
                 </div>
                 <div className="subscription_contet">
-                  <Link to="/plan-rrr">
-                    <p className="subscription_heading">Plan N</p>
+                  <Link to="/plan-nnl-vsl">
+                    <p className="subscription_heading">Plan NP</p>
                   </Link>
 
                   <h5 style={{ paddingTop: "10px", paddingBottom: "10px" }}>
-                    NOLEX PACK
+                    NNL-VSL Pack
                   </h5>
                   <h6 style={{ paddingTop: "10px", paddingBottom: "10px" }}>
-                    (Ticket to Global Success)
+                    (Learning Nursing Procuders)
                   </h6>
                   <p>
-                    A Compilation of Crisp & Concise Study Material For Your
-                    Last-Minute Revision For NORCET!
+                    To Enhance Your Clinical, Behavioral & Leadership Skills
+                    with Simulation Videos Under the Guidance of Trained
+                    Instructors!
                   </p>
                 </div>
                 <div className="subscription_btn">
-                  <Link to="/plan-rrr">
+                  <Link to="/plan-nnl-vsl">
                     <button
                       style={{
-                        marginTop: "80px",
+                        marginTop: "60px",
+                        color: "red",
+                        cursor: "pointer",
+                      }}
+                    >
+                      Know More
+                    </button>
+                  </Link>
+                </div>
+              </div>
+
+              <div className="subscription_child">
+                <div className="subscription_img">
+                  <img src={PlanA} alt="" />
+                </div>
+                <div className="subscription_contet">
+                  <Link to="/plan-a">
+                    <p className="subscription_heading">Plan A</p>
+                  </Link>
+
+                  <h5 style={{ paddingTop: "10px", paddingBottom: "10px" }}>
+                    Crash Courses
+                  </h5>
+                  <h6 style={{ paddingTop: "10px", paddingBottom: "10px" }}>
+                    (Exam Centric)
+                  </h6>
+                  <p>
+                    CHO, UPPSC, ESIC, DSSSB, OSSSC, APPSC, TSSSC, NIMHANS,
+                    PGIMER, JIPMER, Kerala PSC, DHS, RRB, ISRO, CNCI, SCTIMST
+                    Exams-Centric Crash Courses For Your!
+                  </p>
+                </div>
+                <div className="subscription_btn">
+                  <Link to="/plan-a">
+                    <button
+                      style={{
+                        marginTop: "33px",
+                        color: "red",
+                        cursor: "pointer",
+                      }}
+                    >
+                      Know More
+                    </button>
+                  </Link>
+                </div>
+              </div>
+
+              <div className="subscription_child">
+                <div className="subscription_img">
+                  <img src={PlanMScSNO} alt="" />
+                </div>
+                <div className="subscription_contet">
+                  <Link to="/plan-msc">
+                    <p className="subscription_heading">Plan MSc/SNO</p>
+                  </Link>
+
+                  <h5 style={{ paddingTop: "10px", paddingBottom: "10px" }}>
+                    Entrance Pack 3.0
+                  </h5>
+                  <h6 style={{ paddingTop: "10px", paddingBottom: "10px" }}>
+                    (The Next Level)
+                  </h6>
+                  <p>
+                    Excel in All the MSc Entrance Exams (AIIMS/NIMHANS/JIPMER/
+                    PGIMER/RAK/WBUHS/ RUHS/ILBS/Others) with Top-Notch Content!
+                  </p>
+                </div>
+                <div className="subscription_btn">
+                  <Link to="/plan-msc">
+                    <button
+                      style={{
+                        marginTop: "35px",
                         color: "red",
                         cursor: "pointer",
                       }}
@@ -429,6 +442,111 @@ const MainCourse = () => {
                     <button
                       style={{
                         marginTop: "103px",
+                        color: "red",
+                        cursor: "pointer",
+                      }}
+                    >
+                      Know More
+                    </button>
+                  </Link>
+                </div>
+              </div>
+
+              <div className="subscription_child">
+                <div className="subscription_img">
+                  <img src={PlanQB} alt="" />
+                </div>
+                <div className="subscription_contet">
+                  <Link to="/plan-b">
+                    {" "}
+                    <p className="subscription_heading">Plan QB</p>
+                  </Link>
+
+                  <h5 style={{ paddingTop: "10px", paddingBottom: "10px" }}>
+                    Test Series 4.0
+                  </h5>
+                  <h6 style={{ paddingTop: "10px", paddingBottom: "10px" }}>
+                    (Invest in Practice)
+                  </h6>
+                  <p>360-Degree Approach From NORCET To NCLEX!</p>
+                </div>
+                <div className="subscription_btn">
+                  <Link to="/plan-b">
+                    <button
+                      style={{
+                        marginTop: "85px",
+                        color: "red",
+                        cursor: "pointer",
+                      }}
+                    >
+                      Know More
+                    </button>
+                  </Link>
+                </div>
+              </div>
+
+              <div className="subscription_child">
+                <div className="subscription_img">
+                  <img src={PlanN} alt="" />
+                </div>
+                <div className="subscription_contet">
+                  <Link to="/plan-rrr">
+                    <p className="subscription_heading">Plan N</p>
+                  </Link>
+
+                  <h5 style={{ paddingTop: "10px", paddingBottom: "10px" }}>
+                    NCLEX PACK
+                  </h5>
+                  <h6 style={{ paddingTop: "10px", paddingBottom: "10px" }}>
+                    (Ticket to Global Success)
+                  </h6>
+                  <p>
+                    A Compilation of Crisp & Concise Study Material For Your
+                    Last-Minute Revision For NORCET!
+                  </p>
+                </div>
+                <div className="subscription_btn">
+                  <Link to="/plan-rrr">
+                    <button
+                      style={{
+                        marginTop: "60px",
+                        color: "red",
+                        cursor: "pointer",
+                      }}
+                    >
+                      Know More
+                    </button>
+                  </Link>
+                </div>
+              </div>
+
+              <div className="subscription_child">
+                <div className="subscription_img">
+                  <img src={PlanFDP} alt="" />
+                </div>
+                <div className="subscription_contet">
+                  <Link to="/plan-b">
+                    {" "}
+                    <p className="subscription_heading">Plan FDP</p>
+                  </Link>
+
+                  <h5 style={{ paddingTop: "10px", paddingBottom: "10px" }}>
+                    Faculty Development Program
+                  </h5>
+                  <h6 style={{ paddingTop: "10px", paddingBottom: "10px" }}>
+                    (Upskill and Upgrade)
+                  </h6>
+                  <p>
+                    Upskill to upgrade yourself by joining hands with NNL's
+                    faculty development program and get free access to
+                    knowledge, resources and opportunities in abundance.
+                  </p>
+                </div>
+                <div className="subscription_btn">
+                  <Link to="/plan-b">
+                    <button
+                      style={{
+                        marginTop: "10px",
                         color: "red",
                         cursor: "pointer",
                       }}
@@ -525,9 +643,6 @@ const MainCourse = () => {
                     <IoIosArrowBack />
                   </div>
                 </div>
-                <div className="master_see_main">
-                  <button className="master_button-2">See All</button>
-                </div>
               </div>
             </Swiper>
           </div>
@@ -539,9 +654,6 @@ const MainCourse = () => {
           <div className="nextian_title">
             <div className="neaxtian_heading">
               <h3>What our learners say about the Courses</h3>
-            </div>
-            <div className="nextian_btn">
-              <button>See All</button>
             </div>
           </div>
 
@@ -590,7 +702,11 @@ const MainCourse = () => {
                     </div>
                     <div className="ournextian_title">
                       <h4>{item.studentName}</h4>
-                      <span>{item.passYear}</span>
+                      <span style={{ fontWeight: "bold" }}>{item.rank}</span>
+                      <span style={{ paddingLeft: "8px" }}>
+                        {item.passYear}
+                      </span>
+
                       <p>
                         {isExpanded[index]
                           ? item.testimonial

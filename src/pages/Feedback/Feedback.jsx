@@ -8,12 +8,13 @@ const Feedback = () => {
     feedback: "",
   });
   const [isError, setIsError] = useState([]);
-
+  const [isSuccess, setIsSuccess] = useState("");
   const handleChange = (e) => {
     const name = e.target.name;
     const value = e.target.value;
     setShareFeedback({ ...shareFeedback, [name]: value });
     setIsError({ ...isError, [name]: "" });
+    setIsSuccess({ message: "" });
   };
 
   const handleSubmit = async (e) => {
@@ -30,11 +31,12 @@ const Feedback = () => {
         data: JSON.stringify(newFeedback),
       });
       setShareFeedback(res.data.data);
-      console.log(res);
-      toast.success(res.data.message, {
-        position: "top-right",
-        autoClose: 1000,
-      });
+      setIsSuccess({ message: res.data.message });
+      // console.log(res);
+      // toast.success(res.data.message, {
+      //   position: "top-right",
+      //   autoClose: 1000,
+      // });
       setShareFeedback({
         feedback: "",
       });
@@ -66,6 +68,9 @@ const Feedback = () => {
                   <button className="submit_btn" type="submit">
                     Share Now
                   </button>
+                  {isSuccess.message && (
+                    <p className="success">{isSuccess.message}</p>
+                  )}
                 </div>
               </form>
             </div>

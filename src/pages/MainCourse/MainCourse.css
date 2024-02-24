@@ -2,9 +2,9 @@
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
-  min-height: 55vh;
+  /* min-height: 55vh; */
   position: relative;
-  margin-top: 105px;
+  margin-top: 115px;
 }
 
 .course_title {
@@ -13,15 +13,16 @@
   flex-direction: column;
   justify-content: flex-start;
   align-items: self-start;
-  padding: 124px 0;
+  padding: 120px 0;
   color: #fff;
 }
 
 .course_title h2 {
   text-transform: uppercase;
-  font-size: 44px;
-  font-weight: 700;
+  font-size: 50px;
+  font-weight: 900;
   letter-spacing: 0.5px;
+  color: #000;
 }
 
 .subscription_img {
@@ -56,9 +57,10 @@
 .course_title p {
   text-transform: uppercase;
   font-size: 20px;
-  font-weight: 400;
+  font-weight: 500;
   padding-top: 4px;
   letter-spacing: 0.5px;
+  color: #000;
 }
 
 .subscription_plan {
@@ -446,6 +448,10 @@
 
 /* @media screen and (max-width: 1400px) { .master_button2{top: 22%;}} */
 @media screen and (max-width: 1024px) {
+  .course_section {
+    margin-top: 75px;
+  }
+
   .subscription_parent {
     grid-template-columns: repeat(3, 1fr);
   }

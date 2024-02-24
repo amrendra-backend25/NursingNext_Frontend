@@ -9,8 +9,9 @@
 .nextian_title {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    width: calc(100% - 88px);
+    width: calc(90% - 20px);
     position: absolute;
+    margin-top: 15px;
 }
 
 .ournextian_section_slider {
@@ -143,21 +144,30 @@
 }
 
 /*============================Responsive Tablet========================*/
-@media screen and (max-width: 1024px) {}
+@media screen and (max-width: 1024px) {
+    .nextian_title {
+        width: calc(90% - 30px);
+        margin-top: 12px;
+    }
+}
 
 @media screen and (max-width: 768px) {
     .ournextian_section .ournextian_button {
         position: absolute;
-        top: 0%;
-        left: 89%;
+        top: 3%;
+        left: 85%;
+    }
+
+    .nextian_title {
+        margin-top: 14px;
     }
 }
 
 @media screen and (max-width: 500px) {
     .ournextian_section .ournextian_button {
         position: absolute;
-        top: 1%;
-        left: 80%;
+        top: 3%;
+        left: 78%;
     }
 
     .ournextian_section .neaxtian_heading h3 {

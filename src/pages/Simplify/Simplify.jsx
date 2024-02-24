@@ -1,8 +1,9 @@
+import { Link } from "react-router-dom";
 import "./Simplify.css";
 //import appstore from '/images/simplify/Download_on_the_App_Store_Badge_US-UK_RGB_blk_092917.png'
 import playstore from "/images/simplify/Group 164217.png";
 //import iosstore from '/images/simplify/iOS AppStore.png'
-import androidstore from "/images/simplify/iOS AppStore.png";
+import androidstore from "/images/simplify/QRCODENNL.jpeg";
 import MockupWebsite from "/images/simplify/MockupWebsite.png";
 //import screenshot2 from '/images/simplify/Screenshot-2.png'
 
@@ -18,9 +19,15 @@ const Simplify = () => {
             </p>
             <p className="use">At the click of a button </p>
             <p className="easy">Download the App Now</p>
-            <div className="img_button">
-              <img src={playstore} alt="" />
-            </div>
+            <Link
+              to="https://play.google.com/store/apps/details?id=com.live.nursingnext&hl=en_IN&pli=1"
+              target="blank"
+            >
+              <div className="img_button">
+                <img src={playstore} alt="" />
+              </div>
+            </Link>
+
             <div className="scan_code">
               <p>Scan the QR Code</p>
               <div className="scan_img">

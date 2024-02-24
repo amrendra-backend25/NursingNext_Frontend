@@ -97,7 +97,7 @@ const RRB = () => {
         </div>
       </section>
 
-      <section className="month_offer_section">
+      {/* <section className="month_offer_section">
         <div className="container">
           <div className="month_offer_title">
             <h3>OFFER OF THE MONTH</h3>
@@ -129,7 +129,7 @@ const RRB = () => {
             </div>
           </div>
         </div>
-      </section>
+      </section> */}
     </>
   );
 };

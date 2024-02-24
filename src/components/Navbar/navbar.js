@@ -20,40 +20,55 @@ const navbar = [
         link: "all-courses",
       },
       {
-        name: "Plan Zero",
+        name: "Free Pack",
         link: "plan-zero",
       },
+
       {
-        name: "Plan A",
-        link: "plan-a",
+        name: "MLB PRO",
+        link: "plan-mlb-pro",
       },
       {
-        name: "Plan B",
-        link: "plan-b",
-      },
-      {
-        name: "PlanC+",
+        name: "Mastermind Pack",
         link: "plan-c-plus",
       },
       {
-        name: "Plan MSc",
-        link: "plan-msc",
-      },
-      {
-        name: "Plan UG",
+        name: "Undergraduate Pack",
         link: "plan-ug",
       },
       {
-        name: "Plan TH",
+        name: "MLB Lite Crash Course",
+        link: "plan-mlb-lite",
+      },
+
+      {
+        name: "Crash Courses",
+        link: "plan-a",
+      },
+      {
+        name: "MSc Entrance / SNO",
+        link: "plan-msc",
+      },
+      {
+        name: "NNL VSL Pack",
+        link: "plan-np",
+      },
+
+      {
+        name: "Target High Digital Lite",
         link: "plan-th",
       },
       {
-        name: "Plan RRR",
-        link: "plan-rrr",
+        name: "Question Back Pack",
+        link: "plan-qb",
       },
       {
-        name: "Plan NNL VSL",
-        link: "plan-nnl-vsl",
+        name: "Faculty Development",
+        link: "plan-fdp",
+      },
+      {
+        name: "NCLEX",
+        link: "plan-n",
       },
     ],
   },
@@ -109,13 +124,12 @@ const navbar = [
   {
     id: 6,
     link: "newsroom",
-    title: "newsroom",
+    title: "news room",
   },
   {
     id: 7,
     link: "blogs",
     title: "blogs",
   },
-  
 ];
 export default navbar;

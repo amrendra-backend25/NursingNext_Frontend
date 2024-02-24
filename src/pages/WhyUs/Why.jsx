@@ -1,5 +1,5 @@
 import "./Why.css";
-import whychoose from "/images/why_choose/whyus.png";
+import whychoose from "/images/why_choose/WhyChoose.png";
 //import tabright from "/images/why_choose/visionright.png";
 import { useState, useEffect } from "react";
 import { Paths } from "../../config/configAPI";

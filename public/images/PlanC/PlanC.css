@@ -1,0 +1,81 @@
+.plan_tab_section{margin: 60px 0px;}
+  
+  .vertical-tabs {
+    display: flex;
+    flex-direction: column;
+    border-right: 1px solid #ccc;
+  }
+  
+  .plan_tab_section  .tab {
+    padding: 10px;
+    cursor: pointer;
+    border-bottom: 1px solid #ccc;
+    background-color: #f2f2f2;
+  }
+  
+.plan_tab_section .tab.active {
+    background: #D43604;color: #fff;
+    font-weight: bold;
+    border: none;
+  }
+  
+  .tab-content {
+    padding: 10px;
+  }
+
+.plan_button_section_parent{
+    display: flex;
+    align-items: center;
+}  
+.plan_tab_button_left{width: 60%; display: flex; gap: 20px; border-top-right-radius: 500px; border-bottom-right-radius: 500px; 
+align-items: center;}
+.plan_tab_button_right{width: 40%; position: relative; cursor: pointer;}
+.plan_tab_img_left{background: #EDF0F4;border-top-right-radius: 500px; border-bottom-right-radius: 500px; padding: 40px 0px 30px 50px;}
+.plan_tab_img_left h1{font-size: 30px; color: #333; font-weight: 600; text-align: left;}
+.plan_tab_img_left p{padding: 8px 0;}
+.tree_plan{position: absolute; left: 19%; background: #0979BE; width: 40px; height: 40px; display: flex; justify-content: center;
+align-items: center; border-radius: 50%; padding: 6px; margin-top: 5px;}
+.plan_tab_button_right .plan_tab_button button{border:1px solid #D43604;color: #D43604;width: 300px; height: 50px; 
+margin-bottom: 30px; border-radius: 50px; font-size: 14px; background: transparent; 
+font-weight: 600;}
+.tab_right_content .tab_heading{ font-size: 25px; font-weight: 600; line-height: 35px; padding-top: 10px; color: #333;}
+.tab_right_content .tab_para{font-size: 15px; font-weight: 400; line-height: 20px; color: #707070; padding: 5px 0 10px;}
+.tab_right_inner_btn button{background: transparent; font-size: 14px; font-weight: 500; text-decoration: underline;color: #333;}
+.plan_content_title h3{font-size: 28px; font-weight: 600; color: #333; padding-bottom: 10px;}
+.plan_lectures_content p{padding: 10px 0; font-size: 15px;}
+.plan_lectures_content p span{padding-right: 5px;}
+.plan_tab_button_right .tab_button_01{ top: -117px; left: -150px;}
+.plan_tab_button_right .tab_button_02{ bottom: -48px; left: -147px;}
+.plan_tab_button_right .tab_button_03{ bottom: -135px; left: -148px;}
+
+.plan_tab_button{position: absolute;}
+.video_title h3{text-align: center; font-size: 32px; font-weight: 600; color: 600; color: #333;}
+
+/* ============================Responsive Tablet/Phone========================*/
+@media screen and (max-width: 1024px){
+    .plan_tab_img_left{padding: 40px 0px 30px 25px;}
+    .plan_tab_img_left h1{font-size: 20px;}
+    .plan_tab_button_right .plan_tab_button button {width: 270px; height: 45px; font-size: 12px;}
+    .plan_content_title h3{font-size: 20px;}
+    .plan_lectures_content p {font-size: 12px; padding: 5px 0;}
+}
+
+@media screen and (max-width: 768px){
+    .plan_button_section_parent{flex-direction: column; gap: 30px;}
+    .plan_tab_img_left h1{font-size: 20px; text-align: center;}
+    .plan_tab_button_left{width: 100%;}
+    .plan_tab_button_right{width: 100%;}
+    .plan_tab_img_left{text-align: center; padding: 20px 20px; border-radius: 0;width: 100%;}
+    .plan_tab_button_right .tab_button_01{left: 0;}
+    .plan_tab_button_right .tab_button_02{left: 0;}
+    .plan_tab_button_right .tab_button_03{left: 0;}
+    
+}
+
+@media screen and (max-width: 500px){
+  .plan_tab_button_left{gap: 10px;}
+  .plan_tab_button_right .plan_tab_button button{width: 175px; height: 50px; font-size: 10px;}
+  .plan_tab_img_left p{font-size: 10px;}
+  .plan_tab_img_left h1 {font-size: 12px;}
+}
+

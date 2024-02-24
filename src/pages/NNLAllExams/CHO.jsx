@@ -5,7 +5,7 @@ import { Paths } from "../../config/configAPI";
 import axios from "axios";
 const CHO = () => {
   const [examsTabs, setExamsTabs] = useState([]);
-
+  const [choBanner, setChoBanner] = useState([]);
   const [setIsError] = useState("");
 
   const showNorcetExams = async () => {
@@ -23,31 +23,57 @@ const CHO = () => {
     }
   };
 
+  const showCHOBanner = async () => {
+    try {
+      const response = await Paths.EndpointsURL.CHOBanner;
+      const record = await axios.get(response, {
+        headers: {
+          "Content-type": "application/json",
+        },
+      });
+      return record.data.data;
+    } catch (error) {
+      setIsError(error.msg);
+      return [];
+    }
+  };
+
   //Logic for received data in parallel
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const [examsData] = await Promise.all([showNorcetExams()]);
-
+        const [examsData, choData] = await Promise.all([
+          showNorcetExams(),
+          showCHOBanner(),
+        ]);
         setExamsTabs(examsData);
+        setChoBanner(choData);
       } catch (error) {
         setIsError(error.msg);
       }
     };
-
     fetchData();
   }, []);
 
   return (
     <>
-      <section className="allexam_section">
-        <div className="container">
-          <div className="allexam_header">
-            <h2>All India Nursing Exams</h2>
-            <p>NURSING EDUCATION</p>
-          </div>
-        </div>
-      </section>
+      {choBanner.slice(0, 1).map((banner) => {
+        const { bannerName, bannerImages } = banner;
+        return (
+          <>
+            <section
+              className="allexam_section"
+              style={{ backgroundImage: `url(${bannerImages})` }}
+            >
+              <div className="container">
+                <div className="allexam_header">
+                  <h2>{bannerName}</h2>
+                </div>
+              </div>
+            </section>
+          </>
+        );
+      })}
 
       <section className="tab_section">
         <div className="container">
@@ -97,7 +123,7 @@ const CHO = () => {
         </div>
       </section>
 
-      <section className="month_offer_section">
+      {/* <section className="month_offer_section">
         <div className="container">
           <div className="month_offer_title">
             <h3>OFFER OF THE MONTH</h3>
@@ -129,7 +155,7 @@ const CHO = () => {
             </div>
           </div>
         </div>
-      </section>
+      </section> */}
     </>
   );
 };

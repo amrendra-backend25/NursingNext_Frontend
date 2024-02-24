@@ -1,0 +1,176 @@
+/* Add your styles for the modal and other components here */
+.hiring_model_title h2 {
+    font-size: 28px;
+    font-weight: 600;
+    color: #333;
+    line-height: 35px;
+}
+
+.hiring_model_title p {
+    font-size: 14px;
+    line-height: 20px;
+    color: #333;
+    display: flex;
+    align-items: center;
+}
+
+.hiring_model_title p span {
+    padding-right: 6px;
+    font-size: 16px;
+    margin-top: 3px;
+}
+
+.hiring_modal {
+    display: none;
+    position: fixed;
+    top: 0%;
+    left: 0%;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    justify-content: center;
+    align-items: center;
+    z-index: 22;
+}
+
+.show {
+    display: flex;
+}
+
+.hiring_modal_content .hiring_modal_header {
+    text-align: left;
+}
+
+.hiring_modal_close {
+    font-size: 30px;
+    cursor: pointer;
+}
+
+.hiring_modal_content {
+    position: fixed;
+    /* max-width: 31rem; */
+    right: 0%;
+    background-color: #fff;
+    padding: 0rem 3rem 1.6rem;
+    border-radius: 0.5rem;
+    display: flex;
+    flex-direction: column;
+}
+
+.hiring_model_form .inputs_data {
+    margin-top: 25px;
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+.hiring_model_form .input_form_data {
+    /* background: transparent; */
+    display: flex;
+    align-items: center;
+    margin: auto;
+    width: 330px;
+    height: 45px;
+    /* background: #eaeaea; */
+    border-radius: 6px;
+    position: relative;
+}
+
+.hiring_modal_content .hiring_model_form .input_form_data input {
+    position: relative;
+    height: 45px;
+    width: 100%;
+    outline: none;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    font-size: 1rem;
+    color: #707070;
+    padding: 0px 15px;
+    margin-top: 8px;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+
+.submit_container .submit {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 320px;
+    height: 45px;
+    color: #fff;
+    background: #EC1C24 !important;
+    border-radius: 44px;
+    font-size: 18px;
+    font-weight: 700;
+    cursor: pointer;
+    line-height: 24px;
+}
+
+.form_control {
+    position: relative;
+    height: 45px;
+    width: 100%;
+    outline: none;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    font-size: 1rem;
+    color: #707070;
+    padding: 0 15px;
+    margin-top: 8px;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.error {
+    position: absolute;
+    bottom: -26px;
+    left: 10px;
+    color: #ec1c24;
+}
+
+@media screen and (max-width: 1024px) {
+    .about_model_form .inputs_data {
+        margin-top: 5px;
+        display: flex;
+        flex-direction: column;
+        gap: 17px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .about_model_form .input_form_data {
+        width: 350px;
+        height: 50px;
+    }
+}
+
+@media screen and (max-width: 550px) {
+    .about_model_form .input_form_data {
+        width: 300px;
+        height: 50px;
+    }
+
+    .about_modal_content {
+        padding: 0rem 2rem 1rem;
+    }
+}
+
+@media screen and (max-width: 320px) {
+    .about_model_form .input_form_data {
+        width: 260px;
+        height: 50px;
+    }
+
+    .about_modal_content {
+        padding: 0rem 2rem 1rem;
+    }
+
+    .about_model_form .inputs_data {
+        gap: 10px;
+    }
+
+    .about_model_title p {
+        font-size: 10px;
+    }
+}

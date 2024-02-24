@@ -1,8 +1,6 @@
 import "./Offers.css";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
-import image1 from "/images/banner-1.jpg";
-import image2 from "/images/banner-2.jpg";
 import user from "/images/person.png";
 import phone from "/images/phone.png";
 import email from "/images/email.png";
@@ -22,6 +20,8 @@ import { Paths } from "../../config/configAPI";
 import axios from "axios";
 import { Link } from "react-router-dom";
 import { ToastContainer, toast } from "react-toastify";
+import DoubtModel from "../DoubtModel/DoubtModel";
+import FeedbackModel from "../FeedbackModel/FeedbackModel";
 const Offers = () => {
   const [masterAllCourses, setMasterAllCourses] = useState([]);
   const [offersBanner, setOffersBanner] = useState([]);
@@ -34,12 +34,19 @@ const Offers = () => {
     message: "",
   });
   const [isError, setIsError] = useState([]);
+  const [isSuccess, setIsSuccess] = useState("");
+  const [modalOpen, setModalOpen] = useState(false);
+  const [selectedFaculty, setSelectedFaculty] = useState({});
+
+  const [modalOpen1, setModalOpen1] = useState(false);
+  const [selectedFaculty1, setSelectedFaculty1] = useState({});
 
   const handleChange = (e) => {
     const name = e.target.name;
     const value = e.target.value;
     setOffersForm({ ...offersForm, [name]: value });
     setIsError({ ...isError, [name]: "" });
+    setIsSuccess({ message: "" });
   };
 
   const validateForm = () => {
@@ -80,11 +87,12 @@ const Offers = () => {
           data: JSON.stringify(newOffers),
         });
         setOffersForm(res.data.data);
+        setIsSuccess({ message: res.data.message });
         //console.log(res);
-        toast.success(res.data.message, {
-          position: "top-right",
-          autoClose: 1000,
-        });
+        // toast.success(res.data.message, {
+        //   position: "top-right",
+        //   autoClose: 1000,
+        // });
         setOffersForm({
           name: "",
           phone: "",
@@ -144,12 +152,6 @@ const Offers = () => {
     }
   };
 
-  // const handleValidityClick = async (validity) => {
-  //   setSelectedValidity(validity);
-  //   const offerData = await showOffersOfmonths(validity);
-  //   setMonthsOffers(offerData);
-  // };
-
   useEffect(() => {
     const fetchData = async () => {
       try {
@@ -167,6 +169,24 @@ const Offers = () => {
     };
     fetchData();
   });
+
+  const openModal = () => {
+    setSelectedFaculty();
+    setModalOpen(true);
+  };
+
+  const closeModal = () => {
+    setModalOpen(false);
+  };
+
+  const openModal1 = () => {
+    setSelectedFaculty1();
+    setModalOpen1(true);
+  };
+
+  const closeModal1 = () => {
+    setModalOpen1(false);
+  };
   return (
     <>
       <section className="offers_section">
@@ -195,11 +215,7 @@ const Offers = () => {
                   <div className="offers_slider">
                     <img src={bannerImages} alt="" />
                     <div className="container">
-                      <div className="offers_content">
-                        {/* <h3>Offer of the Month</h3>
-                        <h1>Discounts up to 40% Subscribe Now & Save</h1>
-                        <button className="offers_btn">Know More</button> */}
-                      </div>
+                      <div className="offers_content"></div>
                     </div>
                   </div>
                 </SwiperSlide>
@@ -279,6 +295,9 @@ const Offers = () => {
                       Submit
                     </button>
                   </div>
+                  {isSuccess.message && (
+                    <p className="success">{isSuccess.message}</p>
+                  )}
                 </div>
               </form>
             </div>
@@ -305,54 +324,28 @@ const Offers = () => {
             loop={true}
             modules={[Navigation, Pagination, Autoplay]}
           >
-            <SwiperSlide>
-              <div className="mobile_offers_slider">
-                <img src={image1} alt="" />
-                <div className="container">
-                  <div className="mobile_offers_content">
-                    <h3>Offer of the Month</h3>
-                    <h1>Discounts up to 40% Subscribe Now & Save</h1>
-                    <button className="mobile_offers_btn">Know More</button>
-                  </div>
-                </div>
-              </div>
-            </SwiperSlide>
-            <SwiperSlide>
-              <div className="mobile_offers_slider">
-                <img src={image2} alt="" />
-                <div className="container">
-                  <div className="mobile_offers_content">
-                    <h3>Offer of the Month</h3>
-                    <h1>Discounts up to 40% Subscribe Now & Save</h1>
-                    <button className="mobile_offers_btn">Know More</button>
-                  </div>
-                </div>
-              </div>
-            </SwiperSlide>
-            <SwiperSlide>
-              <div className="mobile_offers_slider">
-                <img src={image1} alt="" />
-                <div className="container">
-                  <div className="mobile_offers_content">
-                    <h3>Offer of the Month</h3>
-                    <h1>Discounts up to 40% Subscribe Now & Save</h1>
-                    <button className="mobile_offers_btn">Know More</button>
-                  </div>
-                </div>
-              </div>
-            </SwiperSlide>
-            <SwiperSlide>
-              <div className="mobile_offers_slider">
-                <img src={image2} alt="" />
-                <div className="container">
-                  <div className="mobile_offers_content">
-                    <h3>Offer of the Month</h3>
-                    <h1>Discounts up to 40% Subscribe Now & Save</h1>
-                    <button className="mobile_offers_btn">Know More</button>
-                  </div>
-                </div>
-              </div>
-            </SwiperSlide>
+            {offersBanner.slice(0, 2).map((banner) => {
+              const { bannerImages } = banner;
+              return (
+                <>
+                  <SwiperSlide>
+                    <div className="mobile_offers_slider">
+                      <img src={bannerImages} alt="" />
+                      <div className="container">
+                        <div className="mobile_offers_content">
+                          {/* <h3>Offer of the Month</h3>
+                          <h1>Discounts up to 40% Subscribe Now & Save</h1>
+                          <button className="mobile_offers_btn">
+                            Know More
+                          </button> */}
+                        </div>
+                      </div>
+                    </div>
+                  </SwiperSlide>
+                </>
+              );
+            })}
+
             <div className="mobile_offers_button">
               <div className="button-prev-slide" style={{ cursor: "pointer" }}>
                 <IoIosArrowForward />
@@ -366,8 +359,8 @@ const Offers = () => {
         <div className="form_section">
           <div className="main_container">
             <div className="register_form">
-              <h2>Fill up & Claim the Offer!🎁</h2>
-              <form action="" className="form" onSubmit={handleSubmit}>
+              <h2>Fill up & Claim the Offer</h2>
+              <form action="" className="form_header" onSubmit={handleSubmit}>
                 <div className="input_box">
                   {/* <label for="">Full Name</label> */}
                   <input
@@ -474,12 +467,12 @@ const Offers = () => {
                   },
                   // When window width is >= 768px
                   768: {
-                    slidesPerView: 2,
+                    slidesPerView: 1,
                     spaceBetween: 30,
                   },
                   // When window width is >= 1024px
                   1024: {
-                    slidesPerView: 2,
+                    slidesPerView: 1,
                     spaceBetween: 30,
                   },
                   1100: {
@@ -508,34 +501,6 @@ const Offers = () => {
                           <div className="month_background">
                             <img src={offersBanner} alt="" />
                           </div>
-
-                          {/* <div className="plan_validity">
-                            {monthsOffers.slice(0, 3).map((offers) => {
-                              const { offersValidity, offersPrice } = offers;
-                              return (
-                                <>
-                                  <div className="validity_content">
-                                    <p
-                                      className={`validity_month ${
-                                        selectedValidity === offersValidity
-                                          ? "selected"
-                                          : ""
-                                      }`}
-                                      onClick={() =>
-                                        handleValidityClick(offersValidity)
-                                      }
-                                    >
-                                      {offersValidity}
-                                    </p>
-                                    <p className="validity_price">
-                                      ₹ {offersPrice}
-                                    </p>
-                                  </div>
-                                </>
-                              );
-                            })}
-                          </div> */}
-
                           <div className="plan_validity">
                             <div className="validity_content">
                               <p className="validity_month">{validity6}</p>
@@ -587,7 +552,6 @@ const Offers = () => {
                       <IoIosArrowBack />
                     </div>
                   </div>
-                  <div className="button_left">See All</div>
                 </div>
               </Swiper>
             </div>
@@ -676,9 +640,6 @@ const Offers = () => {
                     <IoIosArrowBack />
                   </div>
                 </div>
-                <div className="master_see">
-                  <button className="master_button-2">See All</button>
-                </div>
               </div>
             </Swiper>
           </div>
@@ -717,12 +678,13 @@ const Offers = () => {
               </div>
               <div className="refer_title">
                 <h5>
-                  Plan B <br />
-                  (Test Series)
+                  Plan UG <br />
+                  (Undergraduate Pack)
                 </h5>
                 <p>
-                  The One-In-All, All-In-One Pack to help you become the Master
-                  of all Subjects!
+                  To Ease You with Your A-Z Career Needs From University Exams
+                  to NORCET Or Other Competitive Exams with Step-By-Step
+                  Learning!
                 </p>
                 <div className="refer_btn">
                   <Link to="/plan-b">
@@ -738,27 +700,51 @@ const Offers = () => {
       <section className="about_support">
         <div className="container">
           <div className="about_support_title">
-            <div className="about_support_content">
+            <div className="about_support_content" onClick={() => openModal()}>
               <img src={help} alt="" />
               <h4>Help & Support</h4>
               <p>Contact us for any Queries, service requests or complaints</p>
+              <DoubtModel />
             </div>
-            <div className="about_support_content">
+
+            <div className="about_support_content" onClick={() => openModal1()}>
               <img src={shape} alt="" />
               <h4>Your Feedback</h4>
               <p>Do you have any suggestions? We’d love to hear from you!</p>
+              <FeedbackModel />
             </div>
-            <div className="about_support_content">
-              <img src={FAQ} alt="" />
-              <h4>FAQs</h4>
-              <p>All your frequently asked questions, answered in one place</p>
-            </div>
-            <div className="about_support_content">
-              <img src={app} alt="" />
-              <h4>Download App</h4>
-              <p>Get the App and access a world of goodness</p>
-            </div>
+            <Link to="/all-faq">
+              <div className="about_support_content">
+                <img src={FAQ} alt="" />
+                <h4>FAQs</h4>
+                <p>
+                  All your frequently asked questions, answered in one place
+                </p>
+              </div>
+            </Link>
+
+            <Link
+              to="https://play.google.com/store/apps/details?id=com.live.nursingnext&hl=en_IN&pli=1"
+              target="blank"
+            >
+              <div className="about_support_content">
+                <img src={app} alt="" />
+                <h4>Download App</h4>
+                <p>Get the App and access a world of goodness</p>
+              </div>
+            </Link>
           </div>
+          <DoubtModel
+            isOpen={modalOpen}
+            onClose={closeModal}
+            person={selectedFaculty}
+          />
+
+          <FeedbackModel
+            isOpen={modalOpen1}
+            onClose={closeModal1}
+            person={selectedFaculty1}
+          />
         </div>
       </section>
       <ToastContainer />

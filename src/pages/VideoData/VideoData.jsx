@@ -44,9 +44,9 @@ const VideoData = () => {
           <div className="video_left">
             <p>Boost Your Preparation</p>
           </div>
-          <div className="video_btn">
+          {/* <div className="video_btn">
             <button className="video_button">See All</button>
-          </div>
+          </div> */}
         </div>
         <div className="video_main_slider">
           <Swiper
@@ -58,7 +58,7 @@ const VideoData = () => {
             }}
             autoplay={{
               delay: 5000,
-              disableOnInteraction: false
+              disableOnInteraction: false,
             }}
             // loop={true}
             modules={[Navigation, Autoplay]}
@@ -70,7 +70,7 @@ const VideoData = () => {
                   <div className="video_img">
                     <ReactPlayer
                       width="98%"
-                      height="65vh"
+                      height="75vh"
                       controls
                       url={item.videoLink}
                     />

@@ -73,7 +73,7 @@ const Footer = () => {
                   <a href="/about">About</a>
                 </li>
                 <li>
-                  <a href="">Blogs</a>
+                  <a href="/blogs">Blogs</a>
                 </li>
                 <li>
                   <a href="/all-courses">Courses</a>
@@ -117,7 +117,7 @@ const Footer = () => {
                   <a href="/jipmer">JIPMER</a>
                 </li>
                 <li>
-                  <a href="nimhans">MIIMHANS</a>
+                  <a href="nimhans">NIMHANS</a>
                 </li>
                 <li>
                   <a href="/cho">CHO</a>
@@ -202,9 +202,14 @@ const Footer = () => {
                 <RiLinkedinFill />
               </a>
             </div>
-            <div className="social_img">
-              <img src={playstore} alt="" />
-            </div>
+            <Link
+              to="https://play.google.com/store/apps/details?id=com.live.nursingnext&hl=en_IN&pli=1"
+              target="blank"
+            >
+              <div className="social_img">
+                <img src={playstore} alt="" />
+              </div>
+            </Link>
           </div>
           <div className="underline"></div>
           <div className="copyright">

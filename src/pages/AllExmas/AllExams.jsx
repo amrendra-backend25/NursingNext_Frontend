@@ -1,8 +1,6 @@
 import { Link } from "react-router-dom";
 import "./AllExams.css";
-import tree from "/images/offers/tree.png";
-import plan1 from "/images/offers/plan_1.png";
-import plan2 from "/images/offers/Icon-02.png";
+
 import { Navigation, Autoplay } from "swiper/modules";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
@@ -16,6 +14,7 @@ import axios from "axios";
 const AllExams = () => {
   const [examsTabs, setExamsTabs] = useState([]);
   const [examsBanner, setExamsBanner] = useState([]);
+  const [monthsOffers, setMonthsOffers] = useState([]);
   const [setIsError] = useState("");
   const [activeTab, setActiveTab] = useState(1);
 
@@ -54,17 +53,34 @@ const AllExams = () => {
     }
   };
 
+  const showOffersOfmonths = async () => {
+    try {
+      const response = await Paths.EndpointsURL.OfferOfMonths;
+      const record = await axios.get(response, {
+        headers: {
+          "Content-type": "application/json",
+        },
+      });
+      return record.data.data;
+    } catch (error) {
+      setIsError(error.message);
+      return [];
+    }
+  };
+
   //Logic for received data in parallel
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const [examsData, examsBannerData] = await Promise.all([
+        const [examsData, examsBannerData, offerMonthData] = await Promise.all([
           showExamsTabs(),
           showExamsBanner(),
+          showOffersOfmonths(),
         ]);
 
         setExamsTabs(examsData);
         setExamsBanner(examsBannerData);
+        setMonthsOffers(offerMonthData);
       } catch (error) {
         setIsError(error.msg);
       }
@@ -151,7 +167,7 @@ const AllExams = () => {
                           })}
 
                           <div className="tab_btn">
-                            <Link>
+                            <Link to="/plan-mlb-pro">
                               <button>Suggested Pack</button>
                             </Link>
                           </div>
@@ -216,378 +232,77 @@ const AllExams = () => {
                   },
                 }}
               >
-                <SwiperSlide>
-                  <div className="month_card_plan">
-                    <div className="month_background">
-                      <div className="month_card_left">
-                        <div className="image_plan">
-                          <img src={tree} alt="" />
+                {monthsOffers.slice(0, 4).map((offers) => {
+                  const {
+                    offersBanner,
+                    description,
+                    validity6,
+                    validity12,
+                    validity24,
+
+                    price6,
+                    price12,
+                    price24,
+                  } = offers;
+                  const sentences = description.split(". ");
+                  return (
+                    <>
+                      <SwiperSlide>
+                        <div className="month_card_plan">
+                          <div className="month_background">
+                            <img src={offersBanner} alt="" />
+                          </div>
+                          <div className="plan_validity">
+                            <div className="validity_content">
+                              <p className="validity_month">{validity6}</p>
+                              <p className="validity_price">₹ {price6}</p>
+                            </div>
+                            <div className="validity_content">
+                              <p className="validity_month">{validity12}</p>
+                              <p className="validity_price">₹ {price12}</p>
+                            </div>
+                            <div className="validity_content">
+                              <p className="validity_month">{validity24}</p>
+                              <p className="validity_price">₹ {price24}</p>
+                            </div>
+                          </div>
+
+                          <div className="underline_plan"></div>
+                          <div className="lectures_content">
+                            {sentences.map((sentence, sentenceIndex) => {
+                              return (
+                                <>
+                                  <p key={sentenceIndex}>
+                                    <span>
+                                      <FaCheck />
+                                    </span>
+                                    {sentence}
+                                  </p>
+                                </>
+                              );
+                            })}
+                          </div>
                         </div>
-                        <div className="month_plan_title">
-                          <h4>Know All About Plan C+ (Mastermind Pack)</h4>
-                          <p>Watch, learn & Succeed</p>
-                        </div>
-                      </div>
-                      <div className="month_card_right">
-                        <img src={plan1} alt="" />
-                      </div>
-                    </div>
-                    <div className="plan_validity">
-                      <div className="validity_content">
-                        <p className="validity_month">Validity 6 Months</p>
-                        <p className="validity_price">₹13,999</p>
-                      </div>
-                      <div className="validity_content">
-                        <p className="validity_month">Validity 6 Months</p>
-                        <p className="validity_price">₹13,999</p>
-                      </div>
-                      <div className="validity_content">
-                        <p className="validity_month">Validity 6 Months</p>
-                        <p className="validity_price">₹13,999</p>
-                      </div>
-                    </div>
-                    <div className="underline_plan"></div>
-                    <div className="lectures_content">
-                      <p>
-                        <span>
-                          <FaCheck />
-                        </span>
-                        1700+ hrs of Video Lectures (Hinglish/English)
-                      </p>
-                      <p>
-                        <span>
-                          <FaCheck />
-                        </span>
-                        100+ Hybrid Live Teaching Classes/Doubt Session
-                      </p>
-                      <p>
-                        <span>
-                          <FaCheck />
-                        </span>
-                        0k+ Qs in Review/Practice Mode
-                      </p>
-                      <p>
-                        <span>
-                          <FaCheck />
-                        </span>
-                        150+ System wise/Subject wise/Topic wise Tests
-                      </p>
-                      <p>
-                        <span>
-                          <FaCheck />
-                        </span>
-                        10+ Review classes by Batch mentor
-                      </p>
-                      <p>
-                        <span>
-                          <FaCheck />
-                        </span>
-                        100+ Previous Year Papers
-                      </p>
-                      <p>
-                        <span>
-                          <FaCheck />
-                        </span>
-                        30+ Hours of Podcast
-                      </p>
-                      <p>
-                        <span>
-                          <FaCheck />
-                        </span>
-                        1500+ High-Yielding Flashcards/E-notes
-                      </p>
-                      <p>
-                        <span>
-                          <FaCheck />
-                        </span>
-                        1000+ IBQs/VBQs
-                      </p>
-                      <p>
-                        <span>
-                          <FaCheck />
-                        </span>
-                        Mentor Support/Live Chat
-                      </p>
-                    </div>
-                  </div>
-                </SwiperSlide>
-                <SwiperSlide>
-                  <div className="month_card_plan">
-                    <div className="month_background">
-                      <div className="month_card_left">
-                        <div className="image_plan">
-                          <img src={plan2} alt="" />
-                        </div>
-                        <div className="month_plan_title">
-                          <h4>Know All About Plan UG (Undergraduate Pack)</h4>
-                          <p>Watch, learn & Succeed</p>
-                        </div>
-                      </div>
-                      <div className="month_card_right">
-                        <img src={plan1} alt="" />
-                      </div>
-                    </div>
-                    <div className="plan_validity">
-                      <div className="validity_content">
-                        <p className="validity_month">Validity 12 Months</p>
-                        <p className="validity_price">₹7,421</p>
-                        <p className="validity_red">(1st Year)</p>
-                      </div>
-                      <div className="validity_content">
-                        <p className="validity_month">Validity 12 Months</p>
-                        <p className="validity_price">₹7,499</p>
-                        <p className="validity_red">(2nd Year)</p>
-                      </div>
-                      <div className="validity_content">
-                        <p className="validity_month">Validity 24 Months</p>
-                        <p className="validity_price">₹29,998</p>
-                        <p className="validity_red">(3rd & 4th Year)</p>
-                      </div>
-                    </div>
-                    <div className="underline_plan"></div>
-                    <div className="lectures_content">
-                      <p>
-                        <span>
-                          <FaCheck />
-                        </span>
-                        Hybrid Lectures by the Masterminds
-                      </p>
-                      <p>
-                        <span>
-                          <FaCheck />
-                        </span>
-                        Comprehensive Coverage of Topics
-                      </p>
-                      <p>
-                        <span>
-                          <FaCheck />
-                        </span>
-                        Long and Short Questions with Answers
-                      </p>
-                      <p>
-                        <span>
-                          <FaCheck />
-                        </span>
-                        Multiple Choice Questions
-                      </p>
-                      <p>
-                        <span>
-                          <FaCheck />
-                        </span>
-                        Live conceptual learning by Masterminds and{" "}
-                      </p>
-                      <p>
-                        <span>
-                          <FaCheck />
-                        </span>
-                        Session Mentors
-                      </p>
-                      <p>
-                        <span>
-                          <FaCheck />
-                        </span>
-                        Progress Analysis Session and Student Faculty Meetings
-                      </p>
-                      <p>
-                        <span>
-                          <FaCheck />
-                        </span>
-                        Live Revision Sessions
-                      </p>
-                    </div>
-                  </div>
-                </SwiperSlide>
-                <SwiperSlide>
-                  <div className="month_card_plan">
-                    <div className="month_background">
-                      <div className="month_card_left">
-                        <div className="image_plan">
-                          <img src={tree} alt="" />
-                        </div>
-                        <div className="month_plan_title">
-                          <h4>Know All About Plan MSC (Mastermind Pack)</h4>
-                          <p>Watch, learn & Succeed</p>
-                        </div>
-                      </div>
-                      <div className="month_card_right">
-                        <img src={plan1} alt="" />
-                      </div>
-                    </div>
-                    <div className="plan_validity">
-                      <div className="validity_content">
-                        <p className="validity_month">Validity 6 Months</p>
-                        <p className="validity_price">₹13,999</p>
-                      </div>
-                      <div className="validity_content">
-                        <p className="validity_month">Validity 6 Months</p>
-                        <p className="validity_price">₹13,999</p>
-                      </div>
-                      <div className="validity_content">
-                        <p className="validity_month">Validity 6 Months</p>
-                        <p className="validity_price">₹13,999</p>
-                      </div>
-                    </div>
-                    <div className="underline_plan"></div>
-                    <div className="lectures_content">
-                      <p>
-                        <span>
-                          <FaCheck />
-                        </span>
-                        1700+ hrs of Video Lectures (Hinglish/English)
-                      </p>
-                      <p>
-                        <span>
-                          <FaCheck />
-                        </span>
-                        100+ Hybrid Live Teaching Classes/Doubt Session
-                      </p>
-                      <p>
-                        <span>
-                          <FaCheck />
-                        </span>
-                        20k+ Qs in Review/Practice Mode
-                      </p>
-                      <p>
-                        <span>
-                          <FaCheck />
-                        </span>
-                        150+ System wise/Subject wise/Topic wise Tests
-                      </p>
-                      <p>
-                        <span>
-                          <FaCheck />
-                        </span>
-                        10+ Review classes by Batch mentor
-                      </p>
-                      <p>
-                        <span>
-                          <FaCheck />
-                        </span>
-                        100+ Previous Year Papers
-                      </p>
-                      <p>
-                        <span>
-                          <FaCheck />
-                        </span>
-                        30+ Hours of Podcast
-                      </p>
-                      <p>
-                        <span>
-                          <FaCheck />
-                        </span>
-                        1500+ High-Yielding Flashcards/E-notes
-                      </p>
-                      <p>
-                        <span>
-                          <FaCheck />
-                        </span>
-                        1000+ IBQs/VBQs
-                      </p>
-                      <p>
-                        <span>
-                          <FaCheck />
-                        </span>
-                        Mentor Support/Live Chat
-                      </p>
-                    </div>
-                  </div>
-                </SwiperSlide>
-                <SwiperSlide>
-                  <div className="month_card_plan">
-                    <div className="month_background">
-                      <div className="month_card_left">
-                        <div className="image_plan">
-                          <img src={plan2} alt="" />
-                        </div>
-                        <div className="month_plan_title">
-                          <h4>Know All About Plan UG (Undergraduate Pack)</h4>
-                          <p>Watch, learn & Succeed</p>
-                        </div>
-                      </div>
-                      <div className="month_card_right">
-                        <img src={plan1} alt="" />
-                      </div>
-                    </div>
-                    <div className="plan_validity">
-                      <div className="validity_content">
-                        <p className="validity_month">Validity 12 Months</p>
-                        <p className="validity_price">₹7,421</p>
-                        <p className="validity_red">(1st Year)</p>
-                      </div>
-                      <div className="validity_content">
-                        <p className="validity_month">Validity 12 Months</p>
-                        <p className="validity_price">₹7,499</p>
-                        <p className="validity_red">(2nd Year)</p>
-                      </div>
-                      <div className="validity_content">
-                        <p className="validity_month">Validity 24 Months</p>
-                        <p className="validity_price">₹29,998</p>
-                        <p className="validity_red">(3rd & 4th Year)</p>
-                      </div>
-                    </div>
-                    <div className="underline_plan"></div>
-                    <div className="lectures_content">
-                      <p>
-                        <span>
-                          <FaCheck />
-                        </span>
-                        Hybrid Lectures by the Masterminds
-                      </p>
-                      <p>
-                        <span>
-                          <FaCheck />
-                        </span>
-                        Comprehensive Coverage of Topics
-                      </p>
-                      <p>
-                        <span>
-                          <FaCheck />
-                        </span>
-                        Long and Short Questions with Answers
-                      </p>
-                      <p>
-                        <span>
-                          <FaCheck />
-                        </span>
-                        Multiple Choice Questions
-                      </p>
-                      <p>
-                        <span>
-                          <FaCheck />
-                        </span>
-                        Live conceptual learning by Masterminds and{" "}
-                      </p>
-                      <p>
-                        <span>
-                          <FaCheck />
-                        </span>
-                        Session Mentors
-                      </p>
-                      <p>
-                        <span>
-                          <FaCheck />
-                        </span>
-                        Progress Analysis Session and Student Faculty Meetings
-                      </p>
-                      <p>
-                        <span>
-                          <FaCheck />
-                        </span>
-                        Live Revision Sessions
-                      </p>
-                    </div>
-                  </div>
-                </SwiperSlide>
+                      </SwiperSlide>
+                    </>
+                  );
+                })}
+
                 <div className="month_plan_button">
                   <div className="button_right">
-                    <div className="button-prev-slide">
+                    <div
+                      className="button-prev-slide"
+                      style={{ cursor: "pointer" }}
+                    >
                       <IoIosArrowForward />
                     </div>
-                    <div className="button-next-slide">
+                    <div
+                      className="button-next-slide"
+                      style={{ cursor: "pointer" }}
+                    >
                       <IoIosArrowBack />
                     </div>
                   </div>
-                  <div className="button_left">See All</div>
                 </div>
               </Swiper>
             </div>

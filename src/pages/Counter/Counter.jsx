@@ -10,7 +10,7 @@ const Counter = () => {
                 <img src={Strike} alt="" />
             </div> */}
           <span className="count_percent">
-            <CountUp start={10} end={90} duration={5} />
+            Upto&nbsp; <CountUp start={10} end={90} duration={5} />
             <p>%</p>
           </span>
           <span className="counter_title">App Strike rate</span>
@@ -36,14 +36,11 @@ const Counter = () => {
           <span className="counter_title">Students Selected</span>
         </div>
         <div className="stat_box">
-          {/* <div className="counter_image">
-                <img src={Success} alt="" />
-            </div> */}
           <span className="count_percent">
-            <CountUp start={400} end={4000} duration={5} />
-            <p>+</p>
+            4.6{/* 4.6 <CountUp start={4} end={4.6} duration={5} /> */}
+            <p></p>
           </span>
-          <span className="counter_title">Success Stories</span>
+          <span className="counter_title">Google Play Store Rating</span>
         </div>
       </div>
     </section>

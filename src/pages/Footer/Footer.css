@@ -85,9 +85,10 @@
 }
 
 .social_icon a {
-    width: 20px;
-    height: 20px;
+    width: 30px;
+    height: 30px;
     color: #000;
+    font-size: 20px;
 }
 
 .footer_title_1 a p {
@@ -127,10 +128,10 @@
 
 /* ============================Responsive Tablet========================*/
 @media screen and (max-width: 1024px) {
-    /* .box_img{
+    .box_img {
         grid-template-columns: repeat(2, 1fr);
         place-items: center;
-    } */
+    }
 }
 
 @media screen and (max-width: 768px) {

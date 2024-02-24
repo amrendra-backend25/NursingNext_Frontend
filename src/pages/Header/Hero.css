@@ -83,7 +83,7 @@
   position: absolute;
   z-index: 10;
   top: 52%;
-  left: 32%;
+  left: 31%;
 }
 
 .swiper_button .button-prev-slide {
@@ -110,7 +110,7 @@
 }
 
 /*_____________________form_________________*/
-.header_from {
+.header_from_1 {
   position: absolute;
   top: 30%;
   left: 5%;
@@ -124,7 +124,7 @@
   border-radius: 25px;
 }
 
-.header_from .text {
+.header_from_1 .text {
   color: #333;
   font-size: 16px;
   font-weight: 700;
@@ -164,14 +164,22 @@
   color: #ec1c24;
 }
 
+.slider_header .success {
+  font-size: 20px;
+  text-align: center;
+  margin-top: 35px;
+  left: 15px;
+  color: #5EEA5C;
+}
+
 .input_form img {
   margin: 0 15px;
   width: 15px;
 }
 
-.input_form input:hover {
+/* .input_form input:hover {
   background: #e8e8e8
-}
+} */
 
 .input_form input {
   height: 45px;
@@ -211,21 +219,37 @@
 /* ============================Responsive Tablet========================*/
 @media screen and (max-width: 1440px) {
   .image_slider img {
-    height: 70vh;
+    height: 80vh;
+  }
+
+  .slider_header .header_from_1 {
+    width: 320px;
+  }
+
+  .slider_header .input_form {
+    width: 260px;
+  }
+
+  .swiper_button .button-next-slide {
+    left: 31%;
   }
 }
 
+
 @media screen and (max-width: 1024px) {
+
+
   .slider_header {
     display: none;
   }
 
   .header_mobile_section {
     display: block;
+    margin-top: 70px;
   }
 
   .header_main_container {
-    min-height: 100vh;
+    min-height: 45vh;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -318,7 +342,7 @@
   }
 
   .header_mobile_offers_slider img {
-    height: 70vh;
+    height: 40vh;
     width: 100%;
     display: block;
   }
@@ -397,6 +421,18 @@
     right: 2%;
   }
 
+  .header_form .header_input_box .error {
+    position: absolute;
+    bottom: -25px;
+    left: 10px;
+    color: #ec1c24;
+  }
+
+  .header_input_box {
+    position: relative;
+    margin-bottom: 20px;
+  }
+
   .header_mobile_slider .swiper-pagination {
     position: absolute;
     /* left: 10%; */
@@ -420,7 +456,7 @@
 
 @media screen and (max-width: 768px) {
   .header_mobile_offers_slider img {
-    height: 50vh;
+    height: 40vh;
   }
 
   .header_mobile_offers_btn {

@@ -5,32 +5,50 @@ import { Navigation, Autoplay, Pagination } from "swiper/modules";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
 import ReactPlayer from "react-player";
-import question from "/images/plan_zero/question.png";
-import tree from "/images/offers/tree.png";
-import { FaCheck } from "react-icons/fa6";
+import question from "/images/plan_zero/StatsLatestBanner.jpg";
 import apply from "/images/aboutUs/apply.png";
 import hiring from "/images/aboutUs/hiring.png";
-import Simplify from "../Simplify/Simplify";
+import PlanQB from "/images/courses/PlanQB.png";
+import PlanC from "/images/courses/PlanC.png";
+import { IoIosArrowBack, IoIosArrowForward } from "react-icons/io";
+import { GoDotFill } from "react-icons/go";
+import tree from "/images/offers/tree.png";
 import { useState, useEffect } from "react";
 import { Paths } from "../../config/configAPI";
 import axios from "axios";
-import { IoIosArrowBack, IoIosArrowForward } from "react-icons/io";
+import DoubtModel from "../DoubtModel/DoubtModel";
 import { Link } from "react-router-dom";
 
 const PlanMSC = () => {
-  const [planANextians, setPlanANextians] = useState([]);
+  const [modalOpen, setModalOpen] = useState(false);
+  const [selectedFaculty, setSelectedFaculty] = useState({});
+
+  const openModal = () => {
+    setSelectedFaculty();
+    setModalOpen(true);
+  };
+
+  const closeModal = () => {
+    setModalOpen(false);
+  };
+
+  const [activeTab, setActiveTab] = useState(1);
   const [planVideos, setPlanVideos] = useState([]);
-  const [planDetails, setPlanDetails] = useState([]);
-  const [salientFeatures, setSalientFeatures] = useState([]);
-  const [allReferCourses, setAllReferCourses] = useState([]);
-  const [planAMind, setPlanAMind] = useState([]);
-  const [planMscBanner, setPlanMscBanner] = useState([]);
+  const [planStats, setPlanStats] = useState([]);
+  const [planSalient, setPlanSalient] = useState([]);
+  const [planCPlusBanner, setPlanCPlusBanner] = useState([]);
+  const [planCPlusTab, setPlanCPlusTab] = useState([]);
+  const [cPlusNextians, setCPlusNextians] = useState([]);
+  const [cPlusFaculity, setCPlusFaculity] = useState([]);
   const [setIsError] = useState("");
   const [isExpanded, setIsExpanded] = useState([]);
+  const handleTabClick = (tabNumber) => {
+    setActiveTab(tabNumber);
+  };
 
-  const displayNextians = async () => {
+  const showPlanVideos = async () => {
     try {
-      const response = await Paths.EndpointsURL.HomeNextians;
+      const response = await Paths.EndpointsURL.PlanMscVideo;
       const record = await axios.get(response, {
         headers: {
           "Content-type": "application/json",
@@ -43,7 +61,39 @@ const PlanMSC = () => {
     }
   };
 
-  const showPlanMsc = async () => {
+  const showPlanStats = async () => {
+    try {
+      const response = await Paths.EndpointsURL.PlanMscStats;
+      const record = await axios.get(response, {
+        headers: {
+          "Content-type": "application/json",
+        },
+      });
+      // console.log(record.data);
+      return record.data.data;
+    } catch (error) {
+      setIsError(error.msg);
+      return [];
+    }
+  };
+
+  const showPlanSalient = async () => {
+    try {
+      const response = await Paths.EndpointsURL.PlanMscSalient;
+      const record = await axios.get(response, {
+        headers: {
+          "Content-type": "application/json",
+        },
+      });
+      // console.log(record.data);
+      return record.data.data;
+    } catch (error) {
+      setIsError(error.msg);
+      return [];
+    }
+  };
+
+  const showPlanCPlusBanner = async () => {
     try {
       const response = await Paths.EndpointsURL.PlanMscBanner;
       const record = await axios.get(response, {
@@ -58,9 +108,9 @@ const PlanMSC = () => {
     }
   };
 
-  const displaySinglePlan = async () => {
+  const showPlanCPlusOfferTab = async () => {
     try {
-      const response = await Paths.EndpointsURL.SinglePlanVideos;
+      const response = await Paths.EndpointsURL.PlanMscOffersPrice;
       const record = await axios.get(response, {
         headers: {
           "Content-type": "application/json",
@@ -73,9 +123,9 @@ const PlanMSC = () => {
     }
   };
 
-  const displayPlanDetails = async () => {
+  const showPlanCPlusNextians = async () => {
     try {
-      const response = await Paths.EndpointsURL.SinglePlanDetails;
+      const response = await Paths.EndpointsURL.HomeNextians;
       const record = await axios.get(response, {
         headers: {
           "Content-type": "application/json",
@@ -88,37 +138,7 @@ const PlanMSC = () => {
     }
   };
 
-  const displaySilentFeatures = async () => {
-    try {
-      const response = await Paths.EndpointsURL.SinglePlanSilentFeatures;
-      const record = await axios.get(response, {
-        headers: {
-          "Content-type": "application/json",
-        },
-      });
-      return record.data.data;
-    } catch (error) {
-      setIsError(error.msg);
-      return [];
-    }
-  };
-
-  const displayReferCourses = async () => {
-    try {
-      const response = await Paths.EndpointsURL.SinglePlanReferCourses;
-      const record = await axios.get(response, {
-        headers: {
-          "Content-type": "application/json",
-        },
-      });
-      return record.data.data;
-    } catch (error) {
-      setIsError(error.msg);
-      return [];
-    }
-  };
-
-  const showAllMasterMind = async () => {
+  const showPlanCPlusMastermind = async () => {
     try {
       const response = await Paths.EndpointsURL.HomeMasterMind;
       const record = await axios.get(response, {
@@ -141,41 +161,36 @@ const PlanMSC = () => {
     });
   };
 
-  const handleScrollToTop = () => {
-    window.scrollTo({
-      top: 0,
-      behavior: "smooth",
-    });
-  };
-
   useEffect(() => {
     const fetchData = async () => {
       try {
         const [
-          mastermindData,
-          nextiansData,
-          videoData,
-          planDetailsData,
-          silentFeaturesData,
-          referCoursesData,
-          planMscData,
+          planVideosData,
+          planStatsData,
+          planSalientData,
+          planCData,
+          planCPriceTab,
+          planCNextianData,
+          planCFaculityData,
         ] = await Promise.all([
-          showAllMasterMind(),
-          displayNextians(),
-          displaySinglePlan(),
-          displayPlanDetails(),
-          displaySilentFeatures(),
-          displayReferCourses(),
-          showPlanMsc(),
+          showPlanVideos(),
+          showPlanStats(),
+          showPlanSalient(),
+
+          showPlanCPlusBanner(),
+          showPlanCPlusOfferTab(),
+          showPlanCPlusNextians(),
+          showPlanCPlusMastermind(),
         ]);
 
-        setPlanAMind(mastermindData);
-        setPlanANextians(nextiansData);
-        setPlanVideos(videoData);
-        setPlanDetails(planDetailsData);
-        setSalientFeatures(silentFeaturesData);
-        setAllReferCourses(referCoursesData);
-        setPlanMscBanner(planMscData);
+        setPlanVideos(planVideosData);
+        setPlanStats(planStatsData);
+        setPlanSalient(planSalientData);
+
+        setPlanCPlusBanner(planCData);
+        setPlanCPlusTab(planCPriceTab);
+        setCPlusNextians(planCNextianData);
+        setCPlusFaculity(planCFaculityData);
       } catch (error) {
         setIsError(error.msg);
       }
@@ -183,9 +198,10 @@ const PlanMSC = () => {
 
     fetchData();
   }, []);
+
   return (
     <>
-      <section className="planzero_section ">
+      <section className="planmsC_section ">
         <Swiper
           spaceBetween={50}
           slidesPerView={1}
@@ -203,24 +219,19 @@ const PlanMSC = () => {
           loop={true}
           modules={[Navigation, Pagination, Autoplay]}
         >
-          {planMscBanner.slice(0, 1).map((banner) => {
-            const { planName, planSubheading, planTagLine, planImages } =
+          {planCPlusBanner.slice(0, 1).map((banner) => {
+            const { planImages, planName, planSubheading, planTagLine } =
               banner;
             return (
               <>
                 <SwiperSlide>
-                  <div className="plan_zero_img">
+                  <div className="plan_msC_img">
                     <img src={planImages} alt="" />
                     <div className="container">
-                      <div className="planzero_slider_title">
-                        <h1>
-                          {planName}
-                          <br />({planSubheading})
-                        </h1>
+                      <div className="planmsC_slider_title">
+                        <span>{planSubheading}</span>
+                        <h1>{planName}</h1>
                         <p>{planTagLine}</p>
-                        <div className="plan_title_btn">
-                          <button>Know More</button>
-                        </div>
                       </div>
                     </div>
                   </div>
@@ -229,16 +240,18 @@ const PlanMSC = () => {
             );
           })}
         </Swiper>
+
+        {/* Modal Component */}
       </section>
 
       <section className="planzero_video_section">
-        {planVideos.slice(0, 1).map((records) => {
-          const { videoTitle, videoLink } = records;
-          return (
-            <>
-              <div className="container">
+        <div className="container">
+          {planVideos.slice(0, 1).map((video) => {
+            const { videoName, videoLink } = video;
+            return (
+              <>
                 <div className="video_title">
-                  <h3 style={{ textAlign: "center" }}>{videoTitle}</h3>
+                  <h3>{videoName}</h3>
                   <div className="video_part">
                     <ReactPlayer
                       width="100%"
@@ -248,36 +261,104 @@ const PlanMSC = () => {
                     />
                   </div>
                 </div>
-              </div>
-            </>
-          );
-        })}
+              </>
+            );
+          })}
+        </div>
       </section>
 
-      <section className="questions_section">
+      <section className="plan_tab_section">
         <div className="container">
-          <div className="question_parent">
-            <div className="question_left">
-              <img src={question} alt="" />
+          <div className="plan_button_section_parent">
+            <div className="plan_tab_button_left">
+              <div className="plan_tab_img_left">
+                {planCPlusTab.slice(0, 1).map((record) => {
+                  const {
+                    planTabHeading,
+                    planTabSubHeading,
+                    planTabParagraph,
+                    planTabImage,
+                  } = record;
+                  return (
+                    <>
+                      <div className="plan_content_heading">
+                        <h1>{planTabHeading}</h1>
+                        <h1>{planTabSubHeading}</h1>
+                        <p>{planTabParagraph}</p>
+                      </div>
+                      <div className="all_plan_tree">
+                        <img src={tree} alt="" className="tree_plan" />
+                        <img src={planTabImage} alt="" />
+                      </div>
+                    </>
+                  );
+                })}
+              </div>
+              <div className="plan_tab_button_right">
+                <div className="plan_tab_button tab_button_01">
+                  {planCPlusTab.slice(0, 3).map((tab, index) => {
+                    const {
+                      planName,
+                      planValidity,
+                      planCutPrice,
+                      planActualPrice,
+                    } = tab;
+                    return (
+                      <>
+                        <button
+                          onClick={() => handleTabClick(index + 1)}
+                          className={`tab ${
+                            activeTab === index + 1 ? " tab active" : ""
+                          }`}
+                        >
+                          {planName} {planValidity} ₹{" "}
+                          <span>{planCutPrice} </span>| ₹ {planActualPrice}
+                        </button>
+                      </>
+                    );
+                  })}
+                </div>
+              </div>
             </div>
-            <div className="question_right">
-              {planDetails.map((records) => {
+
+            <div className="plan_tab_button_right_1">
+              {planCPlusTab.slice(0, 3).map((TabDesc, index) => {
                 const {
-                  planDetailTitle,
-                  planDetailDescription,
-                  planDetailIcon,
-                } = records;
+                  planName,
+                  planValidity,
+                  planCutPrice,
+                  planActualPrice,
+                  withBook,
+                  planDescription,
+                } = TabDesc;
+                const sentences = planDescription.split(". ");
                 return (
                   <>
-                    <div className="question_right_title">
-                      <div className="icon_zero_img">
-                        <img src={planDetailIcon} alt="" />
+                    {activeTab === index + 1 && (
+                      <div className="plan_choose_right_msc">
+                        <div className="plan_content_title">
+                          <h3>
+                            {planName} {planValidity}{" "}
+                            <span>₹ {planCutPrice}</span> | ₹ {planActualPrice}
+                          </h3>
+                          <h4>{withBook}</h4>
+                        </div>
+                        <div className="plan_lectures_content">
+                          {sentences.map((sentence, sentenceIndex) => {
+                            return (
+                              <>
+                                <p key={sentenceIndex}>
+                                  <span>
+                                    <GoDotFill />
+                                  </span>
+                                  {sentence}
+                                </p>
+                              </>
+                            );
+                          })}
+                        </div>
                       </div>
-                      <div className="title_zero">
-                        <h4>{planDetailTitle}</h4>
-                        <p>{planDetailDescription}</p>
-                      </div>
-                    </div>
+                    )}
                   </>
                 );
               })}
@@ -335,16 +416,18 @@ const PlanMSC = () => {
                 },
               }}
             >
-              {planAMind.map((result) => {
-                const { facilityName, facilityImage, specialization } = result;
+              {cPlusFaculity.map((record) => {
+                const { facilityImage, specialization, facilityName } = record;
                 return (
                   <>
-                    <SwiperSlide key={result.id}>
+                    <SwiperSlide key={record.id}>
                       <div className="mastermind_card">
                         <div className="mastermind_img">
                           <img src={facilityImage} alt="" />
                           <div className="overlay">
-                            <div className="content">{specialization}</div>
+                            <div className="content">
+                              <p>{specialization}</p>
+                            </div>
                           </div>
                         </div>
                         <div className="mastermind_title">
@@ -355,23 +438,15 @@ const PlanMSC = () => {
                   </>
                 );
               })}
-              <div className="master_button_2">
-                <div className="master_right_button">
-                  <div
-                    className="button-prev-slide"
-                    style={{ cursor: "pointer" }}
-                  >
+
+              <div className="master_button_plan">
+                <div className="master_button_right">
+                  <div className="button-prev-slide">
                     <IoIosArrowForward />
                   </div>
-                  <div
-                    className="button-next-slide"
-                    style={{ cursor: "pointer" }}
-                  >
+                  <div className="button-next-slide">
                     <IoIosArrowBack />
                   </div>
-                </div>
-                <div className="master_see">
-                  <button className="master_button-2">See All</button>
                 </div>
               </div>
             </Swiper>
@@ -379,108 +454,64 @@ const PlanMSC = () => {
         </div>
       </section>
 
+      <section className="questions_section">
+        <div className="container">
+          <div className="salient_title">
+            <h3>Key Benifites of the plan</h3>
+          </div>
+          <div className="question_parent">
+            <div className="question_left">
+              <img src={question} alt="" />
+              <div className="question_head_para">
+                {/* <h2 className="question_head">#Your Success is Our Motto</h2> */}
+              </div>
+            </div>
+
+            <div className="question_right">
+              {planStats.slice(0, 5).map((stats) => {
+                const { statsTitle, statsParagraph, statsIcon } = stats;
+                return (
+                  <>
+                    <div className="question_right_title">
+                      <div className="icon_zero_img">
+                        <img src={statsIcon} alt="" />
+                      </div>
+                      <div className="title_zero">
+                        <h4>{statsTitle}</h4>
+                        <p>{statsParagraph}</p>
+                      </div>
+                    </div>
+                  </>
+                );
+              })}
+            </div>
+          </div>
+        </div>
+      </section>
+
       <section className="salient_section">
         <div className="container">
           <div className="salient_title">
-            <h3>Silent Features</h3>
+            <h3>Salient Features</h3>
           </div>
+
           <div className="salient_parent">
-            {salientFeatures.map((records) => {
-              const { planDetailDescription, planDetailIcon } = records;
+            {planSalient.map((salient) => {
+              const { salientTitle, salientParagraph, salientIcon } = salient;
               return (
                 <>
                   <div className="salient_child">
                     <div className="salient_img">
-                      <img src={planDetailIcon} alt="" />
+                      <img src={salientIcon} alt="" />
                     </div>
                     <div className="salient_title">
-                      <p>{planDetailDescription}</p>
+                      <h5>{salientTitle}</h5>
+                      <p>{salientParagraph}</p>
                     </div>
                   </div>
                 </>
               );
             })}
-          </div>
-        </div>
-      </section>
-
-      <section className="plan_section">
-        <div className="container">
-          {planVideos.slice(0, 1).map((willget) => {
-            const { willGetBanner, willGetDescription } = willget;
-            const sentences = willGetDescription.split(". ");
-            return (
-              <>
-                <div className="plan_parent_title" key={willGetBanner}>
-                  <div className="plan_left_child">
-                    <div className="month_card_left">
-                      <div className="image_plan">
-                        <img src={tree} alt="" />
-                      </div>
-                      <div className="month_plan_title">
-                        {/* <h4>What All You Will Get?</h4>
-                        <p>Watch, learn & Succeed</p> */}
-                      </div>
-                    </div>
-                    <div className="month_card_right">
-                      <img src={willGetBanner} alt="" />
-                    </div>
-                  </div>
-                  <div className="plan_right_child">
-                    <div className="lectures_content">
-                      {sentences.map((sentence, sentenceIndex) => {
-                        return (
-                          <>
-                            <p key={sentenceIndex}>
-                              <span>
-                                <FaCheck />
-                              </span>
-                              {sentence}
-                            </p>
-                          </>
-                        );
-                      })}
-                    </div>
-                  </div>
-                </div>
-              </>
-            );
-          })}
-        </div>
-      </section>
-
-      <section className="approach_section">
-        <div className="container">
-          <div className="approach_card">
-            <div className="approach_sub_title">
-              <div className="approach_img">
-                <img src={question} alt="" />
-              </div>
-              <div className="approach_content">
-                <p className="approach_heading">CHO with Target CHO Book </p>
-                <p>₹1997</p>
-              </div>
-            </div>
-            <div className="approach_sub_title">
-              <div className="approach_img">
-                <img src={question} alt="" />
-              </div>
-              <div className="approach_content">
-                <p className="approach_heading">CHO without Target CHO Book </p>
-                <p>₹1496</p>
-              </div>
-            </div>
-            <div className="approach_sub_title">
-              <div className="approach_img">
-                <img src={question} alt="" />
-              </div>
-              <div className="approach_content">
-                <p className="approach_heading">
-                  UPPSC Staff Nurse Crash Course
-                </p>
-                <p>₹2248</p>
-              </div>
-            </div>
           </div>
         </div>
       </section>
@@ -491,51 +522,40 @@ const PlanMSC = () => {
             <h3>You Can Also Refer These Courses</h3>
           </div>
           <div className="refer_card_parent">
-            {/* <div className="refer_child_card">
+            <div className="refer_child_card">
               <div className="refer_img">
-                <img src={icon1} alt="" />
+                <img src={PlanC} alt="" />
               </div>
               <div className="refer_title">
-                <h5>
-                  Plan C+ <br />
-                  (Mastermind Pack)
-                </h5>
+                <h5>Plan C+ (Mastermind Pack )</h5>
                 <p>
-                  The One-In-All, All-In-One Pack to help you become the Master
-                  of all Subjects!
+                  The ONE-IN-ALL, ALL-IN-ONE Pack Covering TOP-NOTCH Content
+                  Curated & Drafted by the Masterminds To Prepare You For
+                  NORCET!
                 </p>
-                <div className="refer_btn">
-                  <Link to="/plan-c-plus">
-                    <button onClick={handleScrollToTop}>Know More</button>
-                  </Link>
-                </div>
-              </div>
-            </div> */}
 
-            {allReferCourses.map((records) => {
-              const { planName, planSubheading, planTagLine, planIcon } =
-                records;
-              return (
-                <>
-                  <div className="refer_child_card">
-                    <div className="refer_img">
-                      <img src={planIcon} alt="" />
-                    </div>
-                    <div className="refer_title">
-                      <h5>
-                        {planName} <br />({planSubheading})
-                      </h5>
-                      <p>{planTagLine}</p>
-                      <div className="refer_btn">
-                        <Link to="/plan-b">
-                          <button onClick={handleScrollToTop}>Know More</button>
-                        </Link>
-                      </div>
-                    </div>
+                <Link to="/plan-ug">
+                  <div className="refer_btn">
+                    <button>Know More</button>
                   </div>
-                </>
-              );
-            })}
+                </Link>
+              </div>
+            </div>
+            <div className="refer_child_card">
+              <div className="refer_img">
+                <img src={PlanQB} alt="" />
+              </div>
+              <div className="refer_title">
+                <h5>Plan QB (Test Series 4.0)</h5>
+                <p>360-Degree Approach From NORCET To NCLEX!</p>
+
+                <Link to="/plan-mlb-lite">
+                  <div className="refer_btn">
+                    <button>Know More</button>
+                  </div>
+                </Link>
+              </div>
+            </div>
           </div>
         </div>
       </section>
@@ -551,14 +571,22 @@ const PlanMSC = () => {
                 <p className="doubt_sub_title">Still have doubts?</p>
                 <p>Read FAQs</p>
               </div>
-              <div className="center_btn">
-                <button>Know More</button>
+              <div className="center_btn" onClick={() => openModal()}>
+                <button>
+                  Know More
+                  <DoubtModel />{" "}
+                </button>
               </div>
             </div>
             <div className="right_img_doubt">
               <img src={apply} alt="" />
             </div>
           </div>
+          <DoubtModel
+            isOpen={modalOpen}
+            onClose={closeModal}
+            person={selectedFaculty}
+          />
         </div>
       </section>
 
@@ -566,7 +594,7 @@ const PlanMSC = () => {
         <div className="container">
           <div className="nextian_title">
             <div className="neaxtian_heading">
-              <h3>What our learners say about Plan A</h3>
+              <h3>What our learners say about the Course</h3>
             </div>
             <div className="nextian_btn">
               <button>See All</button>
@@ -589,40 +617,47 @@ const PlanMSC = () => {
               modules={[Navigation, Autoplay]}
               className="mySwiper"
               breakpoints={{
-                // When window width is >= 768px
                 300: {
                   slidesPerView: 1,
                   spaceBetween: 30,
                 },
-                // When window width is >= 768px
+
                 768: {
                   slidesPerView: 2,
                   spaceBetween: 30,
                 },
-                // When window width is >= 1024px
+
                 1024: {
                   slidesPerView: 4,
                   spaceBetween: 40,
                 },
               }}
             >
-              {planANextians.map((result, index) => {
-                const { studentName, testimonial, passYear, studentImage } =
-                  result;
+              {cPlusNextians.map((record, index) => {
+                const {
+                  studentName,
+                  passYear,
+                  rank,
+                  studentImage,
+                  testimonial,
+                } = record;
                 return (
                   <>
-                    <SwiperSlide key={result.id}>
+                    <SwiperSlide key={index.id}>
                       <div className="ournextian_card">
                         <div className="ournextian_img">
                           <img src={studentImage} alt={studentName} />
                         </div>
                         <div className="ournextian_title">
                           <h4>{studentName}</h4>
-                          <span>{passYear}</span>
+                          <span style={{ fontWeight: "bold" }}>{rank}</span>
+                          <span style={{ paddingLeft: "8px" }}>{passYear}</span>
+
                           <p>
                             {isExpanded[index]
                               ? testimonial
-                              : `${testimonial.substring(0, 140)}...`}
+                              : // : `${testimonial.substring(0, 123)}...`}
+                                `${testimonial.substring(0, 110)}...`}
                           </p>
                           <span
                             style={{
@@ -640,17 +675,12 @@ const PlanMSC = () => {
                   </>
                 );
               })}
+
               <div className="ournextian_button">
-                <div
-                  className="button-prev-slide"
-                  style={{ cursor: "pointer" }}
-                >
+                <div className="button-prev-slide">
                   <IoIosArrowForward />
                 </div>
-                <div
-                  className="button-next-slide"
-                  style={{ cursor: "pointer" }}
-                >
+                <div className="button-next-slide">
                   <IoIosArrowBack />
                 </div>
               </div>
@@ -658,7 +688,6 @@ const PlanMSC = () => {
           </div>
         </div>
       </section>
-      <Simplify />
     </>
   );
 };

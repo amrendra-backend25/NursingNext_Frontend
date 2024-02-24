@@ -38,7 +38,7 @@ const Digital = () => {
           <h3>Your Digital Coaching Pathshala</h3>
         </div>
         <div className="digital_parent">
-          {digitalApi.slice(0, 8).map((result) => {
+          {digitalApi.slice(0, 12).map((result) => {
             const { courseHeading, subHeading, subHeading2, courseImage } =
               result;
             return (

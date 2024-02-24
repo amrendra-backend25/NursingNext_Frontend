@@ -2,20 +2,24 @@
   padding: 4rem 0;
   background: #fcfbfb;
 }
+
 .digital_title {
   text-align: center;
 }
+
 .digital_title h3 {
   color: #333;
   font-size: 28px;
   font-weight: 700;
 }
+
 .digital_parent {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   margin-top: 50px;
   gap: 20px;
 }
+
 .digital_parent .digital_card {
   display: flex;
   align-items: center;
@@ -27,12 +31,20 @@
   border-radius: 8px;
   background: #fff;
 }
+
 .digital_parent .digital_img img {
   height: 35px;
   width: 35px;
+  transition: 1s linear;
+  cursor: pointer;
   /* border-radius: 50%; */
   /* border: 1px solid #707070; */
 }
+
+.digital_parent .digital_img img:hover {
+  transform: rotatey(360deg);
+}
+
 .digital_parent .digital_title {
   text-align: left;
   padding-left: 25px;
@@ -45,14 +57,17 @@
   line-height: 28px;
   color: #333;
 }
+
 .digital_parent .digital_title p {
   font-size: 16px;
   font-weight: 400;
   color: #707070;
 }
+
 .digital_btn {
   text-align: center;
 }
+
 .digital_btn .why_btn {
   width: 125px;
   height: 45px;
@@ -63,35 +78,42 @@
   font-size: 16px;
   font-weight: 500;
 }
-.digital_btn_submit{text-align: center;}
-.digital_section .digital_btn{
-    height: 44px;
-    width: 110px;
-    border-radius: 25px;
-    background-color: #dd0e0e;
-    color: #fff;
-    font-weight: 500;
-    cursor: pointer;
-    margin-top: 40px;
+
+.digital_btn_submit {
+  text-align: center;
+}
+
+.digital_section .digital_btn {
+  height: 44px;
+  width: 110px;
+  border-radius: 25px;
+  background-color: #dd0e0e;
+  color: #fff;
+  font-weight: 500;
+  cursor: pointer;
+  margin-top: 40px;
 }
 
 
 /* ============================Responsive Tablet/Phone========================*/
-@media screen and (max-width: 1024px){
+@media screen and (max-width: 1024px) {
   .digital_parent {
-      grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(3, 1fr);
   }
 }
 
-@media screen and (max-width: 768px){
+@media screen and (max-width: 768px) {
   .digital_parent {
-      grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(2, 1fr);
   }
 }
 
-@media screen and (max-width: 550px){
+@media screen and (max-width: 550px) {
   .digital_parent {
-      grid-template-columns: repeat(1, 1fr);
+    grid-template-columns: repeat(1, 1fr);
   }
-  .digital_title h3{font-size: 22px;}
+
+  .digital_title h3 {
+    font-size: 22px;
+  }
 }

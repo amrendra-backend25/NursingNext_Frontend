@@ -2,8 +2,7 @@ import "./Hero.css";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { useEffect, useState } from "react";
 import "swiper/css";
-import image1 from "/images/banner-1.jpg";
-import image2 from "/images/banner-2.jpg";
+// import image1 from "/images/banner-1.jpg";
 import user from "/images/person.png";
 import phone from "/images/phone.png";
 import email from "/images/email.png";
@@ -31,6 +30,7 @@ const Home = () => {
     email: "",
   });
   const [isError, setIsError] = useState([]);
+  const [isSuccess, setIsSuccess] = useState("");
   const [isHomeBanner, setIsHomeBanner] = useState([]);
 
   const handleChange = (e) => {
@@ -38,6 +38,7 @@ const Home = () => {
     const value = e.target.value;
     setUploadForm({ ...uploadForm, [name]: value });
     setIsError({ ...isError, [name]: "" });
+    setIsSuccess({ message: "" });
   };
 
   const validateForm = () => {
@@ -74,11 +75,12 @@ const Home = () => {
           data: JSON.stringify(newBanner),
         });
         setUploadForm(res.data.data);
-        //console.log(res.data);
-        toast.success("Form Submitted Successfully", {
-          position: "top-right",
-          autoClose: 1000,
-        });
+        console.log(res.data);
+        // toast.success("Form Submitted Successfully", {
+        //   position: "top-right",
+        //   autoClose: 1000,
+        // });
+        setIsSuccess({ message: res.data.message });
         setUploadForm({
           name: "",
           phone: "",
@@ -132,7 +134,7 @@ const Home = () => {
           loop={true}
           modules={[Navigation, Pagination, Autoplay]}
         >
-          {isHomeBanner.slice(0, 2).map((banner, index) => {
+          {isHomeBanner.slice(0, 7).map((banner, index) => {
             const { bannerImage } = banner;
             return (
               <>
@@ -157,7 +159,7 @@ const Home = () => {
         </Swiper>
         <div className="container">
           <form onSubmit={handleSubmit}>
-            <div className="header_from">
+            <div className="header_from_1">
               <div className="container">
                 <div className="text">Fill up & Claim the Offer!🎁</div>
                 <div className="inputs">
@@ -205,12 +207,16 @@ const Home = () => {
                   <div className="submit_container">
                     <button className="submit">Submit</button>
                   </div>
+                  {isSuccess.message && (
+                    <p className="success">{isSuccess.message}</p>
+                  )}
                 </div>
               </div>
             </div>
           </form>
         </div>
       </section>
+
       <section className="header_mobile_section">
         <div className="header_mobile_slider">
           <Swiper
@@ -230,67 +236,33 @@ const Home = () => {
             loop={true}
             modules={[Navigation, Pagination, Autoplay]}
           >
-            <SwiperSlide>
-              <div className="header_mobile_offers_slider">
-                <img src={image1} alt="" />
-                <div className="container">
-                  <div className="header_mobile_offers_content">
-                    <h3>Offer of the Month</h3>
-                    <h1>Discounts up to 40% Subscribe Now & Save</h1>
-                    <button className="header_mobile_offers_btn">
-                      Know More
-                    </button>
-                  </div>
-                </div>
-              </div>
-            </SwiperSlide>
-            <SwiperSlide>
-              <div className="header_mobile_offers_slider">
-                <img src={image2} alt="" />
-                <div className="container">
-                  <div className="header_mobile_offers_content">
-                    <h3>Offer of the Month</h3>
-                    <h1>Discounts up to 40% Subscribe Now & Save</h1>
-                    <button className="header_mobile_offers_btn">
-                      Know More
-                    </button>
-                  </div>
-                </div>
-              </div>
-            </SwiperSlide>
-            <SwiperSlide>
-              <div className="header_mobile_offers_slider">
-                <img src={image1} alt="" />
-                <div className="container">
-                  <div className="header_mobile_offers_content">
-                    <h3>Offer of the Month</h3>
-                    <h1>Discounts up to 40% Subscribe Now & Save</h1>
-                    <button className="header_mobile_offers_btn">
-                      Know More
-                    </button>
-                  </div>
-                </div>
-              </div>
-            </SwiperSlide>
-            <SwiperSlide>
-              <div className="header_mobile_offers_slider">
-                <img src={image2} alt="" />
-                <div className="container">
-                  <div className="header_mobile_offers_content">
-                    <h3>Offer of the Month</h3>
-                    <h1>Discounts up to 40% Subscribe Now & Save</h1>
-                    <button className="header_mobile_offers_btn">
-                      Know More
-                    </button>
-                  </div>
-                </div>
-              </div>
-            </SwiperSlide>
+            {isHomeBanner.slice(0, 7).map((banner) => {
+              const { bannerImage } = banner;
+              return (
+                <>
+                  <SwiperSlide>
+                    <div className="header_mobile_offers_slider">
+                      <img src={bannerImage} alt="" />
+                      <div className="container">
+                        <div className="header_mobile_offers_content">
+                          {/* <h3>Offer of the Month</h3>
+                          <h1>Discounts up to 40% Subscribe Now & Save</h1>
+                          <button className="header_mobile_offers_btn">
+                            Know More
+                          </button> */}
+                        </div>
+                      </div>
+                    </div>
+                  </SwiperSlide>
+                </>
+              );
+            })}
+
             <div className="header_mobile_offers_button">
-              <div className="button-prev-slide">
+              <div className="button-prev-slide" style={{ cursor: "pointer" }}>
                 <IoIosArrowForward />
               </div>
-              <div className="button-next-slide">
+              <div className="button-next-slide" style={{ cursor: "pointer" }}>
                 <IoIosArrowBack />
               </div>
             </div>
@@ -340,21 +312,13 @@ const Home = () => {
                   />
                   {isError.email && <p className="error">{isError.email}</p>}
                 </div>
-                {/* <div className="header_input_box">
-                  <label for="">Email</label>
-                    <input type="text" placeholder="Email" required />
-                  <textarea
-                    name=""
-                    id=""
-                    cols="30"
-                    rows="5"
-                    placeholder="Message*"
-                  ></textarea>
-                  <p>error</p>
-                </div> */}
+
                 <div className="header_input_btn">
                   <button type="submit">Submit</button>
                 </div>
+                {isSuccess.message && (
+                  <p className="success">{isSuccess.message}</p>
+                )}
               </form>
             </div>
           </div>

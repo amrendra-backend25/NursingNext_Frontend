@@ -1,5 +1,6 @@
 const base = "/jsx";
 const baseURL = "http://43.205.148.119:7000/api/v1/";
+//const baseURL = "https://web.nnlone.com/api/v1/";
 //const baseURL = "http://localhost:7000/api/v1/";
 const baseRoute = "/";
 const imageURL = "https://images.com";
@@ -19,9 +20,12 @@ export const Paths = {
     HomeFAQ: baseURL + "all/faq",
     OffersForm: baseURL + "query/form",
     NNLExams: baseURL + "all/exams",
+    AIIMSNORCETBanner: baseURL + "all/norcet/banner",
+    CHOBanner: baseURL + "all/cho/banner",
     NNLExamsBanner: baseURL + "all/exams/banner",
     MastermindBanner: baseURL + "all/mastermind/banner",
     HomeBanner: baseURL + "all/home/banner",
+    BlogsBanner: baseURL + "all/blogs/banner",
     NextiansBanner: baseURL + "all/nextians/banner",
     AboutUsBanner: baseURL + "all/about-us/banner",
     CourseBanner: baseURL + "all/courses/banner",
@@ -44,7 +48,35 @@ export const Paths = {
     OfferOfMonths: baseURL + "all/months/offers/",
     NewsRoom: baseURL + "all/newsroom/",
     NewsRoomBanner: baseURL + "all/newsroom/banner/",
+    CPlusVideos: baseURL + "all/c-plus/video",
+    CPlusStats: baseURL + "all/c-plus/stats",
+    CPlusSalient: baseURL + "all/c-plus/salient",
+    CPlusKnowMorePrices: baseURL + "all/c-plus/price",
+    CPlusReferCourses: baseURL + "all/c-plus/refer",
+    PlanUGVideos: baseURL + "all/ug/video",
+    PlanUGStats: baseURL + "all/ug/stats",
+    PlanUGSalient: baseURL + "all/ug/salient",
+    PlanUGKnowMorePrices: baseURL + "all/ug/price",
+    PlanMLBLiteBanner: baseURL + "all/plan-mlb-lite/banner",
+    MLBLiteVideos: baseURL + "all/mlb-lite/video",
+    MLBLiteStats: baseURL + "all/mlb-lite/stats",
+    MLBLiteSalient: baseURL + "all/mlb-lite/salient",
+    MLBLiteKnowMorePrice: baseURL + "all/mlb-lite/price",
+    PlanMLBPROBanner: baseURL + "all/plan-mlb-pro/banner",
+    MLBPROVideos: baseURL + "all/mlb-pro/video",
+    MLBPROKnowMorePrice: baseURL + "all/mlb-pro/price",
+    MLBPROStats: baseURL + "all/mlb-pro/stats",
+    MLBPROSalient: baseURL + "all/mlb-pro/salient",
+    PlanZeroVideo: baseURL + "all/zero/video",
+    PlanZeroOffersPrice: baseURL + "all/plan/zero/price",
+    PlanZeroSalient: baseURL + "all/plan/zero/salient",
+    PlanZeroStats: baseURL + "all/plan/zero/stats",
+    PlanMscVideo: baseURL + "all/msc/video",
+    PlanMscOffersPrice: baseURL + "all/msc/price",
+    PlanMscSalient: baseURL + "all/msc/salient",
+    PlanMscStats: baseURL + "all/msc/stats",
   },
+
   imagePathURL: {
     URL: imageURL,
   },

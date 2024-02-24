@@ -5,6 +5,7 @@ import { Paths } from "../../config/configAPI";
 import axios from "axios";
 const AiimsNorcet = () => {
   const [examsTabs, setExamsTabs] = useState([]);
+  const [norcetBanner, setNorcetBanner] = useState([]);
   const [setIsError] = useState("");
 
   const showNorcetExams = async () => {
@@ -22,12 +23,31 @@ const AiimsNorcet = () => {
     }
   };
 
+  const showAIIMSNORCETBanner = async () => {
+    try {
+      const response = await Paths.EndpointsURL.AIIMSNORCETBanner;
+      const record = await axios.get(response, {
+        headers: {
+          "Content-type": "application/json",
+        },
+      });
+      return record.data.data;
+    } catch (error) {
+      setIsError(error.msg);
+      return [];
+    }
+  };
+
   //Logic for received data in parallel
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const [examsData] = await Promise.all([showNorcetExams()]);
+        const [examsData, NorcetData] = await Promise.all([
+          showNorcetExams(),
+          showAIIMSNORCETBanner(),
+        ]);
         setExamsTabs(examsData);
+        setNorcetBanner(NorcetData);
       } catch (error) {
         setIsError(error.msg);
       }
@@ -38,21 +58,29 @@ const AiimsNorcet = () => {
 
   return (
     <>
-      <section className="allexam_section">
-        <div className="container">
-          <div className="allexam_header">
-            <h2>All India Nursing Exams</h2>
-            <p>NURSING EDUCATION</p>
-          </div>
-        </div>
-      </section>
+      {norcetBanner.slice(0, 1).map((banner) => {
+        const { bannerName, bannerImages } = banner;
+        return (
+          <>
+            <section
+              className="allexam_section"
+              style={{ backgroundImage: `url(${bannerImages})` }}
+            >
+              <div className="container">
+                <div className="allexam_header">
+                  <h2>{bannerName}</h2>
+                </div>
+              </div>
+            </section>
+          </>
+        );
+      })}
 
       <section className="tab_section">
         <div className="container">
           <div className="tab_sub_title">
             <h3>All India Nursing Exams</h3>
           </div>
-
           {/* Tab buttons */}
           <div className="tab-content">
             <div className="tab_parent">
@@ -95,7 +123,7 @@ const AiimsNorcet = () => {
         </div>
       </section>
 
-      <section className="month_offer_section">
+      {/* <section className="month_offer_section">
         <div className="container">
           <div className="month_offer_title">
             <h3>OFFER OF THE MONTH</h3>
@@ -127,7 +155,7 @@ const AiimsNorcet = () => {
             </div>
           </div>
         </div>
-      </section>
+      </section> */}
     </>
   );
 };

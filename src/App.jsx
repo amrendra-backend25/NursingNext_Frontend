@@ -1,7 +1,10 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { lazy, Suspense, useEffect, useState } from "react";
 import { ColorRing } from "react-loader-spinner";
-import AllFaq from "./pages/AllFaq/AllFaq";
+const PlanMLBPro = lazy(() => import("./pages/PlanMLBPRO/PlanMLBPro"));
+const InnerBlogs = lazy(() => import("./pages/InnerBlogs/InnerBlogs"));
+const AllFaq = lazy(() => import("./pages/AllFaq/AllFaq"));
+const PlanMLBLite = lazy(() => import("./pages/PlanMLBLite/PlanMLBLite"));
 const MastermindSeeAll = lazy(() =>
   import("./pages/MastermindSeeAll/MastermindSeeAll")
 );
@@ -41,7 +44,7 @@ const PlanCPlus = lazy(() => import("./pages/PlanC+/PlanCPlus"));
 const PlanMSC = lazy(() => import("./pages/PlanMSC/PlanMSC"));
 const PlanUG = lazy(() => import("./pages/PlanUG/PlanUG"));
 const PlanTH = lazy(() => import("./pages/PlanTH/PlanTH"));
-const PlanRRR = lazy(() => import("./pages/PlanRRR/PlanRRR"));
+const PlanQB = lazy(() => import("./pages/PlanQB/PlanQB"));
 const PlanNNLVSL = lazy(() => import("./pages/PlanNNLVSL/PlanNNLVSL"));
 //const MainExam = lazy(() => import("./pages/MainExam/MainExam"));
 const Offers = lazy(() => import("./pages/Offers/Offers"));
@@ -88,13 +91,25 @@ const App = () => {
           <Route path="/plan-msc" element={showLazyTime && <PlanMSC />} />
           <Route path="/plan-ug" element={showLazyTime && <PlanUG />} />
           <Route path="/plan-th" element={showLazyTime && <PlanTH />} />
-          <Route path="/plan-rrr" element={showLazyTime && <PlanRRR />} />
-
+          <Route path="/plan-qb" element={showLazyTime && <PlanQB />} />
+          <Route path="/plan-np" element={showLazyTime && <PlanNNLVSL />} />
+          <Route
+            path="/plan-mlb-lite"
+            element={showLazyTime && <PlanMLBLite />}
+          />
+          <Route
+            path="/plan-mlb-pro"
+            element={showLazyTime && <PlanMLBPro />}
+          />
           {/* <Route path="/testing" element={showLazyTime && <MainExam />} /> */}
 
           <Route path="/offers" element={showLazyTime && <Offers />} />
           <Route path="/newsroom" element={showLazyTime && <NewsRoom />} />
           <Route path="/blogs" element={showLazyTime && <Blogs />} />
+          <Route
+            path="/blogs/innerblogs"
+            element={showLazyTime && <InnerBlogs />}
+          />
           <Route
             path="/aiims-norcet"
             element={showLazyTime && <AiimsNorcet />}
@@ -107,10 +122,7 @@ const App = () => {
           <Route path="/kerala-psc-dhs" element={showLazyTime && <KERALA />} />
           <Route path="/nimhans" element={showLazyTime && <NIMHANS />} />
           <Route path="/all-exams" element={showLazyTime && <AllExams />} />
-          <Route
-            path="/plan-nnl-vsl"
-            element={showLazyTime && <PlanNNLVSL />}
-          />
+
           <Route path="/all-courses" element={showLazyTime && <MainCourse />} />
           <Route path="/faq" element={showLazyTime && <DynamicAccordion />} />
           <Route path="/all-faq" element={showLazyTime && <AllFaq />} />

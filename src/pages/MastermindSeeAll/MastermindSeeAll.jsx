@@ -9,12 +9,15 @@ import hiring from "/images/aboutUs/hiring.png";
 import { IoIosArrowBack, IoIosArrowForward } from "react-icons/io";
 import Simplify from "../Simplify/Simplify";
 import { useState, useEffect } from "react";
-import FacilityModel from "./FacilityModel";
+import FacilityModel from "../MastermindSeeAll/FacilityModel";
 import { Paths } from "../../config/configAPI";
 import axios from "axios";
+import DoubtModel from "../DoubtModel/DoubtModel";
 const MastermindSeeAll = () => {
   const [modalOpen, setModalOpen] = useState(false);
+  const [modalOpen1, setModalOpen1] = useState(false);
   const [selectedFaculty, setSelectedFaculty] = useState({});
+  const [selectedFaculty1, setSelectedFaculty1] = useState({});
   const [seeAllMastermind, setSeeAllMastermind] = useState([]);
   const [mastermindBanner, setMastermindBanner] = useState([]);
   const [setIsError] = useState("");
@@ -28,6 +31,15 @@ const MastermindSeeAll = () => {
 
   const closeModal = () => {
     setModalOpen(false);
+  };
+
+  const openModal1 = (person1) => {
+    setSelectedFaculty1(person1);
+    setModalOpen1(true);
+  };
+
+  const closeModal1 = () => {
+    setModalOpen1(false);
   };
 
   const showAllMasterMind = async () => {
@@ -157,8 +169,7 @@ const MastermindSeeAll = () => {
           <div>
             <div className="master_seeall_img">
               {seeAllMastermind.map((person, index) => {
-                const { facilityName, facilityImage, specialization, subject } =
-                  person;
+                const { facilityName, facilityImage, specialization } = person;
                 return (
                   <>
                     <div
@@ -174,7 +185,7 @@ const MastermindSeeAll = () => {
                         <p className="master_seeall_designation">
                           {specialization}
                         </p>
-                        <p className="master_seeall_study">{subject}</p>
+                        {/* <p className="master_seeall_study">{subject}</p> */}
                         <div className="readmore_dtn">
                           <button>Read More</button>
                         </div>
@@ -206,14 +217,22 @@ const MastermindSeeAll = () => {
                 <p className="doubt_sub_title">Still have doubts?</p>
                 <p>Read FAQs</p>
               </div>
-              <div className="center_btn">
-                <button>Know More</button>
+              <div className="center_btn" onClick={() => openModal1()}>
+                <button style={{ cursor: "pointer" }}>
+                  Know More <DoubtModel />
+                </button>
               </div>
             </div>
+
             <div className="right_img_doubt">
               <img src={apply} alt="" />
             </div>
           </div>
+          <DoubtModel
+            isOpen={modalOpen1}
+            onClose={closeModal1}
+            person={selectedFaculty1}
+          />
         </div>
       </section>
 
@@ -223,9 +242,6 @@ const MastermindSeeAll = () => {
             <div className="neaxtian_faculty_heading">
               <h3>What our learners say about Plan MSC</h3>
             </div>
-            {/* <div className="nextian_faculty_btn">
-              <button>See All</button>
-            </div> */}
           </div>
 
           <div className="ournextian_faculty_section_slider">
