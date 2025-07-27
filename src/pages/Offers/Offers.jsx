@@ -5,7 +5,8 @@ import user from "/images/person.png";
 import phone from "/images/phone.png";
 import email from "/images/email.png";
 import message from "/images/offers/message.png";
-import icon1 from "/images/plan_zero/icon1.png";
+import PlanC from "/images/courses/PlanC.png";
+import Planug from "/images/courses/Planug.png";
 import help from "/images/aboutUs/Help.png";
 import shape from "/images/aboutUs/Shape.svg";
 import FAQ from "/images/aboutUs/FAQs.png";
@@ -15,29 +16,35 @@ import "swiper/css/navigation";
 import "swiper/css/pagination";
 import { IoIosArrowBack, IoIosArrowForward } from "react-icons/io";
 import { FaCheck } from "react-icons/fa6";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useMemo } from "react";
 import { Paths } from "../../config/configAPI";
 import axios from "axios";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import { ToastContainer, toast } from "react-toastify";
 import DoubtModel from "../DoubtModel/DoubtModel";
 import FeedbackModel from "../FeedbackModel/FeedbackModel";
+import Layout from "../Layout/Layout";
+import { useNavigate } from "react-router-dom";
+import { createoOffersLead } from "../LeadsquaredService/LeadsquaredService";
 const Offers = () => {
   const [masterAllCourses, setMasterAllCourses] = useState([]);
   const [offersBanner, setOffersBanner] = useState([]);
   // const [selectedValidity, setSelectedValidity] = useState("");
-
+  const location = useLocation();
+  const [canonicalUrl] = useState("");
   const [offersForm, setOffersForm] = useState({
     name: "",
     phone: "",
     email: "",
     message: "",
   });
+  const navigate = useNavigate();
+  const [setIsValidNum] = useState(true);
   const [isError, setIsError] = useState([]);
   const [isSuccess, setIsSuccess] = useState("");
   const [modalOpen, setModalOpen] = useState(false);
   const [selectedFaculty, setSelectedFaculty] = useState({});
-
+  const [monthsOffers, setMonthsOffers] = useState([]);
   const [modalOpen1, setModalOpen1] = useState(false);
   const [selectedFaculty1, setSelectedFaculty1] = useState({});
 
@@ -45,6 +52,8 @@ const Offers = () => {
     const name = e.target.name;
     const value = e.target.value;
     setOffersForm({ ...offersForm, [name]: value });
+    const isValidNumber = /^\d{10}$/.test(value);
+    setIsValidNum(isValidNumber);
     setIsError({ ...isError, [name]: "" });
     setIsSuccess({ message: "" });
   };
@@ -56,10 +65,17 @@ const Offers = () => {
       newErrors.name = "Name is Required";
       isValid = false;
     }
-    if (!offersForm.phone.trim()) {
-      newErrors.phone = "Phone is Required";
+    if (!offersForm.phone) {
+      newErrors.phone = "Phone number is Required";
+      isValid = false;
+    } else if (offersForm.phone.length !== 10) {
+      newErrors.phone = "Phone number must be 10 digits long";
+      isValid = false;
+    } else if (!/^\d{10}$/.test(offersForm.phone)) {
+      newErrors.phone = "Phone number can only contain digits";
       isValid = false;
     }
+
     if (!offersForm.email.trim()) {
       newErrors.email = "Email is Required";
       isValid = false;
@@ -74,6 +90,7 @@ const Offers = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    createoOffersLead(offersForm);
     const newOffers = { ...offersForm, id: new Date() };
     if (validateForm()) {
       try {
@@ -99,58 +116,70 @@ const Offers = () => {
           email: "",
           message: "",
         });
+        navigate("/thank-you");
+        setTimeout(() => {
+          setIsSuccess("");
+        }, 2000);
       } catch (error) {
         toast.error("Error uploading data:", error);
       }
     }
   };
 
-  const coursesMasterMind = async () => {
-    try {
-      const response = await Paths.EndpointsURL.HomeMasterMind;
-      const record = await axios.get(response, {
-        headers: {
-          "Content-type": "application/json",
-        },
-      });
-      return record.data.data;
-    } catch (error) {
-      setIsError(error.msg);
-      return [];
-    }
-  };
+  const coursesMasterMind = useMemo(
+    () => async () => {
+      try {
+        const response = await Paths.EndpointsURL.HomeMasterMind;
+        const record = await axios.get(response, {
+          headers: {
+            "Content-type": "application/json",
+          },
+        });
+        return record.data.data;
+      } catch (error) {
+        setIsError(error.msg);
+        return [];
+      }
+    },
+    []
+  );
 
-  const showOffersBanner = async () => {
-    try {
-      const response = await Paths.EndpointsURL.OffersBanner;
-      const record = await axios.get(response, {
-        headers: {
-          "Content-type": "application/json",
-        },
-      });
-      return record.data.data;
-    } catch (error) {
-      setIsError(error.msg);
-      return [];
-    }
-  };
+  const showOffersBanner = useMemo(
+    () => async () => {
+      try {
+        const response = await Paths.EndpointsURL.OffersBanner;
+        const record = await axios.get(response, {
+          headers: {
+            "Content-type": "application/json",
+          },
+        });
+        return record.data.data;
+      } catch (error) {
+        setIsError(error.msg);
+        return [];
+      }
+    },
+    []
+  );
 
-  const [monthsOffers, setMonthsOffers] = useState([]);
-  const showOffersOfmonths = async (validity) => {
-    try {
-      const response =
-        (await Paths.EndpointsURL.OfferOfMonths) + `?validity=${validity}`;
-      const record = await axios.get(response, {
-        headers: {
-          "Content-type": "application/json",
-        },
-      });
-      return record.data.data;
-    } catch (error) {
-      setIsError(error.message);
-      return [];
-    }
-  };
+  const showOffersOfmonths = useMemo(
+    () => async (validity) => {
+      try {
+        const response =
+          (await Paths.EndpointsURL.OfferOfMonths) + `?validity=${validity}`;
+        const record = await axios.get(response, {
+          headers: {
+            "Content-type": "application/json",
+          },
+        });
+        return record.data.data;
+      } catch (error) {
+        setIsError(error.message);
+        return [];
+      }
+    },
+    []
+  );
 
   useEffect(() => {
     const fetchData = async () => {
@@ -167,8 +196,15 @@ const Offers = () => {
         setIsError(error.message);
       }
     };
+
+    const currentUrl = window.location.origin + location.pathname;
+    const canonicalLink = document.querySelector('link[rel="canonical"]');
+    if (canonicalLink) {
+      canonicalLink.setAttribute("href", currentUrl);
+    }
+
     fetchData();
-  });
+  }, [showOffersBanner, coursesMasterMind, showOffersOfmonths, location]);
 
   const openModal = () => {
     setSelectedFaculty();
@@ -189,6 +225,11 @@ const Offers = () => {
   };
   return (
     <>
+      <Layout
+        title="Offers - NNL One "
+        description="Explore exclusive offers at NNL One. Elevate your learning experience with our specialized courses and resources"
+      ></Layout>
+      <link rel="canonical" href={canonicalUrl} />
       <section className="offers_section">
         <Swiper
           spaceBetween={50}
@@ -207,7 +248,7 @@ const Offers = () => {
           loop={true}
           modules={[Navigation, Pagination, Autoplay]}
         >
-          {offersBanner.slice(0, 2).map((banner) => {
+          {offersBanner.slice(0, 20).map((banner) => {
             const { bannerImages } = banner;
             return (
               <>
@@ -253,7 +294,7 @@ const Offers = () => {
                   <div className="input_form">
                     <img src={phone} alt="" />
                     <input
-                      type="phone"
+                      type="number"
                       placeholder="Phone*"
                       name="phone"
                       id="phone"
@@ -481,19 +522,17 @@ const Offers = () => {
                   },
                 }}
               >
-                {monthsOffers.slice(0, 4).map((offers) => {
+                {monthsOffers.slice(0, 12).map((offers) => {
                   const {
                     offersBanner,
                     description,
                     validity6,
                     validity12,
                     validity24,
-
                     price6,
                     price12,
                     price24,
                   } = offers;
-                  const sentences = description.split(". ");
                   return (
                     <>
                       <SwiperSlide>
@@ -504,32 +543,25 @@ const Offers = () => {
                           <div className="plan_validity">
                             <div className="validity_content">
                               <p className="validity_month">{validity6}</p>
-                              <p className="validity_price">₹ {price6}</p>
+                              <p className="validity_price">{price6}</p>
                             </div>
                             <div className="validity_content">
                               <p className="validity_month">{validity12}</p>
-                              <p className="validity_price">₹ {price12}</p>
+                              <p className="validity_price">{price12}</p>
                             </div>
                             <div className="validity_content">
                               <p className="validity_month">{validity24}</p>
-                              <p className="validity_price">₹ {price24}</p>
+                              <p className="validity_price"> {price24}</p>
                             </div>
                           </div>
 
                           <div className="underline_plan"></div>
                           <div className="lectures_content">
-                            {sentences.map((sentence, sentenceIndex) => {
-                              return (
-                                <>
-                                  <p key={sentenceIndex}>
-                                    <span>
-                                      <FaCheck />
-                                    </span>
-                                    {sentence}
-                                  </p>
-                                </>
-                              );
-                            })}
+                            <p
+                              dangerouslySetInnerHTML={{
+                                __html: description,
+                              }}
+                            ></p>
                           </div>
                         </div>
                       </SwiperSlide>
@@ -561,15 +593,13 @@ const Offers = () => {
 
       <section className="master_slider">
         <div className="container mm_container">
-          <h3>Receive Step- By- Step Guidance from our Great Team</h3>
           <div className="master_head_2">
-            <div className="master_two_part_2">
-              <p>
-                Our Teaching Experts are here to guide you at every step of the
-                preparation, enabling you to run the course well and crack the
-                entrance exam.
-              </p>
-            </div>
+            <h3>Receive Step by Step Guidance from our Mastermind Faculties</h3>
+            <p>
+              Our teaching experts are here to guide you at every step of the
+              preparation, enabling you to strategically study and ace the
+              entrance exams.
+            </p>
           </div>
           <div className="master_slider_main">
             <Swiper
@@ -654,7 +684,7 @@ const Offers = () => {
           <div className="refer_card_parent">
             <div className="refer_child_card">
               <div className="refer_img">
-                <img src={icon1} alt="" />
+                <img src={PlanC} alt="" />
               </div>
               <div className="refer_title">
                 <h5>
@@ -674,7 +704,7 @@ const Offers = () => {
             </div>
             <div className="refer_child_card">
               <div className="refer_img">
-                <img src={icon1} alt="" />
+                <img src={Planug} alt="" />
               </div>
               <div className="refer_title">
                 <h5>
@@ -687,7 +717,7 @@ const Offers = () => {
                   Learning!
                 </p>
                 <div className="refer_btn">
-                  <Link to="/plan-b">
+                  <Link to="/plan-ug">
                     <button>Know More</button>
                   </Link>
                 </div>

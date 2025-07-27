@@ -1,0 +1,51 @@
+.allfaq_accordian_section{padding: 20px 0 50px;}
+.allfaq_accordian_section .accordian_title h3{
+    font-size: 32px;
+    color: #222;
+    line-height: 40px;
+    font-weight: 600;
+}
+.allfaq_accordian_section .accordian_title p{
+    font-size: 15px;
+    font-weight: 400;
+    line-height: 20px;
+    color: #222;
+    padding: 15px 0;
+}
+.allfaq_accordion-item{border-bottom: 1px solid #dedede;}
+.allfaq_accordion-header{
+  display: flex;
+  justify-content: space-between;
+  padding: 15px 0;
+  cursor: pointer;
+  background-color: #fff;
+  font-weight: 700;
+  font-size: 16px;
+  color: #333;
+}
+.allfaq_accordion-content{
+  padding: 10px;
+  background: #e7e7e7;
+  margin-left: 10px;
+  border-radius: 5px;
+  margin-top: -7px;
+}
+.allfaq_accordion-icon {
+  font-size: 23px;
+}
+
+/* ============================Responsive Tablet========================*/
+@media screen and (max-width:1024px){
+
+}
+
+@media screen and (max-width:768px){
+
+}
+
+@media screen and (max-width:500px){
+  .allfaq_accordian_section{padding: 50px 0 50px;}
+  .allfaq_accordian_section .accordian_title h3{
+    font-size: 24px;
+  }
+}

@@ -1,0 +1,429 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap');
+
+.App {
+  height: 100vh;
+  display: flex;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Roboto', sans-serif;
+}
+
+.career_header {
+  display: flex;
+  align-items: center;
+  margin-top: 70px;
+}
+
+.career_form {
+  width: 35%;
+  background-color: #11658A;
+}
+
+.career_title {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  justify-content: center;
+  align-items: center;
+}
+
+.career_img img {
+  width: 200px;
+}
+
+.career_content {
+  max-width: 450px;
+  text-align: center;
+}
+
+.career_content h2 {
+  margin: 0px 0 10px;
+  font-weight: 700;
+  font-size: 2.5rem;
+  color: #fff;
+}
+
+.career_content p {
+  margin: 0;
+  text-align: center;
+  font-size: 1rem;
+  font-weight: 300;
+  color: #fff;
+  line-height: 1.4rem;
+}
+
+.career_content span {
+  font-weight: 600;
+}
+
+.form {
+  width: 65%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.form-container {
+  width: 500px;
+  height: 550px;
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 0 15px 1px rgba(0, 0, 0, 0.4);
+  display: flex;
+  flex-direction: column;
+}
+
+.form-container .header {
+  flex: 0%;
+  display: grid;
+  place-items: center;
+}
+
+.form-container .header h2 {
+  font-size: 1.6rem;
+  font-weight: 600;
+  margin-bottom: 0rem;
+  padding: 10px 0;
+  color: #333;
+}
+
+.form-container .header h3 {
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin: 0;
+  padding-bottom: .8rem;
+  color: #333;
+}
+
+.form-container .body {
+  flex: 60%;
+}
+
+.form-container .footer {
+  flex: 20%;
+  display: flex;
+  justify-content: center;
+}
+
+
+.prev_btn {
+  background-color: #DD0E0E;
+  color: white;
+  border: none;
+  cursor: pointer;
+  font-weight: bold;
+  border-radius: 7px;
+  width: 100px;
+  height: 40px;
+  padding: 10px 5px;
+  margin: 5px;
+}
+
+.prev_btn.disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
+
+.prev_btn:not(.disabled):hover {
+  border: 2px solid #DD0E0E;
+  color: #DD0E0E;
+  background: transparent;
+}
+
+
+
+.form-container .footer .next_btn {
+  border-radius: 7px;
+  width: 100px;
+  height: 40px;
+  background-color: #DD0E0E;
+  font-weight: bold;
+  color: white;
+  border: 0 none;
+  cursor: pointer;
+  padding: 10px 5px;
+  margin: 5px;
+}
+
+.sign-up-container {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.sign-up-container input {
+  margin: 10px;
+  width: 400px;
+  height: 45px;
+  padding: 0 20px;
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: #666;
+}
+
+/* .personal-info-container {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+} */
+
+.personal_info {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.personal_info input {
+  margin: 10px;
+  width: 400px;
+  height: 45px;
+  padding-left: 20px;
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+.joiner_box {
+  margin: 0 40px;
+  color: #666;
+}
+
+.joiner_box h3 {
+  font-size: 1rem;
+  font-weight: 400;
+}
+
+.joiner_box .joiner_radio {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  gap: 50px;
+}
+
+
+/* PROGRESS BAR */
+.progressbar {
+  width: 500px;
+  height: 10px;
+  background-color: white;
+  margin-bottom: 30px;
+}
+
+.progressbar div {
+  width: 25%;
+  height: 100%;
+  background-color: #DD0E0E;
+  border-radius: 10px;
+}
+
+.other-info-container form {
+  /* height: 100%; */
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.other-info-container input {
+  margin: 10px;
+  width: 400px;
+  height: 40px;
+  padding-left: 20px;
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+
+.upload-info-container {
+  /* height: 100%; */
+  width: 100%;
+  /* display: flex; */
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.upload-info-container form {
+  margin: 10px;
+  width: 440px;
+  height: 40px;
+  padding-left: 20px;
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+.select-box {
+  width: 100%;
+  padding-top: 1rem;
+}
+
+.select-box #select_apply {
+  width: 100%;
+  height: 45px;
+  border-color: #cacaca;
+  border-radius: 6px;
+  font-size: 1rem;
+  padding-left: 15px;
+  font-weight: 500;
+  text-transform: capitalize;
+  color: #666;
+}
+
+.select-box #select_apply option {
+  color: #000;
+}
+
+.upload_radio {
+  display: flex;
+  gap: 50PX;
+}
+
+.upload_box {
+  color: #666;
+}
+
+.upload_box h3 {
+  font-size: 1rem;
+  font-weight: 400;
+}
+
+.input_form_data {
+  margin-top: 10px;
+}
+
+.input_form_data input {
+  position: relative;
+  height: 40px;
+  width: 93%;
+  outline: none;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  font-size: .9rem;
+  color: #707070;
+  padding: 0px 15px;
+  margin-top: 8px;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.customfile::-webkit-file-upload-button {
+  background: #999999;
+  color: #fff;
+  padding: 5px 10px;
+  border: none;
+  border-radius: 50px;
+  font-size: 12px;
+  margin-top: 8px;
+}
+
+.career_input_box input {
+  outline: none;
+  border-radius: 5px;
+  border: 1px solid #cacaca;
+}
+
+.career_input_box input.invalid {
+  border: 2px solid red;
+}
+
+.career_input_box input.valid {
+  border: 2px solid green;
+}
+
+.valid {
+  border: 2px solid green;
+}
+
+.invalid {
+  border: 2px solid red;
+}
+
+.footer_btn {
+  margin-top: 40%;
+  text-align: center;
+}
+
+.form-container .footer_btn .next_btn {
+  border-radius: 7px;
+  width: 100px;
+  height: 40px;
+  background-color: #DD0E0E;
+  font-weight: bold;
+  color: white;
+  border: 0 none;
+  cursor: pointer;
+  padding: 10px 5px;
+  margin: 5px;
+}
+
+@media (min-width: 768px) and (max-width: 1023px) {
+  .App {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .career_form {
+    width: 100%;
+  }
+
+  .form {
+    width: 100%;
+  }
+}
+
+@media (min-width: 320px) and (max-width: 767px) {
+  .App {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .career_form {
+    width: 100%;
+  }
+
+  .form {
+    width: 100%;
+  }
+
+  .form-container {
+    width: 360px;
+  }
+
+  .sign-up-container input {
+    width: 280px;
+  }
+
+  .personal_info input {
+    width: 280px;
+  }
+
+  .other-info-container input {
+    width: 280px;
+  }
+
+  .select-box #select_apply {
+    width: 70%;
+  }
+
+  .input_form_data input {
+    width: 63%;
+  }
+
+  .progressbar {
+    width: 300px;
+  }
+}

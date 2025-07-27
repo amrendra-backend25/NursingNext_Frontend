@@ -4,6 +4,8 @@ import App from "./App.jsx";
 import "./index.css";
 import { createGlobalStyle } from "styled-components";
 import "react-toastify/dist/ReactToastify.css";
+import "react-quill/dist/quill.snow.css";
+import "react-lazy-load-image-component/src/effects/blur.css";
 
 const GlobalStyle = createGlobalStyle`
 // @import url('https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500;600;700&display=swap');

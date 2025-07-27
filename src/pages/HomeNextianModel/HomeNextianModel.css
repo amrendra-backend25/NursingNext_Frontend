@@ -1,0 +1,406 @@
+/* Add your styles for the modal and other components here */
+.nextian_modal {
+    display: none;
+    position: fixed;
+    top: 0%;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(120, 120, 120, 0.2);
+    justify-content: center;
+    align-items: center;
+    z-index: 15;
+}
+
+.nextian_modal_content {
+    background-color: #fefefe;
+    padding: 0px 20px 20px;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+
+.nextian_modal_header {
+    text-align: right;
+}
+
+.nextian_modal_close {
+    font-size: 30px;
+    cursor: pointer;
+    color: #333;
+}
+
+.show {
+    display: flex;
+}
+
+.master_nextian_content {
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    gap: 60px;
+    /* padding: 0px 80px 15px; */
+    max-width: 75vw;
+    min-height: 50vh;
+}
+
+.nextian_image_left {
+    width: 30%;
+    text-align: center;
+    /* background-color: #F5F5F7; */
+    border-radius: 10px;
+}
+
+.nextian_image_left img {
+    width: 300px;
+    height: 300px;
+}
+
+.nextian_description_right {
+    width: 70%;
+}
+
+.nextian_master_title h2 {
+    color: #222;
+    font-weight: 700;
+    font-size: 45px;
+}
+
+.nextian_master_title .nextian_degree {
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 22px;
+    max-width: 500px;
+    color: #222;
+    padding: 10px 0;
+}
+
+.nextian_master_title .nextian_medal {
+    font-size: 30px;
+    font-weight: 700;
+    color: #716d6d;
+    padding-bottom: 30px;
+}
+
+.nextian_master_title p {
+    font-size: 15px;
+    line-height: 23px;
+    color: #707070;
+    padding-bottom: 8px;
+    padding-right: 100px;
+}
+
+.faculty_btn button {
+    background: transparent;
+    font-size: 16px;
+    font-weight: 500;
+    text-transform: capitalize;
+    margin-top: 10px;
+    text-decoration: underline;
+}
+
+/* success slider */
+.nextian_success_slider_section {
+    background: #EBEBEB;
+}
+
+/* .nextian_success_slider_section .swiper-wrapper {
+    z-index: -99;
+    position: relative;
+  } */
+
+.nextian_title_slider_child {
+    text-align: center;
+    padding: 50px;
+}
+
+.nextian_title_heading h4 {
+    font-size: 32px;
+    font-weight: 700;
+    line-height: 36px;
+    color: #333;
+    padding-bottom: 10px;
+}
+
+.nextian_success_img_content .nextian_name {
+    font-size: 20px;
+    font-weight: 500;
+    line-height: 26px;
+    color: #222;
+    padding-top: 10px;
+}
+
+.nextian_success_img_content .nextian_rank {
+    font-size: 16px;
+    font-weight: 400;
+    color: #707070;
+    line-height: 20px;
+    padding: 10px 0px;
+}
+
+.nextian_success_img_content .nextian_content {
+    font-size: 15px;
+    font-weight: 400;
+    color: #707070;
+    line-height: 20px;
+    max-width: 800px;
+    margin: auto;
+    padding-bottom: 10px;
+}
+
+.nextian_title_slider_parent .swiper-button-prev {
+    border: 1px solid #d0d0d0;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+}
+
+.nextian_title_slider_parent .swiper-button-next {
+    border: 1px solid #d0d0d0;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+}
+
+.nextian_title_slider_parent .swiper-button-next:after {
+    color: #555;
+    font-size: 16px;
+    font-weight: 600;
+}
+
+.nextian_title_slider_parent .swiper-button-prev:after {
+    color: #555;
+    font-size: 16px;
+    font-weight: 600;
+}
+
+/* Add your styles for the modal and other components here */
+.nextian_modal {
+    display: none;
+    position: fixed;
+    top: 0%;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(120, 120, 120, 0.2);
+    justify-content: center;
+    align-items: center;
+    z-index: 15;
+}
+
+.nextian_modal_content {
+    background-color: #fefefe;
+    padding: 0px 20px 20px;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+
+.nextian_modal_header {
+    text-align: right;
+}
+
+.nextian_modal_close {
+    font-size: 30px;
+    cursor: pointer;
+}
+
+.show {
+    display: flex;
+}
+
+.master_nextian_content {
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    gap: 60px;
+    /* padding: 0px 80px 15px; */
+    max-width: 75vw;
+    min-height: 50vh;
+}
+
+.nextian_image_left {
+    width: 30%;
+    text-align: center;
+    background-color: #F5F5F7;
+    border-radius: 10px;
+}
+
+.nextian_description_right {
+    width: 70%;
+}
+
+.nextian_master_title h2 {
+    color: #222;
+    font-weight: 700;
+    font-size: 45px;
+}
+
+.nextian_master_title .nextian_degree {
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 22px;
+    max-width: 500px;
+    color: #222;
+    padding: 10px 0;
+}
+
+.nextian_master_title .nextian_medal {
+    font-size: 30px;
+    font-weight: 700;
+    color: #716d6d;
+    padding-bottom: 30px;
+}
+
+.nextian_master_title p {
+    font-size: 15px;
+    line-height: 23px;
+    color: #707070;
+    padding-bottom: 8px;
+    padding-right: 100px;
+}
+
+.faculty_btn button {
+    background: transparent;
+    font-size: 16px;
+    font-weight: 500;
+    text-transform: capitalize;
+    margin-top: 10px;
+    text-decoration: underline;
+}
+
+
+@media (min-width: 1024px) and (max-width: 1291px) {
+    .nextian_master_title h2 {
+        font-size: 32px;
+    }
+
+    .nextian_master_title .faculty_medal {
+        font-size: 24px;
+    }
+
+    .nextian_master_title p {
+        font-size: 10px;
+        line-height: 14px;
+    }
+
+    .nextian_master_title p {
+        font-size: 20px;
+        line-height: 28px;
+        padding: 0;
+        font-weight: 400;
+    }
+
+    .our_proud_nextian_parent {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (min-width: 768px) and (max-width: 1023px) {
+    .nextian_master_title h2 {
+        font-size: 27px;
+    }
+
+    .nextian_master_title .nextian_medal {
+        font-size: 18px;
+        padding-bottom: 15px;
+    }
+
+    .nextian_master_title .nextian_degree {
+        font-size: 12px;
+        line-height: 15px;
+    }
+
+    .nextian_master_title p {
+        font-size: 16px;
+        line-height: 26px;
+        padding: 0px;
+    }
+
+    .master_nextian_section p {
+        font-size: 9px;
+        line-height: 14px;
+        padding-bottom: 0px;
+    }
+
+    .master_nextian_content {
+        min-height: 0;
+        max-width: 85vw;
+    }
+
+    .our_proud_nextian_content .our_proud_view {
+        padding-right: 0px;
+        text-align: justify;
+        line-height: 18px;
+    }
+
+    .our_proud_nextian_parent {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (min-width: 320px) and (max-width: 767px) {
+
+    .nextian_seeall_parent {
+        flex-direction: column-reverse;
+        gap: 40px;
+    }
+
+    .nextian_seeall_left {
+        width: 100%;
+    }
+
+    .nextian_seeall_right {
+        width: 100%;
+    }
+
+    .master_nextian_content {
+        flex-direction: column;
+        gap: 20px;
+        max-width: 80vw;
+        padding: 0 40px 10px;
+    }
+
+    .nextian_image_left {
+        width: 100%;
+    }
+
+    .nextian_image_left img {
+        width: 150px;
+        height: 150px;
+    }
+
+    .nextian_description_right {
+        width: 100%;
+    }
+
+    .nextian_master_title h2 {
+        font-size: 16px;
+    }
+
+    .nextian_master_title .nextian_medal {
+        font-size: 12px;
+        padding-bottom: 5px;
+    }
+
+    .nextian_master_title .nextian_degree {
+        font-size: 7px;
+        padding: 5px 0;
+        line-height: 10px;
+    }
+
+    .nextian_master_title p {
+        font-size: .8rem;
+        line-height: 1.1rem;
+        padding: 0;
+    }
+
+
+    .our_proud_nextian_parent {
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+    }
+}

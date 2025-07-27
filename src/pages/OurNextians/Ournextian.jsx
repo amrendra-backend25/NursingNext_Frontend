@@ -8,8 +8,12 @@ import { useState, useEffect } from "react";
 import { Paths } from "../../config/configAPI";
 import axios from "axios";
 import { Link } from "react-router-dom";
+import HomeNextianModel from "../HomeNextianModel/HomeNextianModel";
 
 const Ournextian = () => {
+  const [modalOpen5, setModalOpen5] = useState(false);
+  const [selectedFaculty5, setSelectedFaculty5] = useState({});
+
   const [proudNextians, setProudNextians] = useState([]);
   const [setIsError] = useState("");
   const [isExpanded, setIsExpanded] = useState([]);
@@ -24,12 +28,12 @@ const Ournextian = () => {
           "Content-type": "application/json",
         },
       }).then((record) => {
-        setProudNextians(record.data.data);
-        //console.log(record.data.products);
+        // Sort the data based on a specific property, e.g., id
+        const sortedData = record.data.data.sort((a, b) => a.id - b.id);
+        setProudNextians(sortedData);
       });
     } catch (error) {
       setIsError(error.msg);
-      //console.log(error.msg);
     }
   };
 
@@ -45,22 +49,20 @@ const Ournextian = () => {
     displayNextians();
   }, []);
 
+  const openModal5 = (person) => {
+    setSelectedFaculty5(person);
+    setModalOpen5(true);
+  };
+
+  const closeModal5 = () => {
+    setModalOpen5(false);
+  };
+
   return (
     <section className="ournextian_section">
       <div className="container">
-        <div className="nextian_title">
-          <div className="neaxtian_heading">
-            <h3>Our Proud Nextians</h3>
-            <p>Champions Of Excallence</p>
-          </div>
-          <div className="nestian_subtitle">
-            <div className="video_left"></div>
-            <div className="nextian_btn">
-              <Link to="see-all-nextians">
-                <button>See All</button>
-              </Link>
-            </div>
-          </div>
+        <div className="neaxtian_heading">
+          <h3>Testimonials</h3>
         </div>
         <div className="ournextian_section_slider">
           <Swiper
@@ -71,10 +73,10 @@ const Ournextian = () => {
               prevEl: ".button-next-slide",
             }}
             autoplay={{
-              delay: 2500,
+              delay: 4000,
               disableOnInteraction: false,
             }}
-            loop={false}
+            loop={true}
             modules={[Navigation, Autoplay]}
             className="mySwiper"
             breakpoints={{
@@ -95,54 +97,56 @@ const Ournextian = () => {
               },
             }}
           >
-            {proudNextians.map((result, index) => {
+            {proudNextians.map((person, index) => {
               const { studentName, passYear, rank, studentImage, testimonial } =
-                result;
+                person;
               return (
                 <>
-                  <SwiperSlide key={result.id}>
-                    <div className="ournextian_card">
+                  <SwiperSlide key={person.id}>
+                    <div
+                      className="ournextian_card"
+                      onClick={() => openModal5(person)}
+                    >
                       <div className="ournextian_img">
                         <img src={studentImage} alt={studentName} />
                       </div>
                       <div className="ournextian_title">
                         <h4>{studentName}</h4>
-                        <span style={{ fontWeight: "bold" }}>{rank} </span>
-                        <span>{passYear}</span>
-
+                        <span style={{ fontWeight: "bold" }}>{rank} </span>|
+                        <span> {passYear}</span>
                         <p>
                           {isExpanded[index]
                             ? testimonial
-                            : // : `${testimonial.substring(0, 123)}...`}
-                              `${testimonial.substring(0, 115)}...`}
+                            : `${testimonial.substring(0, 120)}...`}
                         </p>
-                        <span
-                          style={{
-                            cursor: "pointer",
-                            color: "red",
-                            marginBottom: "10px",
-                          }}
-                          onClick={() => handleToggleClick(index)}
-                        >
-                          {isExpanded[index] ? "Show less" : "  Show More"}
-                        </span>
+                        <div className="proud_nextian_btn">
+                          <button>Read More</button>
+                        </div>
                       </div>
                     </div>
                   </SwiperSlide>
                 </>
               );
             })}
-            <div className="ournextian_button">
-              <div className="button-prev-slide" style={{ cursor: "pointer" }}>
-                <IoIosArrowForward />
-              </div>
-              <div className="button-next-slide" style={{ cursor: "pointer" }}>
-                <IoIosArrowBack />
+            <div className="ournextian_button_slider">
+              <div className="ournextian_left">
+                <div className="button-prev-slide">
+                  <IoIosArrowForward />
+                </div>
+                <div className="button-next-slide">
+                  <IoIosArrowBack />
+                </div>
               </div>
             </div>
           </Swiper>
         </div>
       </div>
+      {/* Modal Component */}
+      <HomeNextianModel
+        isOpen={modalOpen5}
+        onClose={closeModal5}
+        person={selectedFaculty5}
+      />
     </section>
   );
 };

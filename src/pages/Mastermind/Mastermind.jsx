@@ -5,124 +5,94 @@ import "swiper/css/pagination";
 import { Navigation, Autoplay } from "swiper/modules";
 import { IoIosArrowBack, IoIosArrowForward } from "react-icons/io";
 import { useState, useEffect } from "react";
-import { Paths } from "../../config/configAPI";
-import axios from "axios";
-import { Link } from "react-router-dom";
-const Mastermind = () => {
-  const [homeMind, setHomeMind] = useState([]);
-  const [setIsError] = useState("");
+import { useLocation } from "react-router-dom";
+import { NewWhyChoose } from "../WhyUs/NewWhyChoose";
 
-  const displayMasterMind = async () => {
-    try {
-      const response = await Paths.EndpointsURL.HomeMasterMind;
-      axios({
-        url: response,
-        method: "GET",
-        headers: {
-          "Content-type": "application/json",
-        },
-      }).then((record) => {
-        setHomeMind(record.data.data);
-        //console.log(record.data.products);
-      });
-    } catch (error) {
-      setIsError(error.msg);
-      //console.log(error.msg);
-    }
-  };
+const Mastermind = () => {
+  const location = useLocation();
+  const [canonicalUrl] = useState("");
 
   useEffect(() => {
-    displayMasterMind();
-  }, []);
+    const currentUrl = window.location.origin + location.pathname;
+    const canonicalLink = document.querySelector('link[rel="canonical"]');
+    if (canonicalLink) {
+      canonicalLink.setAttribute("href", currentUrl);
+    }
+  }, [location]);
 
   return (
-    <section className="master_slider">
-      <div className="container mm_container">
-        <h3>Mastermind Faculties</h3>
-        <div className="master_head">
-          <div className="master_two_part">
-            <p>Learn from the Top Educators in India</p>
+    <>
+      <link rel="canonical" href={canonicalUrl} />
+      <section className="master_slider">
+        <div className="container mm_container">
+          <div className="master_heading_title">
+            <h3>Features</h3>
           </div>
-          {/* <div className="master_btn">
-            <button className="master_button">See All</button>
-          </div> */}
-        </div>
-        <div className="master_slider_main">
-          <Swiper
-            slidesPerView={4}
-            spaceBetween={25}
-            navigation={{
-              nextEl: ".button-prev-slide",
-              prevEl: ".button-next-slide",
-            }}
-            autoplay={{
-              delay: 2500,
-              disableOnInteraction: false,
-            }}
-            // loop={true}
-            modules={[Autoplay, Navigation]}
-            className="mySwiper"
-            breakpoints={{
-              // When window width is >= 768px
-              300: {
-                slidesPerView: 1,
-                spaceBetween: 30,
-              },
-              // When window width is >= 768px
-              768: {
-                slidesPerView: 2,
-                spaceBetween: 30,
-              },
-              // When window width is >= 1024px
-              1024: {
-                slidesPerView: 4,
-                spaceBetween: 30,
-              },
-            }}
-          >
-            {homeMind.map((item) => (
-              <SwiperSlide key={item.id}>
-                <div className="mastermind_card">
-                  <div className="mastermind_img">
-                    <img src={item.facilityImage} alt="" />
-                    <div className="overlay">
-                      <div className="content">
-                        <p>{item.specialization}</p>
+          <div className="master_slider_main">
+            <Swiper
+              slidesPerView={4}
+              spaceBetween={25}
+              navigation={{
+                nextEl: ".button-prev-slide",
+                prevEl: ".button-next-slide",
+              }}
+              autoplay={{
+                delay: 2500,
+                disableOnInteraction: false,
+              }}
+              loop={true}
+              modules={[Autoplay, Navigation]}
+              className="mySwiper"
+              breakpoints={{
+                // When window width is >= 768px
+                300: {
+                  slidesPerView: 1,
+                  spaceBetween: 30,
+                },
+                // When window width is >= 768px
+                768: {
+                  slidesPerView: 2,
+                  spaceBetween: 30,
+                },
+                // When window width is >= 1024px
+                1024: {
+                  slidesPerView: 4,
+                  spaceBetween: 30,
+                },
+              }}
+            >
+              {NewWhyChoose.slice(3, 8).map((item) => (
+                <SwiperSlide key={item.id}>
+                  <div className="mastermind_card">
+                    <div className="mastermind_img">
+                      <img src={item.img} alt="" />
+                      <div className="overlay">
+                        <div className="faculty_content">
+                          <p>{item.title}</p>
+                        </div>
                       </div>
                     </div>
+                    <div className="mastermind_title">
+                      <h4>{item.title}</h4>
+                    </div>
                   </div>
-                  <div className="mastermind_title">
-                    <h4>{item.facilityName}</h4>
-                    {/* <p>{item.specialization}</p> */}
+                </SwiperSlide>
+              ))}
+              <div className="master_button_slider">
+                <div className="master_button_left">
+                  <div className="button-prev-slide">
+                    <IoIosArrowForward />
                   </div>
-                </div>
-              </SwiperSlide>
-            ))}
-            <div className="master_button2">
-              <div className="master_right_button">
-                <div
-                  className="button-prev-slide"
-                  style={{ cursor: "pointer" }}
-                >
-                  <IoIosArrowForward />
-                </div>
-                <div
-                  className="button-next-slide"
-                  style={{ cursor: "pointer" }}
-                >
-                  <IoIosArrowBack />
+                  <div className="button-next-slide">
+                    <IoIosArrowBack />
+                  </div>
                 </div>
               </div>
-              <div className="master_see">
-                <Link to="see-all">
-                  <button className="master_button-2">See All</button>
-                </Link>
-              </div>
-            </div>
-          </Swiper>
+            </Swiper>
+          </div>
         </div>
-      </div>
-    </section>
+      </section>
+    </>
   );
 };
 

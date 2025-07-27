@@ -1,0 +1,39 @@
+.time-main {
+    display: flex;
+    gap: 10px;
+
+}
+
+.time-main .timer-box {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    background: linear-gradient(135deg, rgb(110, 110, 110) 20.71%, rgb(0, 0, 0) 91.42%);
+    color: #fff;
+    padding: 8px 15px;
+    border-radius: 6px;
+    font-size: 28px;
+    font-weight: 700;
+    /* min-width: 55px; */
+}
+
+.time-main .timer-box .time-label {
+    text-transform: capitalize;
+    font-size: 12px;
+    font-weight: 300;
+}
+
+.time-main p {
+    font-weight: 500;
+    font-size: 18px;
+    color: #fff;
+    width: 220px;
+    height: 40px;
+    background-color: #afad04;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 30px;
+}

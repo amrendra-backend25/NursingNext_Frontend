@@ -21,8 +21,6 @@ const Manubar = () => {
   };
   const location = useLocation();
   const isHomePage = location.pathname === "/";
-
-  // const [menuOpened, setMenuOpened] = useState(false);
   const [nav, setNav] = useState(false);
   const scrollNav = () => {
     if (isHomePage) {
@@ -52,13 +50,13 @@ const Manubar = () => {
         <div className="header">
           <div className="container tn_container">
             <div className="tn_right">
-              <a href="">
+              <a href="mailto:info@aevitasproc.com">
                 <BsEnvelope />
-                <span>feedback@nursingnextlive.in</span>
+                <span>info@aevitasproc.com</span>
               </a>
-              <a href="">
+              <a href="tel:8840965338">
                 <IoCallOutline />
-                <span>Toll-Free: +91 9919914449</span>
+                <span>Toll-Free: +91 8840965338</span>
               </a>
             </div>
           </div>
@@ -73,11 +71,12 @@ const Manubar = () => {
                   <img
                     src={
                       nav || !isHomePage
-                        ? "/images/NNL Logo-01.png"
-                        : "/images/NNL LOGO_White-01.png"
+                        ? "/images/logoIrfan-r.png"
+                        : "/images/logoIrfan-r.png"
                     }
-                    alt=""
+                    alt="aevitasproc"
                   />
+                  <h3 className="name_avi">AevitasProc</h3>
                 </Link>
               </div>
 
@@ -119,14 +118,6 @@ const Manubar = () => {
                     </li>
                   ))}
                 </ul>
-
-                <div className="login_btn">
-                  {/* <IoIosNotificationsOutline className="nav_notification" /> */}
-                  {/* <p>
-                    <button>PA</button>
-                    <FaAngleDown className="fa_down" />
-                  </p> */}
-                </div>
               </div>
             </div>
 

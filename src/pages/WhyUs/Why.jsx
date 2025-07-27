@@ -1,45 +1,13 @@
 import "./Why.css";
 import whychoose from "/images/why_choose/WhyChoose.png";
-//import tabright from "/images/why_choose/visionright.png";
-import { useState, useEffect } from "react";
-import { Paths } from "../../config/configAPI";
-import axios from "axios";
+import { useState } from "react";
+import { NewWhyChoose } from "./NewWhyChoose";
 const Why = () => {
-  const [whyChooseTabs, setWhyChooseTabs] = useState([]);
-  const [setIsError] = useState("");
   const [activeTab, setActiveTab] = useState(1);
 
   const handleTabClick = (tabNumber) => {
     setActiveTab(tabNumber);
   };
-
-  const showWhyChoose = async () => {
-    try {
-      const response = await Paths.EndpointsURL.WhyChooseUs;
-      const record = await axios.get(response, {
-        headers: {
-          "Content-type": "application/json",
-        },
-      });
-      return record.data.data;
-    } catch (error) {
-      setIsError(error.msg);
-      return [];
-    }
-  };
-
-  useEffect(() => {
-    const fetchData = async () => {
-      try {
-        const data = await showWhyChoose();
-        setWhyChooseTabs(data);
-        //console.log(data);
-      } catch (error) {
-        setIsError(error.msg);
-      }
-    };
-    fetchData();
-  }, []);
 
   return (
     <>
@@ -52,8 +20,8 @@ const Why = () => {
                 <img src={whychoose} alt="" />
               </div>
               <div className="tab_button_right">
-                {whyChooseTabs.slice(0, 7).map((records, index) => {
-                  const { tabHeading } = records;
+                {NewWhyChoose.slice(0, 7).map((records, index) => {
+                  const { title } = records;
                   return (
                     <>
                       <div
@@ -66,7 +34,7 @@ const Why = () => {
                           }`}
                           onClick={() => handleTabClick(index + 1)}
                         >
-                          {tabHeading}
+                          {title}
                         </button>
                       </div>
                     </>
@@ -75,9 +43,39 @@ const Why = () => {
               </div>
             </div>
 
+            <section className="tab_section_data">
+              <div className="container">
+                <div className="tab_sub_title">
+                  <h2>why choose us?</h2>
+                </div>
+                <div className="tab_button_right_1">
+                  {NewWhyChoose.slice(0, 7).map((records, index) => {
+                    const { title } = records;
+                    return (
+                      <>
+                        <div
+                          key={index}
+                          className={`why_tab_button_1 ${index + 1}`}
+                        >
+                          <button
+                            className={`tab ${
+                              activeTab === index + 1 ? "active" : ""
+                            }`}
+                            onClick={() => handleTabClick(index + 1)}
+                          >
+                            {title}
+                          </button>
+                        </div>
+                      </>
+                    );
+                  })}
+                </div>
+              </div>
+            </section>
+
             <div className="tab_button_right">
-              {whyChooseTabs.map((tabData, index) => {
-                const { tabImage, tabHeading, tabParagraph } = tabData;
+              {NewWhyChoose.map((tabData, index) => {
+                const { img, title, Paragraph } = tabData;
                 return (
                   <div
                     key={index}
@@ -87,11 +85,11 @@ const Why = () => {
                     }}
                   >
                     <div className="tab_right_img">
-                      <img src={tabImage} alt="" />
+                      <img src={img} alt="" />
                     </div>
                     <div className="tab_right_content">
-                      <p className="tab_heading">{tabHeading}</p>
-                      <p className="tab_para">{tabParagraph}</p>
+                      <p className="tab_heading">{title}</p>
+                      <p className="tab_para">{Paragraph}</p>
                     </div>
                   </div>
                 );

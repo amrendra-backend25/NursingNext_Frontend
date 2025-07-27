@@ -1,3 +1,4 @@
+/*==============About_banner_start===============*/
 .about_section {
     background-size: cover;
     background-repeat: no-repeat;
@@ -6,67 +7,6 @@
     position: relative;
     margin-top: 115px;
 }
-
-.learn_mission_section {
-    padding: 5rem 0 0;
-}
-
-.value_card_child {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 30px;
-    position: relative;
-    padding: 50px 0 0;
-}
-
-.learn_card_data {
-    position: relative;
-    top: -60px;
-    text-align: center;
-    /* clip-path: polygon(0 25%, 50% 0, 100% 25%, 100% 75%, 50% 100%, 0 75%); */
-}
-
-.learn_img_content {
-    text-align: center;
-}
-
-.learn_img_content img {
-    height: 250px;
-    width: 350px;
-}
-
-.learn_card_data .learn_icon_data_01 img {
-    width: 100px;
-    height: 100px;
-    background-color: #f26b73;
-    border: 10px solid #fff;
-    border-radius: 15px;
-}
-
-.learn_card_data .learn_icon_data_02 img {
-    width: 100px;
-    height: 100px;
-    background-color: #fcb889;
-    border: 10px solid #fff;
-    border-radius: 15px;
-}
-
-.learn_card_data .learn_icon_data_03 img {
-    width: 100px;
-    height: 100px;
-    background-color: #88c5f2;
-    border: 10px solid #fff;
-    border-radius: 15px;
-}
-
-.learn_card_data p {
-    color: #707070;
-    font-size: 15px;
-    line-height: 19px;
-    text-align: justify;
-    padding: 0 45px;
-}
-
 
 .about_title {
     /* position: absolute;
@@ -97,6 +37,80 @@
     padding-top: 4px;
     letter-spacing: 0.5px;
     color: #000;
+}
+
+
+/*==============About_banner_end===============*/
+
+/*==============learn_mission_start===============*/
+.learn_mission_section {
+    padding: 5rem 0 0;
+}
+
+.value_card_child {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+    position: relative;
+    padding: 50px 0 0;
+}
+
+.learn_card_data {
+    position: relative;
+    top: -60px;
+    text-align: center;
+}
+
+.learn_img_content {
+    text-align: center;
+    position: relative;
+}
+
+.learn_img_content p {
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #fff;
+    font-size: 55px;
+    font-weight: 700;
+}
+
+.learn_img_content img {
+    height: 250px;
+    width: 350px;
+}
+
+.learn_card_data .learn_icon_data_01 img {
+    width: 100px;
+    height: 100px;
+    background-color: #cc0d1b;
+    border: 10px solid #fff;
+    border-radius: 15px;
+}
+
+.learn_card_data .learn_icon_data_02 img {
+    width: 100px;
+    height: 100px;
+    background-color: #969696;
+    border: 10px solid #fff;
+    border-radius: 15px;
+}
+
+.learn_card_data .learn_icon_data_03 img {
+    width: 100px;
+    height: 100px;
+    background-color: #174382;
+    border: 10px solid #fff;
+    border-radius: 15px;
+}
+
+.learn_card_data p {
+    color: #707070;
+    font-size: 15px;
+    line-height: 19px;
+    text-align: justify;
+    padding: 0 45px;
 }
 
 .learning_section {
@@ -182,6 +196,9 @@
     padding-top: 1.4rem;
 }
 
+/*==============learn_mission_end===============*/
+
+/*==============gallery_section_start===============*/
 .gallery_section {
     padding: 2rem 0;
     background: #FCFBFB;
@@ -200,6 +217,9 @@
     gap: 22px;
 }
 
+/*==============gallery_section_end===============*/
+
+/*==============award_section_start===============*/
 .award_section {
     padding: 4rem 0;
     position: relative;
@@ -264,6 +284,10 @@
     background-color: #BC0022;
 }
 
+/*==============award_section_end===============*/
+
+
+/*==============visionaries_section_start===============*/
 .visionaries_section {
     padding-top: 40px;
 }
@@ -393,6 +417,9 @@
     text-align: justify;
 }
 
+/*==============visionaries_section_start===============*/
+
+/*==============hiring_section_start===============*/
 .hiring_section {
     padding-bottom: 4rem;
 }
@@ -463,7 +490,9 @@
     cursor: pointer;
 }
 
+/*==============hiring_section_end===============*/
 
+/*==============support_section_start===============*/
 .about_support {
     background: #FCFBFB;
 }
@@ -483,6 +512,11 @@
     padding: 12px 0;
 }
 
+.about_support_content:hover h4 {
+    color: #DD0E0E;
+    font-weight: 900;
+}
+
 .about_support_content {
     cursor: pointer;
 }
@@ -495,40 +529,17 @@
     margin: auto;
 }
 
+/*==============support_section_end===============*/
+
 
 /* ============================Responsive Tablet========================*/
-@media screen and (max-width: 1440px) {
-    .hiring_content {
-        top: 20%;
-        left: 6%;
-        position: absolute;
-    }
-
-    .about_title {
-        padding: 80px 0;
-    }
-
-    .learn_card_data p {
-        padding: 0;
-    }
-}
-
 @media screen and (max-width: 1024px) {
-    /* .about_title {
-        padding: 60px 0;
-    } */
 
     .about_section {
         margin-top: 75px;
     }
 
-    /* .about_title {
-        padding: 80px 0;
-    }
 
-    .learn_card_data p {
-        padding: 0;
-    } */
 
     .award_parent .left_award h3 {
         font-size: 30px;
@@ -558,26 +569,44 @@
     }
 }
 
-@media screen and (max-width: 768px) {
+/* ============================Responsive Tablet========================*/
+@media (min-width: 1024px) and (max-width: 1291px) {
+    .about_section {
+        margin-top: 115px;
+    }
+
+    .hiring_parent {
+        flex-wrap: nowrap;
+    }
+
+    .hiring_content {
+        top: 45%;
+        left: 5%;
+        position: absolute;
+    }
+}
+
+@media screen and (max-width: 1024px) {
+    .about_section {
+        margin-top: 72px;
+    }
+}
+
+@media (min-width: 768px) and (max-width: 1023px) {
+    .about_section {
+        margin-top: 72px;
+    }
+
     .about_title {
-        padding: 65px 0;
-    }
-
-    .learn_card_data p {
-        padding: 0;
-    }
-
-    .award_parent .left_award h3 {
-        font-size: 25px;
-        line-height: 32px;
-    }
-
-    .director_title p {
-        font-size: 13px;
+        padding: 90px 0;
     }
 
     .value_card_child {
         grid-template-columns: repeat(2, 1fr);
+    }
+
+    .director_title p {
+        font-size: 13px;
     }
 
     .vision_head_parent .head_img_left {
@@ -620,7 +649,133 @@
     }
 }
 
-@media screen and (max-width: 550px) {
+@media (min-width: 320px) and (max-width: 767px) {
+    .about_section {
+        margin-top: 72px;
+    }
+
+    .about_title {
+        padding: 50px 0;
+    }
+
+    .about_title h2 {
+        font-size: 25px;
+    }
+
+    .learn_mission_section {
+        padding: 3rem 0 0;
+    }
+
+    .learning_title h3 {
+        font-size: 22px;
+    }
+
+    .learning_title p {
+        font-size: 14px;
+        text-align: justify;
+    }
+
+    .value_card_child {
+        grid-template-columns: repeat(1, 1fr);
+        gap: 0;
+    }
+
+    .learn_card_data p {
+        padding: 0;
+        line-height: 22px;
+    }
+
+    .award_parent .left_award h3 {
+        font-size: 24px;
+        line-height: 32px;
+    }
+
+    .award_parent {
+        flex-direction: column-reverse;
+    }
+
+    .award_parent .left_award {
+        width: 100%;
+        padding-top: 20px;
+    }
+
+    .award_parent .right_award {
+        width: 100%;
+    }
+
+    .director_title p {
+        font-size: 13px;
+    }
+
+    .visionaries_section .vision_head_parent {
+        flex-wrap: wrap;
+    }
+
+    .visionaries_section .vision_head_parent_1 {
+        flex-wrap: wrap;
+    }
+
+    .visionaries_section .vision_head_parent_2 {
+        flex-wrap: wrap;
+    }
+
+    .vision_head_parent .head_img_left {
+        width: 100%;
+        text-align: center;
+    }
+
+    .vision_head_parent .head_title_right {
+        width: 100%;
+    }
+
+    .vision_head_parent_1 .head_img_left_1 {
+        width: 100%;
+        text-align: center;
+    }
+
+    .vision_head_parent_1 .head_title_right_1 {
+        width: 100%;
+    }
+
+    .director_title_1 p {
+        font-size: 13px;
+    }
+
+    .vision_head_parent_2 .head_img_left_2 {
+        width: 100%;
+        text-align: center;
+    }
+
+    .vision_head_parent_2 .head_title_right_2 {
+        width: 100%;
+    }
+
+    .director_title_2 p {
+        font-size: 13px;
+    }
+
+    .about_support_title {
+        grid-template-columns: repeat(1, 1fr);
+    }
+
+    .explore_div {
+        padding: 20px 0;
+        flex-direction: column;
+    }
+
+    .left_explore {
+        width: 100%;
+        margin-bottom: 30px;
+    }
+
+    .hiring_content {
+        top: 14%;
+        left: 30%;
+        position: absolute;
+    }
+}
+
+/* @media screen and (max-width: 550px) {
     .about_title {
         padding: 40px 0;
     }
@@ -749,4 +904,66 @@
         left: 30%;
         position: absolute;
     }
-}
+} */
+
+/* @media screen and (max-width: 768px) {
+    .about_title {
+        padding: 65px 0;
+    }
+
+    .learn_card_data p {
+        padding: 0;
+    }
+
+    .award_parent .left_award h3 {
+        font-size: 25px;
+        line-height: 32px;
+    }
+
+    .director_title p {
+        font-size: 13px;
+    }
+
+    .value_card_child {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .vision_head_parent .head_img_left {
+        width: 50%;
+    }
+
+    .vision_head_parent .head_title_right {
+        width: 50%;
+    }
+
+    .vision_head_parent_1 .head_img_left_1 {
+        width: 50%;
+    }
+
+    .vision_head_parent_1 .head_title_right_1 {
+        width: 50%;
+    }
+
+    .director_title_1 p {
+        font-size: 13px;
+        text-align: justify;
+    }
+
+    .vision_head_parent_2 .head_img_left_2 {
+        width: 50%;
+    }
+
+    .vision_head_parent_2 .head_title_right_2 {
+        width: 50%;
+    }
+
+    .director_title_2 p {
+        font-size: 13px;
+    }
+
+    .hiring_content {
+        top: 17%;
+        left: 40%;
+        position: absolute;
+    }
+} */

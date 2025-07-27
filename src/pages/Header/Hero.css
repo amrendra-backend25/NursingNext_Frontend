@@ -12,92 +12,39 @@
      width: 100%;
      background: rgba(0, 0, 0, 0.6);
  } */
+
 .image_slider {
   position: relative;
 }
 
-.image_slider img {
-  height: 90vh;
-  width: 100%;
-  display: block;
-}
-
-.image_slider .title_content {
-  position: absolute;
-  top: 42%;
-  right: 21rem;
-  color: #fff;
-}
-
-.title_content h3 {
-  font-size: 16px;
-  text-transform: uppercase;
-  margin-bottom: 10px;
-  letter-spacing: 0.8px;
-  font-weight: 500;
-}
-
-.title_content h1 {
-  font-size: 40px;
-  font-weight: 700;
-  text-transform: uppercase;
-  margin: 10px 0 10px;
-  max-width: 480px;
-  letter-spacing: 0.5px;
-}
-
-.title_content h1 span {
-  /* font-size: 40px; */
-}
-
-.title_content p {
-  font-size: 20px;
-  max-width: 600px;
-  letter-spacing: 0.1px;
-}
-
-.image_btn {
-  padding: 1rem 2rem;
-  background: #fff;
-  font-size: 13px;
-  color: #333;
-  margin-top: 15px;
-  border-radius: 50px;
-  font-weight: 600;
-}
-
-.image_btn:hover {
-  background: #ec1c24 !important;
-  color: #fff;
-}
 
 /*_____________________Swiper Css_________________*/
 .swiper_button .button-next-slide {
   color: #000;
-  width: 40px;
-  height: 40px;
+  width: 2.2rem;
+  height: 2.2rem;
   border-radius: 50%;
   background: #fff;
   display: grid;
   place-items: center;
   position: absolute;
   z-index: 10;
-  top: 52%;
-  left: 31%;
+  top: 50%;
+  left: 33%;
 }
 
 .swiper_button .button-prev-slide {
   color: #000;
-  width: 40px;
-  height: 40px;
+  width: 2.2rem;
+  height: 2.2rem;
   border-radius: 50%;
   background: #fff;
   display: grid;
   place-items: center;
   position: absolute;
   z-index: 10;
-  top: 52%;
-  right: 4%;
+  top: 50%;
+  right: 5%;
 }
 
 .slider_header .swiper-pagination {
@@ -112,101 +59,123 @@
 /*_____________________form_________________*/
 .header_from_1 {
   position: absolute;
-  top: 30%;
-  left: 5%;
+  top: 60%;
   z-index: 10;
   background: #fff;
-  width: 350px;
-  height: 365px;
+  width: 19rem;
   padding: 25px 0;
-  /* box-shadow: 0px 9px 10px 10px rgba(148, 139, 139, 0.5);
-    transition:  border 0.3s, border-radius 0.3s, box-shadow 0.3s; */
   border-radius: 25px;
+  transform: translatey(-50%);
 }
 
 .header_from_1 .text {
   color: #333;
   font-size: 16px;
   font-weight: 700;
-  margin-left: 18px;
+  margin-left: 38px;
 }
 
-.inputs {
+.header_from_1 .inputs {
   margin-top: 15px;
 }
 
-/* .input_error {
-  margin-bottom: 25px;
-} */
-.input_error .p {
-  /* margin-bottom: 6px; */
-  /* padding: 20px 0; */
-  color: #ec1c24;
-}
-
-.input_form {
+.header_from_1 .input_form {
   display: flex;
   align-items: center;
   margin: auto;
-  margin-top: 20px;
-  width: 280px;
-  height: 45px;
+  margin-top: 10px;
   background: #eaeaea;
   border-radius: 6px;
-  margin-bottom: 30px;
+  margin-bottom: 20px;
   position: relative;
+  width: 80%;
 }
 
 .error {
   position: absolute;
-  bottom: -25px;
+  bottom: -21px;
   left: 10px;
   color: #ec1c24;
 }
 
-.slider_header .success {
-  font-size: 20px;
-  text-align: center;
+.submit_success {
   margin-top: 35px;
-  left: 15px;
-  color: #5EEA5C;
 }
 
-.input_form img {
+.submit_success .success {
+  font-size: 12px;
+  text-align: center;
+  color: #5eea5c;
+  border: 2px solid #5eea5c;
+  padding: 5px;
+  border-radius: 30px;
+  width: 200px;
+  margin: auto;
+}
+
+.header_from_1 .input_form img {
   margin: 0 15px;
   width: 15px;
 }
 
-/* .input_form input:hover {
-  background: #e8e8e8
-} */
+.image_slider img {
+  width: 100%;
+  height: 90vh;
+}
 
-.input_form input {
-  height: 45px;
-  width: 400px;
+.header_from_1 .input_form input {
+  height: 2.3rem;
   background: transparent;
   border: none;
   outline: none;
   color: #797979;
   font-size: 14px;
+  width: 100%;
 }
 
-.submit_container {
+.header_from_1 .textarea_data {
+  display: flex;
+  margin: auto;
+  width: 80%;
+  background: #eaeaea;
+  border-radius: 6px;
+  position: relative;
+}
+
+.header_from_1 .message_box {
+  margin: 10px -5px 0px 12px;
+  width: 35px;
+  color: #797979;
+}
+
+.header_from_1 .textarea_data textarea {
+  background: transparent;
+  height: 2.3rem;
+  border: none;
+  outline: none;
+  color: #797979;
+  font-size: 14px;
+  padding-top: 10px;
+  width: 100%;
+}
+
+.banner_submit_container {
   margin: auto;
   display: flex;
   justify-content: center;
+  margin-top: 23px;
 }
 
-.submit_container .submit {
+.banner_submit_container .submit {
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 280px;
-  height: 45px;
+  width: 80%;
+  height: 40px;
   color: #fff;
   background: #ec1c24 !important;
   border-radius: 44px;
-  font-size: 18px;
+  font-size: 14px;
   font-weight: 700;
   cursor: pointer;
   line-height: 24px;
@@ -217,27 +186,223 @@
 }
 
 /* ============================Responsive Tablet========================*/
-@media screen and (max-width: 1440px) {
-  .image_slider img {
-    height: 80vh;
-  }
+@media (min-width: 1024px) and (max-width: 1290px) {
 
-  .slider_header .header_from_1 {
-    width: 320px;
-  }
-
+  /* .slider_header {min-width: 1000px; max-width: 100%;} */
   .slider_header .input_form {
-    width: 260px;
+    margin-top: 0;
+    margin-bottom: 20px;
+  }
+
+  .header_from_1 .text {
+    font-size: 0.8rem;
+  }
+
+  .error {
+    font-size: 12px;
+    bottom: -18px;
   }
 
   .swiper_button .button-next-slide {
-    left: 31%;
+    left: 30%;
+  }
+
+  .header_from_1 {
+    width: 16rem;
+    top: 62%;
+    padding: 15px 0;
+  }
+
+  .banner_submit_container {
+    margin-top: .9rem;
+  }
+
+  .banner_submit_container .submit {
+    font-size: .8rem;
+    height: 2rem;
+  }
+
+  .header_from_1 .input_form input {
+    height: 2rem;
+  }
+
+  .header_from_1 .textarea_data textarea {
+    height: 2rem;
   }
 }
 
+@media screen and (max-width: 1230px) {
+  .slider_header {
+    width: 1225px;
+    max-width: 100%;
+  }
+}
+
+@media screen and (max-width: 1195px) {
+  .slider_header {
+    width: 1190px;
+    max-width: 100%;
+  }
+}
 
 @media screen and (max-width: 1024px) {
+  .slider_header {
+    margin-top: 0;
+  }
 
+  .swiper_button .button-next-slide {
+    width: 30px;
+    height: 30px;
+  }
+
+  .swiper_button .button-prev-slide {
+    width: 30px;
+    height: 30px;
+  }
+
+  .header_from_1 {
+    width: 16rem;
+    top: 57%;
+    padding: 15px 0;
+  }
+
+  .banner_submit_container {
+    margin-top: .9rem;
+  }
+
+  .banner_submit_container .submit {
+    font-size: .8rem;
+    height: 2rem;
+  }
+
+  .header_from_1 .input_form input {
+    height: 2rem;
+  }
+
+  .header_from_1 .textarea_data textarea {
+    height: 2rem;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1023px) {
+  .slider_header {
+    margin-top: 0px;
+  }
+
+  .heroBannerSlider {
+    padding-top: 70px;
+  }
+
+  .swiper_button .button-next-slide {
+    width: 30px;
+    height: 30px;
+  }
+
+  .swiper_button .button-prev-slide {
+    width: 30px;
+    height: 30px;
+  }
+
+  .slider_header .input_form {
+    margin-top: 0;
+    margin-bottom: 20px;
+  }
+
+  .submit_container {
+    width: 190px;
+  }
+
+  .submit_container .submit {
+    height: 35px;
+    font-size: 14px;
+  }
+
+  .header_from_1 .text {
+    font-size: 0.8rem;
+  }
+
+  .error {
+    font-size: 12px;
+    bottom: -18px;
+  }
+
+  .header_from_1 .inputs {
+    margin-top: 10px;
+  }
+}
+
+@media (min-width: 800px) and (max-width: 850px) {
+  .slider_header {
+    width: 834px;
+    max-width: 100%;
+  }
+
+  .swiper_button .button-prev-slide {
+    top: 56%;
+    width: 28px;
+    height: 28px;
+  }
+
+  .swiper_button .button-next-slide {
+    top: 56%;
+    width: 28px;
+    height: 28px;
+    left: 31%;
+  }
+
+  .header_from_1 .text {
+    margin-left: 1.4rem;
+  }
+
+  .header_from_1 {
+    width: 14rem;
+    top: 57%;
+  }
+
+  .banner_submit_container {
+    margin-top: .9rem;
+  }
+
+  .banner_submit_container .submit {
+    font-size: .8rem;
+    height: 1.5rem;
+  }
+
+  .header_from_1 .input_form input {
+    height: 2rem;
+  }
+
+  .header_from_1 .textarea_data textarea {
+    height: 2rem;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .header_from_1 {
+    display: none;
+  }
+
+  .image_slider img {
+    height: 35vh;
+  }
+
+  .swiper_button .button-next-slide {
+    left: 32.5%;
+    top: 50%;
+  }
+
+  .swiper_button .button-next-slide {
+    width: 25px;
+    height: 25px;
+  }
+
+  .swiper_button .button-prev-slide {
+    width: 25px;
+    height: 25px;
+  }
+}
+
+@media (min-width: 320px) and (max-width: 768px) {
 
   .slider_header {
     display: none;
@@ -245,7 +410,12 @@
 
   .header_mobile_section {
     display: block;
-    margin-top: 70px;
+    position: relative;
+  }
+
+  .header_mobile_section {
+    width: 768px;
+    max-width: 100%;
   }
 
   .header_main_container {
@@ -280,7 +450,6 @@
 
   .header_form .input_box {
     width: 100%;
-    /* margin-top: 20px; */
   }
 
   .header_input_box label {
@@ -305,94 +474,61 @@
     font-weight: 700;
   }
 
-  .header_form .header_input_box textarea {
-    position: relative;
-    /* height: 50px; */
+  .header_form .header_textarea_form {
+    display: flex;
+    margin: auto;
     width: 100%;
-    outline: none;
-    border: 1px solid #ddd;
+    height: 100px;
     border-radius: 6px;
+    position: relative;
+    border: 1px solid #ddd;
+  }
+
+  .header_form .header_textarea_form textarea {
+    background: transparent;
+    width: 100%;
+    border: none;
+    outline: none;
+    color: #797979;
     font-size: 1rem;
-    color: #707070;
-    padding: 15px 15px 0px;
-    margin-top: 8px;
+    padding-top: 10px;
+    padding-left: 15px;
   }
 
   .header_input_btn button {
     height: 55px;
     width: 100%;
-    background-color: #DA0303 !important;
+    background-color: #da0303 !important;
     border: none;
     outline: none;
     color: #fff;
     border-radius: 10px;
     font-size: 16px;
     font-weight: 700;
-    margin-top: 10px;
+    margin-top: 20px;
   }
 
   /* mobile_slider */
   .header_mobile_slider {
     position: relative;
-    margin-top: 0px;
+    /* margin-top: 70px; */
   }
 
-  .header_mobile_offers_slider {
+  .header_mobile_section .heroBannerSlider {
     position: relative;
+    padding-top: 70px;
   }
+
+  /* .header_mobile_offers_slider {
+    position: relative;
+  } */
 
   .header_mobile_offers_slider img {
-    height: 40vh;
+    height: 25vh;
     width: 100%;
     display: block;
   }
 
-  .header_mobile_offers_slider .header_mobile_offers_content {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    color: #fff;
-  }
-
-  .header_mobile_offers_content h3 {
-    font-size: 16px;
-    margin-bottom: 10px;
-    font-weight: 500;
-  }
-
-  .header_mobile_offers_content h1 {
-    font-size: 35px;
-    font-weight: 700;
-    text-transform: uppercase;
-    margin: 10px 0 10px;
-    /* max-width: 600px; */
-    letter-spacing: 0.5px;
-    line-height: 40px;
-  }
-
-  .header_mobile_offers_content p {
-    font-size: 20px;
-    max-width: 600px;
-    letter-spacing: 0.1px;
-  }
-
-  .header_mobile_offers_btn {
-    padding: 0.8rem 1.5rem;
-    background: #fff;
-    font-size: 11px;
-    color: #333;
-    margin-top: 0px;
-    border-radius: 50px;
-    font-weight: 600;
-  }
-
-  .header_mobile_offers_btn:hover {
-    background: #EC1C24 !important;
-    color: #fff;
-  }
-
-  /*_____________________Swiper Css_________________*/
   .header_mobile_offers_button .button-next-slide {
     color: #000;
     width: 30px;
@@ -403,8 +539,9 @@
     place-items: center;
     position: absolute;
     z-index: 10;
-    top: 45%;
-    left: 2%;
+    top: 65%;
+    left: 8%;
+    transform: translate(-50%, -50%);
   }
 
   .header_mobile_offers_button .button-prev-slide {
@@ -417,13 +554,14 @@
     place-items: center;
     position: absolute;
     z-index: 10;
-    top: 45%;
-    right: 2%;
+    top: 65%;
+    right: -2%;
+    transform: translate(-50%, -50%);
   }
 
   .header_form .header_input_box .error {
     position: absolute;
-    bottom: -25px;
+    bottom: -20px;
     left: 10px;
     color: #ec1c24;
   }
@@ -431,16 +569,6 @@
   .header_input_box {
     position: relative;
     margin-bottom: 20px;
-  }
-
-  .header_mobile_slider .swiper-pagination {
-    position: absolute;
-    /* left: 10%; */
-  }
-
-  .swiper-horizontal>.swiper-pagination-bullets .swiper-pagination-bullet,
-  .swiper-pagination-horizontal.swiper-pagination-bullets .swiper-pagination-bullet-active {
-    background-color: #000;
   }
 
   .month_plan_button .button_left {
@@ -454,34 +582,30 @@
   }
 }
 
-@media screen and (max-width: 768px) {
-  .header_mobile_offers_slider img {
-    height: 40vh;
-  }
-
-  .header_mobile_offers_btn {
-    font-size: 12px;
-    font-weight: 600;
+@media screen and (max-width: 450px) {
+  .header_mobile_section {
+    width: 428px;
+    max-width: 100%;
   }
 }
 
-
-@media screen and (max-width: 550px) {
-  .header_mobile_offers_content h1 {
-    font-size: 17px;
-    line-height: 22px;
+@media screen and (max-width: 420px) {
+  .header_mobile_section {
+    width: 414px;
+    max-width: 100%;
   }
+}
 
-  .header_mobile_slider .swiper-pagination {
-    display: none;
+@media screen and (max-width: 400px) {
+  .header_mobile_section {
+    width: 390px;
+    max-width: 100%;
   }
+}
 
-  .header_mobile_offers_slider img {
-    height: 30vh;
-  }
-
-  .header_mobile_offers_btn {
-    padding: 0.5rem 1rem;
-    font-size: 10px;
+@media screen and (max-width: 380px) {
+  .header_mobile_section {
+    width: 375px;
+    max-width: 100%;
   }
 }

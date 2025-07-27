@@ -2,12 +2,15 @@ import * as FaIcons from "react-icons/fa";
 import * as AiIcons from "react-icons/ai";
 import * as IoIcons from "react-icons/io";
 import * as RiIcons from "react-icons/ri";
+import * as SlIcons from "react-icons/sl";
+import * as LuIcons from "react-icons/lu";
+import * as PiIcons from "react-icons/pi";
 
 export const SidebarData = [
   {
     title: "About Us",
     path: "/about",
-    icon: <AiIcons.AiFillHome />,
+    icon: <FaIcons.FaInfoCircle />,
   },
   {
     title: "Offers",
@@ -16,8 +19,8 @@ export const SidebarData = [
   },
   {
     title: "Courses",
-    path: "/all-courses",
-    icon: <AiIcons.AiFillHome />,
+    // path: "/all-courses",
+    icon: <SlIcons.SlBookOpen />,
     iconClosed: <RiIcons.RiArrowDownSFill />,
     iconOpened: <RiIcons.RiArrowUpSFill />,
     SubData: [
@@ -26,18 +29,24 @@ export const SidebarData = [
         path: "/all-courses",
         icon: <IoIcons.IoIosPaper />,
       },
+
       {
-        title: "Free Pack",
-        path: "/plan/zero",
+        title: "Plan Zero Free Pack",
+        path: "/plan-zero",
         icon: <IoIcons.IoIosPaper />,
       },
       {
-        title: "Mastermind Pack",
+        title: "MLB PRO Earth Batch",
+        path: "/plan-mlb-pro",
+        icon: <IoIcons.IoIosPaper />,
+      },
+      {
+        title: "Plan C+ Gold Edition",
         path: "/plan-c-plus",
         icon: <IoIcons.IoIosPaper />,
       },
       {
-        title: "Undergraduate Pack",
+        title: "Plan UG",
         path: "/plan-ug",
         icon: <IoIcons.IoIosPaper />,
       },
@@ -47,13 +56,8 @@ export const SidebarData = [
         icon: <IoIcons.IoIosPaper />,
       },
       {
-        title: "Crash Courses",
+        title: "Plan A Crash Course",
         path: "/plan-a",
-        icon: <IoIcons.IoIosPaper />,
-      },
-      {
-        title: "NNL VSL Pack",
-        path: "/plan-np",
         icon: <IoIcons.IoIosPaper />,
       },
       {
@@ -62,21 +66,37 @@ export const SidebarData = [
         icon: <IoIcons.IoIosPaper />,
       },
       {
+        title: "NNL VSL Pack",
+        path: "/plan-np",
+        icon: <IoIcons.IoIosPaper />,
+      },
+
+      {
         title: "Target High Digital Lite",
         path: "/plan-th",
         icon: <IoIcons.IoIosPaper />,
       },
       {
-        title: "Question Back Pack",
-        path: "plan-qb",
+        title: "Question Bank Pack",
+        path: "/plan-qb",
+        icon: <IoIcons.IoIosPaper />,
+      },
+      {
+        title: "Faculty Development",
+        path: "/plan-fdp",
+        icon: <IoIcons.IoIosPaper />,
+      },
+      {
+        title: "NCLEX",
+        path: "/plan-n",
         icon: <IoIcons.IoIosPaper />,
       },
     ],
   },
   {
     title: "Exams",
-    path: "/all-exams",
-    icon: <AiIcons.AiFillHome />,
+    // path: "/all-exams",
+    icon: <LuIcons.LuNewspaper />,
     iconClosed: <RiIcons.RiArrowDownSFill />,
     iconOpened: <RiIcons.RiArrowUpSFill />,
     SubData: [
@@ -91,23 +111,18 @@ export const SidebarData = [
         icon: <IoIcons.IoIosPaper />,
       },
       {
-        title: "PGIMER",
-        path: "/pgimer",
+        title: "Nursing Officer Exams",
+        path: "/officer-exams",
         icon: <IoIcons.IoIosPaper />,
       },
       {
-        title: "ESIC",
-        path: "/esic",
+        title: "MSC",
+        path: "/msc",
         icon: <IoIcons.IoIosPaper />,
       },
       {
-        title: "RRB",
-        path: "/rrb",
-        icon: <IoIcons.IoIosPaper />,
-      },
-      {
-        title: "JIPMER",
-        path: "/jipmer",
+        title: "NCLEX",
+        path: "/nclex",
         icon: <IoIcons.IoIosPaper />,
       },
       {
@@ -115,52 +130,22 @@ export const SidebarData = [
         path: "/cho",
         icon: <IoIcons.IoIosPaper />,
       },
-      {
-        title: "NIMHANS",
-        path: "/nimhans",
-        icon: <IoIcons.IoIosPaper />,
-      },
-      {
-        title: "KERALA PSC/DHS",
-        path: "/kerala-psc-dhs",
-        icon: <IoIcons.IoIosPaper />,
-      },
     ],
   },
   {
-    title: "Stories",
+    title: "Success Stories",
     path: "/stories",
-    icon: <FaIcons.FaCartPlus />,
+    icon: <FaIcons.FaCrown />,
   },
   {
     title: "Newsroom",
     path: "/newsroom",
-    icon: <IoIcons.IoMdPeople />,
+    icon: <FaIcons.FaNewspaper />,
   },
-  //   {
-  //     title: "Messages",
-  //     path: "/messages",
-  //     icon: <FaIcons.FaEnvelopeOpenText />,
 
-  //     iconClosed: <RiIcons.RiArrowDownSFill />,
-  //     iconOpened: <RiIcons.RiArrowUpSFill />,
-
-  //     SubData: [
-  //       {
-  //         title: "Message 1",
-  //         path: "/messages/message1",
-  //         icon: <IoIcons.IoIosPaper />,
-  //       },
-  //       {
-  //         title: "Message 2",
-  //         path: "/messages/message2",
-  //         icon: <IoIcons.IoIosPaper />,
-  //       },
-  //     ],
-  //   },
   {
     title: "Blogs",
     path: "/blogs",
-    icon: <IoIcons.IoMdHelpCircle />,
+    icon: <PiIcons.PiPencilSimpleLineBold />,
   },
 ];

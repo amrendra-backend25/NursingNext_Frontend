@@ -1,0 +1,256 @@
+.simplified_section {
+  padding: 0px 0 50px;
+}
+
+.simplified_parent {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  place-items: center;
+}
+
+.simplified_title {
+  padding: 0px 40px;
+}
+
+.simplified_title .simplified_link {
+  color: #333;
+  font-size: 32px;
+  font-weight: 700;
+  line-height: 40px;
+}
+
+.simplified_title .simplified_para {
+  color: #7a7a7a;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 25px;
+  padding-top: 5px;
+}
+
+.simplified_title .simplified_list ul {
+  margin-top: 20px;
+}
+
+.simplified_title .simplified_list ul li {
+  font-size: 18px;
+  font-weight: 400;
+  color: #333;
+  list-style: disc;
+  padding: 5px 0;
+}
+
+.simplified_title .simplified_ques {
+  font-size: 17px;
+  color: #333;
+  font-weight: 400;
+  line-height: 25px;
+  padding: 30px 0;
+}
+
+.simplified_title .simplified_ques span {
+  font-weight: 700;
+}
+
+.simplified_title .simplified_detail {
+  font-size: 18px;
+  font-weight: 600;
+  color: #333;
+  line-height: 25px;
+}
+
+.register_form_right {
+  padding: 80px 10px 50px 50px;
+}
+
+.register_form_title h2 {
+  font-size: 30px;
+  color: #333;
+  line-height: 40px;
+  font-weight: 600;
+}
+
+.register_form_title p {
+  font-size: 16px;
+  color: #7a7a7a;
+  font-weight: 400;
+  line-height: 20px;
+  padding-top: 10px;
+}
+
+.register_form_right .inputs_simplify {
+  margin-top: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.register_form_right .simplify_input_form {
+  background: transparent;
+}
+
+.register_form_right .simplify_input_form input {
+  position: relative;
+  height: 45px;
+  width: 100%;
+  outline: none;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  font-size: 1rem;
+  color: #707070;
+  padding: 0 15px;
+  margin-top: 20px;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.register_form_right .simplify_textarea_form {
+  /* display: flex; */
+  margin: auto;
+  height: 100px;
+  width: 100%;
+  border-radius: 6px;
+  position: relative;
+  margin-top: 8px;
+}
+
+.register_form_right .simplify_textarea_form textarea {
+  background: transparent;
+  width: 100%;
+  height: 100px;
+  border: none;
+  outline: none;
+  color: #797979;
+  font-size: 14px;
+  font-weight: 500;
+  padding-top: 10px;
+  border: 1px solid #ddd;
+  padding: 10px 15px 0px;
+  border-radius: 10px;
+  margin-top: 14px;
+}
+
+.submit_data {
+  margin-top: 45px;
+}
+
+.submit_data .submit_btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 50px;
+  color: #fff;
+  background: #EC1C24 !important;
+  border-radius: 44px;
+  font-size: 18px;
+  font-weight: 700;
+  cursor: pointer;
+  line-height: 24px;
+}
+
+.simplify_input_form .input_error, .simplify_textarea_form .input_error {
+  color: #DD0E0E;
+  font-weight: 500;
+  font-size: 14px;
+  /* position: fixed; */
+  margin-top: 5px;
+  position: absolute;
+}
+
+/* ============================Responsive Tablet========================*/
+@media screen and (max-width: 1024px) {
+  .simplified_parent {
+    grid-template-columns: repeat(1, 1fr);
+  }
+
+  .simplified_title .simplified_link {
+    font-size: 24px;
+    line-height: 30px;
+  }
+
+  .simplified_title .simplified_para {
+    font-size: 16px;
+    padding-top: 5px;
+    line-height: 20px;
+  }
+
+  .simplified_title .simplified_list ul {
+    margin-top: 10px;
+  }
+
+  .simplified_title .simplified_list ul li {
+    font-size: 14px;
+    padding: 3px 0;
+    line-height: 20px;
+  }
+
+  .simplified_title .simplified_ques {
+    font-size: 14px;
+    padding: 10px 0;
+    line-height: 20px;
+  }
+
+  .simplified_title .simplified_detail {
+    font-size: 15px;
+    line-height: 20px;
+  }
+
+  .register_form_right {
+    padding: 60px 58px 50px 50px;
+  }
+
+  .register_form_title h2 {
+    font-size: 24px;
+    line-height: 30px;
+  }
+
+  .register_form_title p {
+    font-size: 14px;
+    line-height: 18px;
+    padding-top: 6px;
+  }
+
+  .register_form_right .inputs {
+    gap: 6px;
+  }
+
+  .register_form_right .input_form input {
+    width: 100%;
+  }
+
+  .register_form_right .textarea_form textarea {
+    width: 100%;
+  }
+
+  .submit_register .submit_btn {
+    height: 40px;
+    font-size: 15px;
+    margin-top: 20px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .simplified_title {
+    padding: 0 70px;
+    margin-top: 30px;
+  }
+
+  .simplified_section {
+    padding: 0;
+  }
+
+  .register_form_right {
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .simplified_title {
+    padding: 0;
+  }
+
+  .register_form_right {
+    width: 100%;
+    padding: 15px;
+  }
+}

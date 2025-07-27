@@ -21,7 +21,7 @@ const NextianModel = ({ isOpen, onClose, person }) => {
                 <h2>{person.studentName}</h2>
                 <p className="nextian_degree"></p>
                 <h4 className="nextian_medal">
-                  {person.rank} {person.passYear}
+                  {person.rank} | {person.passYear}
                 </h4>
                 <p>{person.testimonial}</p>
               </div>

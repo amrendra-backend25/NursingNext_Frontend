@@ -1,5 +1,7 @@
 .video_section .video_title h3 {
   text-align: left;
+  color: #333;
+  font-size: 32px;
 }
 
 .video_section {
@@ -16,10 +18,8 @@
 
 .video_subtitle {
   display: grid;
-  /* grid-template-columns: repeat(2, 1fr); */
   padding-top: 15px;
   padding-bottom: 30px;
-  /* max-width: calc(100% - 63px); */
   position: relative;
 }
 
@@ -46,8 +46,8 @@
 .video_button {
   position: absolute;
   z-index: 10;
-  top: 4%;
-  left: 94%;
+  top: 1%;
+  left: 93%;
   display: flex;
   align-items: center;
   gap: 0.2rem;
@@ -56,21 +56,21 @@
 
 .video_main_slider {
   border-radius: 35px;
+  max-width: 75vw;
+  /* height: 100vh; */
+  margin: auto;
 }
 
-/* .video_card {
-  border-radius: 140px;
-  background-color: red;
-} */
+.video_img {
+  display: flex;
+  justify-content: center;
+  padding: 10px 0;
+}
 
-/* .video_img {
-  border-radius: 140px;
-  background-color: red;
-} */
 .video_img iframe {
   border-radius: 30px;
-  /* width: 98%;
-  height: 75vh; */
+  /* width: 75vw;
+  height: 50vh; */
 }
 
 .video_button .button-next-slide {
@@ -82,10 +82,7 @@
   border: 1px solid #DFDFDF;
   display: grid;
   place-items: center;
-  /* position: absolute;
-    z-index: 10;
-    top: 0%;
-    left: 95%; */
+
 }
 
 .video_button .button-prev-slide {
@@ -97,25 +94,65 @@
   border: 1px solid#DFDFDF;
   display: grid;
   place-items: center;
-  /* position: absolute;
-    z-index: 10;
-    top: 0%;
-    right: 0%; */
+
 }
 
+.transparent_data {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.01);
+  border-radius: 10px;
+  /* z-index: 1000; */
+  top: 0;
+}
+
+.youtube_btn {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #DD0E0E;
+  display: flex;
+  border-radius: 10px;
+  /* color: #DD0E0E; */
+}
+
+.fa_youtube {
+  color: #fff;
+  width: 60px;
+  height: 55px;
+}
+
+
 /* ============================Responsive Tablet========================*/
-@media screen and (max-width: 1024px) {
+@media (min-width: 1024px) and (max-width: 1291px) {
   .video_img iframe {
     width: 98%;
-    height: 30vh;
+    height: 50vh;
   }
 
   .video_main_slider {
-    height: 30vh;
+    height: 55vh;
+  }
+
+  .transparent_data {
+    height: 73%;
+  }
+
+  .fa_youtube {
+    color: #fff;
+    width: 60px;
+    height: 45px;
+  }
+
+  .youtube_btn {
+    left: 49.5%;
+    top: 49.5%;
   }
 }
 
-@media screen and (max-width: 768px) {
+@media (min-width: 768px) and (max-width: 1023px) {
   .video_button {
     position: absolute;
     top: 5%;
@@ -124,18 +161,37 @@
 
   .video_img iframe {
     width: 98%;
-    height: 50vh;
+    height: 25vh;
   }
 
   .video_main_slider {
-    height: 40vh;
+    height: 22vh;
+  }
+
+  .transparent_data {
+    height: 38%;
   }
 }
 
-@media screen and (max-width: 500px) {
+@media screen and (max-width:768px) {
+  .video_img iframe {
+    width: 100%;
+    height: 40vh;
+  }
+
+  .video_main_slider {
+    height: 32vh;
+  }
+
+  .transparent_data {
+    height: 59%;
+  }
+}
+
+@media (min-width: 320px) and (max-width: 767px) {
   .video_button {
     position: absolute;
-    top: 7%;
+    top: 10%;
     left: 75%;
   }
 
@@ -143,12 +199,36 @@
     padding-bottom: 0;
   }
 
+  .video_section .video_title h3 {
+    font-size: 1rem;
+  }
+
+  .video_left p {
+    font-size: 11px;
+  }
+
   .video_img iframe {
-    width: 98%;
-    height: 30vh;
+    width: 100%;
+    height: 25vh;
   }
 
   .video_main_slider {
     height: 30vh;
+    max-width: 100%;
+  }
+
+  .transparent_data {
+    height: 38%;
+  }
+
+  .container {
+    max-width: 100%;
+    margin: auto;
+  }
+
+  .fa_youtube {
+    color: #fff;
+    width: 50px;
+    height: 45px;
   }
 }

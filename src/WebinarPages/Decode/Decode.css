@@ -1,0 +1,441 @@
+.decode_success_section {
+    padding: 100px 0 30px;
+}
+
+.decode_success_parent {
+    display: flex;
+    /* grid-template-columns: repeat(2, 1fr); */
+    gap: 50px;
+}
+
+.decode_success_left {
+    width: 50%;
+    text-align: center;
+    padding: 30px 0px;
+    background-color: #f6f6f6;
+}
+
+.decode_img_left iframe {
+    max-width: 100%;
+    height: 350px;
+    padding: 0 20px;
+}
+
+.decode_success_right {
+    width: 50%;
+}
+
+.decode_success_right .decode_heading h2 {
+    font-weight: 600;
+    font-size: 32px;
+    color: #333;
+    line-height: 36px;
+}
+
+.decode_success_right .decode_heading p {
+    font-size: 16px;
+    font-weight: 400;
+    color: #707070;
+    line-height: 20px;
+    padding: 7px 100px 0px 0px;
+}
+
+.topic_infection {
+    padding: 30px 0 20px;
+    width: 65%;
+}
+
+.topic_infection_parent {
+    display: flex;
+    padding: 40px 0 40px;
+}
+
+.topic_infection .topic_content_head {
+    font-size: 30px;
+    font-weight: 600;
+    color: #333;
+    line-height: 30px;
+    padding-bottom: 15px;
+}
+
+.topic_infection .topic_date {
+    font-size: 16px;
+    font-weight: 600;
+    color: #666;
+    line-height: 24px;
+    padding: 5px 0;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.topic_infection .topic_mentor {
+    font-size: 16px;
+    font-weight: 600;
+    color: #666;
+    line-height: 26px;
+    text-transform: uppercase;
+    padding-bottom: 15px;
+    letter-spacing: 1px;
+}
+
+.topic_infection .topic_language {
+    font-size: 18px;
+    font-weight: 300;
+    color: #222;
+    line-height: 26px;
+    padding: 10px 0;
+}
+
+.topic_infection .topic_hour {
+    font-size: 20px;
+    font-weight: 600;
+    color: #03a600;
+    line-height: 26px;
+    text-transform: uppercase;
+}
+
+.simplified_right_video {
+    text-align: center;
+}
+
+.simplified_right_video img {
+    border-radius: 10px;
+}
+
+.right_topic button {
+    font-size: 20px;
+    font-weight: 500;
+    color: #fff;
+    background-color: #dd0e0e;
+    width: 250px;
+    height: 50px;
+    border-radius: 40px;
+    margin: 20px 0;
+    cursor: pointer;
+}
+
+.left_img .topic_language {
+    font-size: 22px;
+    font-weight: 600;
+    color: #222;
+}
+
+.timer_btn button {
+    width: 150px;
+    height: 45px;
+    border: 1px solid #dd0e0e;
+    color: #dd0e0e;
+    border-radius: 50px;
+    font-size: 20px;
+    background-color: transparent;
+    font-weight: 600;
+    margin: 5px 0 12px;
+}
+
+.topic_note .para_note {
+    font-size: 22px;
+    color: #222;
+    font-weight: 300;
+    line-height: 28px;
+    text-align: center;
+    padding: 20px 50px;
+}
+
+.mobile_img_video {
+    display: none;
+}
+
+.topic_infection_offer {
+    position: relative;
+    width: 35%;
+    text-align: right;
+}
+
+.offer_content {
+    position: absolute;
+    top: 15%;
+    left: 24%;
+    text-align: center;
+    transform: rotate(338deg);
+}
+
+.offer_content .offer_price {
+    font-size: 36px;
+    font-weight: 600;
+    color: #fff;
+    text-decoration: line-through;
+}
+
+.offer_content .join_offer {
+    font-size: 36px;
+    font-weight: 600;
+    color: #fff;
+}
+
+.offer_timer_parent {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+}
+
+.offer_timer_left .timer_haed {
+    font-size: 18px;
+    font-weight: 600;
+    color: #333;
+    padding-bottom: 10px;
+}
+
+.offer_timer_right {
+    background-color: #f6f6f6;
+    margin-top: 30px;
+}
+
+.offer_timer_right p {
+    padding: 16px;
+    font-size: 15px;
+    color: #7d7d7d;
+    line-height: 20px;
+}
+
+.offer_timer_right p span {
+    color: #e38901;
+    font-weight: 600;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.offer_timer_right p b {
+    color: #000;
+    font-weight: 600;
+    font-size: 16px;
+}
+
+.decode_img_left {
+    position: relative;
+}
+
+.youtube_btn {
+    position: absolute;
+    top: 49%;
+    left: 49.8%;
+    transform: translate(-50%, -50%);
+    background-color: #dd0e0e;
+    display: flex;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.fa_youtube {
+    color: #fff;
+    width: 70px;
+    height: 50px;
+}
+
+/* ============================Responsive Tablet========================*/
+
+@media (min-width: 1024px) and (max-width: 1291px) {
+    .decode_success_parent {
+        flex-direction: column;
+    }
+
+    .decode_success_left {
+        width: 100%;
+        height: 100%;
+        padding: 30px;
+    }
+
+    .decode_success_right {
+        width: 100%;
+    }
+
+    .fa_youtube {
+        width: 65px;
+        left: 48.6%;
+        height: 50px;
+    }
+
+    .decode_img_left iframe {
+        height: 460px;
+    }
+
+    .offer_content {
+        top: 20%;
+        left: 9%;
+    }
+
+    .decode_success_right .decode_heading h2 {
+        font-size: 23px;
+    }
+
+    .topic_infection .topic_content_head {
+        font-size: 24px;
+        line-height: 0;
+    }
+
+    .topic_infection_parent {
+        padding: 0;
+    }
+
+    .offer_timer_parent {
+        flex-direction: column;
+        gap: 0;
+        align-items: flex-start;
+    }
+
+    .decode_success_right .decode_heading p {
+        font-size: 14px;
+    }
+
+    .offer_content .offer_price {
+        font-size: 36px;
+    }
+
+    .offer_content .join_offer {
+        font-size: 36px;
+    }
+}
+
+@media screen and (max-width: 1024px) {
+    .offer_content {
+        top: 16%;
+        left: 48%;
+    }
+
+    .offer_content .offer_price {
+        font-size: 30px;
+    }
+
+    .offer_content .join_offer {
+        font-size: 30px;
+    }
+
+}
+
+@media (min-width: 768px) and (max-width: 1023px) {
+    .offer_content {
+        left: 33%;
+        top: 18%;
+    }
+
+    .decode_success_parent {
+        flex-direction: column;
+    }
+
+    .decode_img_left {
+        width: 100%;
+        height: 100%;
+    }
+
+    .decode_success_left {
+        width: 100%;
+        padding: 30px;
+    }
+
+    .decode_success_right {
+        width: 100%;
+    }
+
+    .decode_img_left iframe {
+        height: 330px;
+    }
+
+    .offer_content .offer_price {
+        font-size: 36px;
+    }
+
+    .offer_content .join_offer {
+        font-size: 36px;
+    }
+
+    .fa_youtube {
+        width: 65px;
+        height: 50px;
+    }
+}
+
+@media (min-width: 320px) and (max-width: 767px) {
+    .fa_youtube {
+        width: 65px;
+        height: 50px;
+    }
+
+    .offer_content {
+        left: 36%;
+    }
+
+    .decode_img_left {
+        width: 100%;
+        height: 100%;
+    }
+
+    .decode_success_parent {
+        flex-direction: column;
+    }
+
+    .decode_success_left {
+        width: 100%;
+        padding: 30px;
+    }
+
+    .decode_success_right {
+        width: 100%;
+    }
+
+    .decode_img_left iframe {
+        height: 160px;
+    }
+
+    .decode_success_right .decode_heading h2 {
+        font-size: 22px;
+    }
+
+    .decode_success_right .decode_heading p {
+        font-size: 16px;
+        padding: 0;
+    }
+
+    .topic_infection .topic_content_head {
+        font-size: 18px;
+    }
+
+    .topic_infection .topic_date {
+        font-size: 16px;
+    }
+
+    .topic_infection_parent {
+        align-items: center;
+        padding: 0;
+    }
+
+    .topic_infection .topic_mentor {
+        font-size: 16px;
+    }
+
+    .topic_infection .topic_hour {
+        font-size: 15px;
+    }
+
+    .offer_content {
+        left: 8%;
+    }
+
+    .offer_content .offer_price {
+        font-size: 22px;
+    }
+
+    .offer_content .join_offer {
+        font-size: 22px;
+    }
+
+    .offer_timer_parent {
+        gap: 0;
+    }
+
+    .offer_timer_parent {
+        flex-direction: column;
+    }
+
+    .decode_success_section {
+        padding: 30px 0;
+    }
+}

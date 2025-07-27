@@ -1,0 +1,87 @@
+.upcoming_section{padding: 50px 0 20px;}
+/* .upcoming_title{margin-left: 15px;} */
+.upcoming_title h2{
+    font-size: 32px;
+    font-weight: 600;
+    color: #333;
+    line-height: 38px;
+}
+.upcoming_title p{
+    font-size: 16px;
+    font-weight: 400;
+    color: #7a7a7a;
+    line-height: 20px;
+    padding-top: 10PX;
+}
+.upcoming_item_card{margin: 20px 0px;}
+.upcoming_card{display: grid; grid-template-columns: repeat(3, 1fr);place-items: center; gap: 20px;}
+.upcoming_img{position: relative;}  
+.upcoming_img .overlay{
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0px;
+    right: 0px;
+    opacity: 1;
+    transition: opacity 0.4s ease-in-out;
+    /* background: rgba(0, 0, 0, 0.5); */
+    cursor: pointer;
+}
+.upcoming_img .upcoming_content{
+    position: absolute;
+    bottom: 0%;
+    left: 0%;
+    transform: translatex(0px);
+    text-align: left;
+    color: #fff; font-size: 20px; padding: 0 10px 0px 30px; width: 100%;
+    margin-bottom: 30px;
+}
+.mastermind_title{ padding-left: 10px;}
+.mastermind_title h4{color: #333; font-weight: 700; font-size: 20px; padding: 10px 0 5px;}
+.mastermind_title p{color: #666; font-weight: 400; font-size: 16px;}
+.upcoming_img:hover .overlay{
+    opacity: 1;
+}
+.upcoming_content h3{
+    font-size: 17px;
+    font-weight: 700;
+    color: #fff;
+    line-height: 24px;
+}
+.upcoming_content p{
+    font-size: 14px;
+    font-weight: 300;
+    color: #fff;
+    line-height: 20px;
+    padding-top: 5px;
+}
+/* .upcoming_img .overlayBottom{
+    height: 100%;
+    width: 0;
+    top: 0;
+    left: 0;
+    right: 30px;
+    background: #dd0e0ebd;
+}
+.upcoming_img:hover .overlayBottom{
+    width: 100%;
+} */
+
+/* ============================Responsive Tablet========================*/
+@media screen and (max-width: 1024px){
+    .upcoming_card{gap: 20px;}
+    .upcoming_img .upcoming_content{padding: 0 20px 0px 15px; margin-bottom: 15px;}
+    .upcoming_content h3{font-size: 15px; line-height: 18px;}
+    .upcoming_content p{font-size: 12px; line-height: 15px; padding-top: 5px;}
+}
+@media screen and (max-width: 768px){
+    .upcoming_card{grid-template-columns: repeat(2, 1fr);}
+    .upcoming_content h3{font-size: 18px; line-height: 20px;}
+    .upcoming_content p{font-size: 14px; line-height: 19px; padding-top: 5px;}
+    .upcoming_img .upcoming_content{margin-bottom: 20px;}
+}
+@media screen and (max-width: 500px){
+    .upcoming_card{grid-template-columns: repeat(1, 1fr); gap: 0;}
+    .upcoming_title h2{font-size: 20px; line-height: 24px;}
+    .upcoming_title p {font-size: 15px;}
+}

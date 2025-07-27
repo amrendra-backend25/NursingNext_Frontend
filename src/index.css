@@ -2,9 +2,7 @@
 
 * {
   margin: 0;
-  padding: 0;
   box-sizing: border-box;
-  list-style: none;
   text-decoration: none;
   border: none;
   outline: none;
@@ -12,14 +10,23 @@
   font-family: 'Roboto', sans-serif;
 }
 
-img {
-  max-width: 100%;
-  /* margin:auto; */
-}
+/* img {
+  width: 100%;
+  margin:auto;
+} */
+
+
+
 
 main {
   max-width: 100%;
   margin: auto;
+}
+
+.container {
+  width: 1280px;
+  max-width: 100%;
+  margin: 0 auto;
 }
 
 :root {
@@ -35,9 +42,7 @@ main {
   --color-black: hsl(var(--primary-hue), 5%, var(--black-lightless));
 
 
-  /* container variables */
-  --width-lg: 90%;
-  --width-md: 90%;
+
 
   /* Border Radius */
   --border-radius-1: 1.2rem;
@@ -57,11 +62,11 @@ body {
   line-height: 1.6;
 }
 
-.container {
-  width: var(--width-lg);
+/* .container {
+  max-width: 90%;
   margin-inline: auto;
-  /* max-width: 1920px; */
-}
+  max-width: 1920px;
+} */
 
 /* section{
   padding: 9rem 0;
@@ -121,12 +126,12 @@ h6 {
 }
 
 img {
-  /* display: block; */
   max-width: 100%;
+  /* margin: auto; */
   object-fit: cover;
 }
 
-.btn {
+/* .btn {
   display: inline-block;
   width: fit-content;
   display: flex;
@@ -168,7 +173,7 @@ img {
 
 .btn.sm {
   padding: .5rem 1.2rem;
-}
+} */
 
 ::-webkit-scrollbar {
   height: .5rem;
@@ -209,15 +214,20 @@ img {
 
 
 /* ============================Responsive Tablet========================*/
+@media screen and (max-width: 1350px) {
+  .container {
+    width: 95%;
+  }
+}
 
 @media screen and (max-width: 1024px) {
   body {
     font-size: 1rem;
   }
 
-  .container {
+  /* .container {
     width: var(--width-md);
-  }
+  } */
 
   /* section{
     padding: 8rem 0;

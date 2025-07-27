@@ -1,0 +1,146 @@
+.our_learners_section {
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    min-height: 60vh;
+    position: relative;
+    margin: 40px 0;
+}
+
+.our_learners_head {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.our_learners_head h1 {
+    font-size: 36px;
+    font-weight: 600;
+    line-height: 44px;
+    color: #fff;
+}
+
+/* .our_learners_title{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 40px;
+} */
+.our_learners_title .learner_card {
+    display: flex;
+    justify-content: center;
+    padding: 40px 40px 60px;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    background-color: #fff;
+    border: 1px solid #d2d2d2;
+}
+
+.learner_img {
+    width: 30%;
+    text-align: center;
+}
+
+.learner_content {
+    width: 70%;
+}
+
+.learner_content h4 {
+    font-size: 20px;
+    text-transform: capitalize;
+    color: #000;
+}
+
+.learner_content h6 {
+    color: #707070;
+    font-size: 15px;
+    padding-top: 5px;
+}
+
+.learner_content h6 span {
+    color: #DD0E0E;
+    font-weight: 700;
+    font-size: 17px;
+}
+
+.learner_content p {
+    color: #707070;
+    font-size: 15px;
+    font-weight: 400;
+    line-height: 22px;
+    padding-top: 6px;
+    max-height: 5rem;
+}
+
+.our_nextian_section {
+    margin-top: -170px;
+    margin-bottom: 60px;
+}
+
+/* ============================Responsive Tablet========================*/
+
+
+@media (min-width: 1024px) and (max-width:1291px) {
+    .our_learners_section {
+        min-height: 50vh;
+    }
+
+    .our_learners_head h1 {
+        font-size: 28px;
+    }
+}
+
+
+@media (min-width: 768px) and (max-width:1023px) {
+    .our_learners_section {
+        min-height: 35vh;
+    }
+
+    .our_learners_head h1 {
+        font-size: 25px;
+    }
+}
+
+@media (min-width: 500px) and (max-width:767px) {
+    .our_learners_section {
+        min-height: 30vh;
+    }
+
+    .our_learners_section h1 {
+        font-size: 21px;
+        line-height: 26px;
+        text-align: center;
+    }
+
+}
+
+@media (min-width: 300px) and (max-width:499px) {
+    .our_learners_section {
+        min-height: 30vh;
+    }
+
+    .our_learners_head h1 {
+        font-size: 13px;
+    }
+
+    .our_learners_title .learner_card {
+        flex-direction: column;
+    }
+
+    .learner_img {
+        width: 100%;
+    }
+
+    .learner_content {
+        width: 100%;
+    }
+
+    .our_nextian_section {
+        margin: 0;
+    }
+}
+
+/* @media screen and (max-width:500px){
+    .our_learners_section{min-height: 30vh;}
+
+
+} */

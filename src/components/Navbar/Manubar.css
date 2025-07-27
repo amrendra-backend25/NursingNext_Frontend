@@ -62,6 +62,12 @@ nav {
   font-weight: 300;
 }
 
+.call_icon {
+  margin-right: 1rem;
+  margin-top: 12px;
+  color: #000;
+}
+
 /* ______________ manubar____________________ */
 .nav_container {
   display: flex;
@@ -71,7 +77,14 @@ nav {
 }
 
 .manubar_section .nav_logo img {
-  width: 200px;
+  width: 140px;
+  margin-top: -30px;
+}
+
+.manubar_section .nav_logo h3 {
+  width: 140px;
+  margin-top: -10px;
+  color: #000;
 }
 
 .manu_nav {
@@ -86,6 +99,7 @@ nav {
   align-items: center;
   /* gap: 2rem; */
   position: relative;
+  list-style: none;
 }
 
 .nav_menu a {
@@ -128,12 +142,13 @@ nav {
 }
 
 .sub_menu li {
-  padding: 10px;
+  padding: 0 0.5rem;
 }
 
 .sub_menu a {
   color: #000;
   text-decoration: none;
+  display: block;
 }
 
 .sub_menu a:hover {
@@ -194,6 +209,10 @@ nav {
   }
 
   .nav_container {
+    display: none;
+  }
+
+  .header {
     display: none;
   }
 
@@ -324,16 +343,19 @@ nav {
   height: 60px;
   text-decoration: none;
   font-size: 18px;
+  font-weight: 500;
 }
 
 .siderbarlink:hover {
-  background: #252831;
-  border-left: 4px solid #632de4;
+  background: #fff;
+  border-left: 4px solid #DA0303;
   cursor: pointer;
+  color: #000;
 }
 
 .sidebaricon {
   display: flex;
+  align-items: center;
 }
 
 .sidebarlabel {
@@ -341,19 +363,22 @@ nav {
 }
 
 .dropdownlink {
-  background: #414757;
-  height: 60px;
+  background: #fff;
+  height: 40px;
   padding-left: 3rem;
   display: flex;
   align-items: center;
   text-decoration: none;
-  color: #f5f5f5;
-  font-size: 18px;
+  color: #000;
+  font-size: 15px;
+  line-height: 20px;
+  font-weight: 500;
 }
 
 .dropdownlink:hover {
-  background: #632ce4;
+  background: #DA0303;
   cursor: pointer;
+  color: #fff;
 }
 
 @media (max-width: 550px) {

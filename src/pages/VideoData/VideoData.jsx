@@ -5,48 +5,31 @@ import "swiper/css";
 import "swiper/css/pagination";
 import { Navigation, Autoplay } from "swiper/modules";
 import { IoIosArrowBack, IoIosArrowForward } from "react-icons/io";
-import { useState, useEffect } from "react";
-import { Paths } from "../../config/configAPI";
-import axios from "axios";
+import { useState } from "react";
+import { FaYoutube } from "react-icons/fa6";
+import HomeVideoModel from "../HomeVideoModel/HomeVideoModel";
+
 const VideoData = () => {
-  const [homeVideos, setHomeVideos] = useState([]);
-  const [setIsError] = useState("");
-  const displayMasterMind = async () => {
-    try {
-      const response = await Paths.EndpointsURL.VideoSnippts;
-      axios({
-        url: response,
-        method: "GET",
-        headers: {
-          "Content-type": "application/json",
-        },
-      }).then((record) => {
-        setHomeVideos(record.data.data);
-        //console.log(record.data.products);
-      });
-    } catch (error) {
-      setIsError(error.msg);
-      //console.log(error.msg);
-    }
+  const [modalOpen5, setModalOpen5] = useState(false);
+  const [selectedFaculty5, setSelectedFaculty5] = useState({});
+
+  const openModal5 = (person) => {
+    setSelectedFaculty5(person);
+    setModalOpen5(true);
   };
 
-  useEffect(() => {
-    displayMasterMind();
-  }, []);
+  const closeModal5 = () => {
+    setModalOpen5(false);
+  };
 
   return (
     <section className="video_section">
       <div className="container">
         <div className="video_title">
-          <h3>Recommended Videos </h3>
+          <h3>Videos Section</h3>
         </div>
         <div className="video_subtitle">
-          <div className="video_left">
-            <p>Boost Your Preparation</p>
-          </div>
-          {/* <div className="video_btn">
-            <button className="video_button">See All</button>
-          </div> */}
+          <div className="video_left"></div>
         </div>
         <div className="video_main_slider">
           <Swiper
@@ -60,24 +43,29 @@ const VideoData = () => {
               delay: 5000,
               disableOnInteraction: false,
             }}
-            // loop={true}
+            loop={true}
             modules={[Navigation, Autoplay]}
             className="mySwiper"
           >
-            {homeVideos.map((item) => (
-              <SwiperSlide key={item.id}>
-                <div className="video_card">
-                  <div className="video_img">
-                    <ReactPlayer
-                      width="98%"
-                      height="75vh"
-                      controls
-                      url={item.videoLink}
-                    />
+            <SwiperSlide>
+              <div className="video_card" onClick={() => openModal5(person)}>
+                <div className="video_img">
+                  <ReactPlayer
+                    width="80%"
+                    height="70vh"
+                    controls
+                    url="https://www.youtube.com/watch?v=KNAzWNUzRoE"
+                  />
+                  <div className="transparent_data">
+                    <div className="youtube_btn">
+                      <FaYoutube className="fa_youtube" />
+                      <HomeVideoModel />{" "}
+                    </div>
                   </div>
                 </div>
-              </SwiperSlide>
-            ))}
+              </div>
+            </SwiperSlide>
+
             <div className="video_button">
               <div className="button-prev-slide" style={{ cursor: "pointer" }}>
                 <IoIosArrowForward />
@@ -92,6 +80,12 @@ const VideoData = () => {
           </Swiper>
         </div>
       </div>
+      {/* Modal Component */}
+      <HomeVideoModel
+        isOpen={modalOpen5}
+        onClose={closeModal5}
+        person={selectedFaculty5}
+      />
     </section>
   );
 };

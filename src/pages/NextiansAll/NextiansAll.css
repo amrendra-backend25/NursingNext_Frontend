@@ -18,17 +18,18 @@
 }
 
 .nextian_seeall_left h2 {
-    font-size: 44px;
-    font-weight: 700;
+    font-size: 50px;
+    font-weight: 900;
     line-height: 60px;
     color: #fff;
     letter-spacing: 0.5px;
+    color: #fff;
 }
 
 .nextian_seeall_left p {
-    font-size: 16px;
+    font-size: 20px;
     font-weight: 400;
-    line-height: 22px;
+    line-height: 25px;
     color: #fff;
 }
 
@@ -187,7 +188,7 @@
 }
 
 .our_proud_nextian_content .our_proud_view {
-    font-size: 15px;
+    font-size: 13px;
     font-weight: 400;
     color: #707070;
     line-height: 22px;
@@ -205,9 +206,10 @@
 
 .our_proud_nextian_img {
     overflow: hidden;
-    width: 150px;
-    height: 150px;
+    width: 130px;
+    height: 130px;
     margin: auto;
+    border-radius: 50%;
 }
 
 .our_proud_nextian_img img {
@@ -247,9 +249,10 @@
     text-align: right;
 }
 
-.nextian_modal_close {
+.nextian_modal_content .nextian_modal_close {
     font-size: 30px;
     cursor: pointer;
+    color: #333 !important;
 }
 
 .show {
@@ -263,7 +266,7 @@
     gap: 60px;
     /* padding: 0px 80px 15px; */
     max-width: 75vw;
-    min-height: 50vh;
+    /* min-height: 50vh; */
 }
 
 .nextian_image_left {
@@ -271,6 +274,11 @@
     text-align: center;
     background-color: #F5F5F7;
     border-radius: 10px;
+}
+
+.nextian_image_left img {
+    width: 300px;
+    height: 300px;
 }
 
 .nextian_description_right {

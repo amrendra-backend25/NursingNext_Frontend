@@ -1,13 +1,38 @@
-.top-btn{
-    font-size: 2rem;
-    color: #fdfdff;  
-    position: fixed;
-    bottom: 1rem;
-    right: 1.5rem;
-    z-index: 999;
-    cursor: pointer;
+/* ScrollToTopButton.css */
+
+.scroll_to_top {
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
-.top-btn--icon{
-    background: red;
+
+.scroll_to_top .top_btn {
+    position: fixed;
+    font-size: 1.5rem;
+    width: 2rem;
+    height: 2rem;
     border-radius: 50%;
+    color: #fff;
+    background-color: #DD0E0E;
+    bottom: 30px;
+    right: 120px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    z-index: 15;
+}
+
+.scroll_to_top .top_btn i {
+    animation: gototop 1s linear infinite alternate-reverse;
+}
+
+@keyframes gototop {
+    0% {
+        transform: translateY(-0rem);
+    }
+
+    100% {
+        transform: translateY(0rem);
+    }
 }

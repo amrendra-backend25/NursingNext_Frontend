@@ -1,10 +1,12 @@
 .digital_section {
   padding: 4rem 0;
-  background: #fcfbfb;
+  background: #fff;
+  overflow: hidden;
 }
 
 .digital_title {
-  text-align: center;
+  text-align: left;
+  margin-bottom: 2rem;
 }
 
 .digital_title h3 {
@@ -13,104 +15,72 @@
   font-weight: 700;
 }
 
+.digital_parent_container {
+  overflow: hidden;
+  padding: 20px 0;
+}
+
 .digital_parent {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  margin-top: 50px;
-  gap: 20px;
-}
-
-.digital_parent .digital_card {
   display: flex;
+  animation: slide 10s linear infinite;
+}
+
+@keyframes slide {
+  0% {
+    transform: translateX(0);
+  }
+
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.digital_card {
+  flex: 0 0 200px;
+  display: flex;
+  justify-content: center;
   align-items: center;
-  padding: 10px 15px;
-  /* border: 1px solid #333; */
-  /* box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px; */
-  box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px,
-    rgb(253, 254, 255) 0px 1px 3px 1px;
-  border-radius: 8px;
   background: #fff;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  padding: 20px;
+  margin: 0 10px;
+  transition: all 0.3s ease;
 }
 
-.digital_parent .digital_img img {
-  height: 35px;
-  width: 35px;
-  transition: 1s linear;
-  cursor: pointer;
-  /* border-radius: 50%; */
-  /* border: 1px solid #707070; */
+.digital_card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
 }
 
-.digital_parent .digital_img img:hover {
-  transform: rotatey(360deg);
+.digital_img {
+  width: 100%;
+  height: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-.digital_parent .digital_title {
-  text-align: left;
-  padding-left: 25px;
+.digital_img img {
+  max-width: 100%;
+  max-height: 100px;
+  object-fit: contain;
 }
 
-
-.digital_parent .digital_title h3 {
-  font-size: 16px;
-  font-weight: 400;
-  line-height: 28px;
-  color: #333;
+/* Pause animation on hover */
+.digital_parent_container:hover .digital_parent {
+  animation-play-state: paused;
 }
 
-.digital_parent .digital_title p {
-  font-size: 16px;
-  font-weight: 400;
-  color: #707070;
-}
-
-.digital_btn {
-  text-align: center;
-}
-
-.digital_btn .why_btn {
-  width: 125px;
-  height: 45px;
-  background: #dd0e0e;
-  color: #fff;
-  border-radius: 26px;
-  margin-top: 60px;
-  font-size: 16px;
-  font-weight: 500;
-}
-
-.digital_btn_submit {
-  text-align: center;
-}
-
-.digital_section .digital_btn {
-  height: 44px;
-  width: 110px;
-  border-radius: 25px;
-  background-color: #dd0e0e;
-  color: #fff;
-  font-weight: 500;
-  cursor: pointer;
-  margin-top: 40px;
-}
-
-
-/* ============================Responsive Tablet/Phone========================*/
-@media screen and (max-width: 1024px) {
-  .digital_parent {
-    grid-template-columns: repeat(3, 1fr);
+@media (max-width: 768px) {
+  .digital_card {
+    flex: 0 0 150px;
   }
 }
 
-@media screen and (max-width: 768px) {
-  .digital_parent {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
-
-@media screen and (max-width: 550px) {
-  .digital_parent {
-    grid-template-columns: repeat(1, 1fr);
+@media (max-width: 480px) {
+  .digital_card {
+    flex: 0 0 120px;
   }
 
   .digital_title h3 {

@@ -6,130 +6,61 @@ const navbar = [
   },
   {
     id: 2,
-    link: "offers",
-    title: "offers",
+    link: "solutions",
+    title: "solutions",
   },
   {
     id: 3,
-    link: "all-courses",
-    title: "courses",
+    link: "services",
+    title: "services",
 
     subRoutes: [
       {
-        name: "All Courses",
-        link: "all-courses",
+        name: "MRO",
+        link: "mro",
       },
       {
-        name: "Free Pack",
-        link: "plan-zero",
-      },
-
-      {
-        name: "MLB PRO",
-        link: "plan-mlb-pro",
-      },
-      {
-        name: "Mastermind Pack",
-        link: "plan-c-plus",
-      },
-      {
-        name: "Undergraduate Pack",
-        link: "plan-ug",
-      },
-      {
-        name: "MLB Lite Crash Course",
-        link: "plan-mlb-lite",
+        name: "Indirect Spend",
+        link: "indirect-spend",
       },
 
       {
-        name: "Crash Courses",
-        link: "plan-a",
+        name: "Vendor Managed",
+        link: "vendor-managed",
       },
       {
-        name: "MSc Entrance / SNO",
-        link: "plan-msc",
+        name: "Analytics",
+        link: "analytics",
       },
       {
-        name: "NNL VSL Pack",
-        link: "plan-np",
-      },
-
-      {
-        name: "Target High Digital Lite",
-        link: "plan-th",
+        name: "inventory forecasting",
+        link: "inventory-forecasting",
       },
       {
-        name: "Question Back Pack",
-        link: "plan-qb",
+        name: "Encrypted Operations",
+        link: "encrypted-operations",
       },
       {
-        name: "Faculty Development",
-        link: "plan-fdp",
+        name: "Procurement ",
+        link: "procurement",
       },
       {
-        name: "NCLEX",
-        link: "plan-n",
+        name: "Corporate gifting",
+        link: "corporate-gifting",
       },
     ],
   },
-  {
-    id: 4,
-    link: "/all-exams",
-    title: "exams",
 
-    subRoutes: [
-      {
-        name: "All Exams",
-        link: "/all-exams",
-      },
-      {
-        name: "AIIMS NORCET",
-        link: "/aiims-norcet",
-      },
-      {
-        name: "PGIMER",
-        link: "/pgimer",
-      },
-      {
-        name: "ESIC",
-        link: "/esic",
-      },
-      {
-        name: "RRB",
-        link: "/rrb",
-      },
-      {
-        name: "JIPMER",
-        link: "/jipmer",
-      },
-      {
-        name: "CHO",
-        link: "/cho",
-      },
-      {
-        name: "NIMHANS",
-        link: "/nimhans",
-      },
-      {
-        name: "KERALA PSC/DHS",
-        link: "/kerala-psc-dhs",
-      },
-    ],
-  },
   {
     id: 5,
-    title: "stories",
+    title: "partners",
     link: "stories",
   },
+
   {
     id: 6,
     link: "newsroom",
-    title: "news room",
-  },
-  {
-    id: 7,
-    link: "blogs",
-    title: "blogs",
+    title: "careers",
   },
 ];
 export default navbar;

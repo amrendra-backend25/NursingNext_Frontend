@@ -108,7 +108,7 @@ const NextiansAll = () => {
                         }}
                         className="mySwiper"
                       >
-                        {proudNextians.map((person, index) => {
+                        {/* {proudNextians.map((person, index) => {
                           const { studentName, rank, passYear, studentImage } =
                             person;
                           return (
@@ -136,7 +136,7 @@ const NextiansAll = () => {
                               </SwiperSlide>
                             </>
                           );
-                        })}
+                        })} */}
                       </Swiper>
                     </div>
                   </div>
@@ -151,10 +151,10 @@ const NextiansAll = () => {
         <div className="container">
           <div className="our_proud_year">
             <div className="our_proud_nextian_title">
-              <h3>NORCET June 2023</h3>
+              <h3>NORCET 2024</h3>
             </div>
             <div className="our_proud_nextian_parent">
-              {proudNextians.slice(0, 4).map((person, index) => {
+              {proudNextians.slice(0, 9).map((person, index) => {
                 const {
                   studentName,
                   rank,
@@ -175,7 +175,7 @@ const NextiansAll = () => {
                       <div className="our_proud_nextian_content">
                         <p className="our_proud_name">{studentName}</p>
                         <p className="our_proud_rank">
-                          {rank} {passYear}
+                          {rank} | {passYear}
                         </p>
                         {/* <p className="our_proud_rank"></p> */}
                         <p className="our_proud_view">
@@ -200,12 +200,65 @@ const NextiansAll = () => {
               person={selectedFaculty}
             />
           </div>
+
+          <div className="our_proud_year">
+            <div className="our_proud_nextian_title">
+              <h3>NORCET 2023</h3>
+            </div>
+            <div className="our_proud_nextian_parent">
+              {proudNextians
+                .slice(9, 16)
+                .sort((a, b) => a.rank - b.rank)
+                .map((person, index) => {
+                  const {
+                    studentName,
+                    rank,
+                    passYear,
+                    studentImage,
+                    testimonial,
+                  } = person;
+                  return (
+                    <div
+                      key={index}
+                      className="our_proud_nextian_card"
+                      onClick={() => openModal(person)}
+                    >
+                      <div className="our_proud_nextian_img">
+                        <img src={studentImage} alt="" />
+                      </div>
+                      <div className="our_proud_nextian_content">
+                        <p className="our_proud_name">{studentName}</p>
+                        <p className="our_proud_rank">
+                          {rank} | {passYear}
+                        </p>
+                        <p className="our_proud_view">
+                          {isExpanded[index]
+                            ? testimonial
+                            : `${testimonial.substring(0, 110)}...`}
+                        </p>
+                        <div className="proud_nextian_btn">
+                          <button>Read More</button>
+                        </div>
+                      </div>
+                    </div>
+                  );
+                })}
+            </div>
+
+            {/* Modal Component */}
+            <NextianModel
+              isOpen={modalOpen}
+              onClose={closeModal}
+              person={selectedFaculty}
+            />
+          </div>
+
           <div className="our_proud_year">
             <div className="our_proud_nextian_title">
               <h3>NORCET 2022</h3>
             </div>
             <div className="our_proud_nextian_parent">
-              {proudNextians.slice(6, 10).map((person, index) => {
+              {proudNextians.slice(16, 18).map((person, index) => {
                 const {
                   studentName,
                   rank,
@@ -226,12 +279,12 @@ const NextiansAll = () => {
                       <div className="our_proud_nextian_content">
                         <p className="our_proud_name">{studentName}</p>
                         <p className="our_proud_rank">
-                          {rank} {passYear}
+                          {rank} | {passYear}
                         </p>
                         <p className="our_proud_view">
                           {isExpanded[index]
                             ? testimonial
-                            : `${testimonial.substring(0, 115)}...`}
+                            : `${testimonial.substring(0, 110)}...`}
                         </p>
                         <div className="proud_nextian_btn">
                           <button>Read More</button>
@@ -249,12 +302,13 @@ const NextiansAll = () => {
               person={selectedFaculty}
             />
           </div>
+
           <div className="our_proud_year">
             <div className="our_proud_nextian_title">
               <h3>NORCET 2021</h3>
             </div>
             <div className="our_proud_nextian_parent">
-              {proudNextians.slice(10, 14).map((person, index) => {
+              {proudNextians.slice(18, 20).map((person, index) => {
                 const {
                   studentName,
                   rank,
@@ -275,12 +329,12 @@ const NextiansAll = () => {
                       <div className="our_proud_nextian_content">
                         <p className="our_proud_name">{studentName}</p>
                         <p className="our_proud_rank">
-                          {rank} {passYear}
+                          {rank} | {passYear}
                         </p>
                         <p className="our_proud_view">
                           {isExpanded[index]
                             ? testimonial
-                            : `${testimonial.substring(0, 115)}...`}
+                            : `${testimonial.substring(0, 111)}...`}
                         </p>
                         <div className="proud_nextian_btn">
                           <button>Read More</button>

@@ -1,6 +1,7 @@
 /* New Css Code start Here */
 .stories_section {
-  background-image: url('/images/aboutUs/about.png');
+
+
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
@@ -20,9 +21,10 @@
 
 .stories_title h2 {
   text-transform: uppercase;
-  font-size: 44px;
-  font-weight: 700;
+  font-size: 40px;
+  font-weight: 900;
   letter-spacing: 0.5px;
+  color: #fff;
 }
 
 .stories_title p {
@@ -33,9 +35,6 @@
   letter-spacing: 0.5px;
 }
 
-.video_part_right {
-  /* padding-bottom: 40px; */
-}
 
 /* VideoPlayer.css */
 .story_video_section {
@@ -246,7 +245,6 @@
 }
 
 .story_modal_content {
-  background-color: #fefefe;
   padding: 0px 20px 20px;
   border-radius: 8px;
   display: flex;
@@ -254,6 +252,7 @@
   position: relative;
   min-width: 80vw;
   min-height: 70vh;
+
 }
 
 .story_model_content_1 {
@@ -315,7 +314,7 @@
 
 @media screen and (max-width: 1024px) {
   .stories_section {
-    margin-top: 75px;
+    margin-top: 70px;
   }
 
   .story_video_left {
@@ -348,6 +347,14 @@
 }
 
 @media screen and (max-width: 768px) {
+  .stories_title {
+    padding: 4rem 0;
+  }
+
+  .stories_title h2 {
+    font-size: 1.9rem;
+  }
+
   .success_story_left {
     width: 100%;
   }
@@ -362,6 +369,11 @@
 
   .story_video_content p {
     padding-right: 12px;
+    padding-top: 1.2rem;
+  }
+
+  .story_video_content_2 {
+    margin-top: 3.5rem;
   }
 
   .story_video_title p {

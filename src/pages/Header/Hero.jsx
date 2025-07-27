@@ -1,37 +1,38 @@
 import "./Hero.css";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { useEffect, useState } from "react";
+import { lazy, useState, Suspense } from "react";
 import "swiper/css";
-// import image1 from "/images/banner-1.jpg";
 import user from "/images/person.png";
 import phone from "/images/phone.png";
 import email from "/images/email.png";
+import { FaMessage } from "react-icons/fa6";
 import { Navigation, Autoplay, Pagination } from "swiper/modules";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
 import { IoIosArrowBack, IoIosArrowForward } from "react-icons/io";
-import Counter from "../Counter/Counter";
-import Why from "../WhyUs/Why";
-import Digital from "../DigitalPathshala/Digital";
-import Mastermind from "../Mastermind/Mastermind";
+
+const Why = lazy(() => import("../WhyUs/Why"));
+const Digital = lazy(() => import("../DigitalPathshala/Digital"));
+const Mastermind = lazy(() => import("../Mastermind/Mastermind"));
 import VideoData from "../VideoData/VideoData";
-import Ournextian from "../OurNextians/Ournextian";
-import Feedback from "../Feedback/Feedback";
-import VisionandMission from "../VisionandMission/VisionandMission";
-import Simplify from "../Simplify/Simplify";
+const Ournextian = lazy(() => import("../OurNextians/Ournextian"));
+
 import { ToastContainer, toast } from "react-toastify";
 import { Paths } from "../../config/configAPI";
 import axios from "axios";
-import DynamicAccordion from "../Accordian/DynamicAccordion";
+import { useNavigate } from "react-router-dom";
+import { createLead } from "../LeadsquaredService/LeadsquaredService";
+import { NewWhyChoose } from "../WhyUs/NewWhyChoose";
 const Home = () => {
   const [uploadForm, setUploadForm] = useState({
     name: "",
     phone: "",
     email: "",
+    message: "",
   });
   const [isError, setIsError] = useState([]);
   const [isSuccess, setIsSuccess] = useState("");
-  const [isHomeBanner, setIsHomeBanner] = useState([]);
+  const navigate = useNavigate();
 
   const handleChange = (e) => {
     const name = e.target.name;
@@ -48,77 +49,81 @@ const Home = () => {
       newErrors.name = "Name is Required";
       isValid = false;
     }
-    if (!uploadForm.phone.trim()) {
-      newErrors.phone = "Phone is Required";
+    if (!uploadForm.phone) {
+      newErrors.phone = "Phone number is Required";
+      isValid = false;
+    } else if (uploadForm.phone.length !== 10) {
+      newErrors.phone = "Number must be 10 digits long only";
+      isValid = false;
+    } else if (!/^\d{10}$/.test(uploadForm.phone)) {
+      newErrors.phone = "Phone number can only contain digits";
       isValid = false;
     }
     if (!uploadForm.email.trim()) {
       newErrors.email = "Email is Required";
       isValid = false;
     }
+    if (!uploadForm.message.trim()) {
+      newErrors.message = "Message is Required";
+      isValid = false;
+    }
     setIsError(newErrors);
     return isValid;
   };
 
+  const validateLeadData = (data) => {
+    if (!data.name || !data.email || !data.phone || !data.message) {
+      throw new Error("Missing required lead details");
+    }
+  };
+
   const handleSubmit = async (e) => {
     e.preventDefault();
-    const newBanner = { ...uploadForm, id: new Date() };
-    if (validateForm()) {
-      try {
-        const response = await Paths.EndpointsURL.PostTopForm;
-        const res = await axios({
-          url: response,
-          method: "POST",
-          headers: {
-            "Content-type": "application/json",
-          },
-          data: JSON.stringify(newBanner),
-        });
-        setUploadForm(res.data.data);
-        console.log(res.data);
-        // toast.success("Form Submitted Successfully", {
-        //   position: "top-right",
-        //   autoClose: 1000,
-        // });
-        setIsSuccess({ message: res.data.message });
-        setUploadForm({
-          name: "",
-          phone: "",
-          email: "",
-        });
-      } catch (error) {
-        toast.error("Error uploading data:", error);
-      }
-    }
-  };
-
-  const displayHomeBanner = async () => {
+    if (!validateForm()) return;
     try {
-      const response = await Paths.EndpointsURL.HomeBanner;
-      axios({
-        url: response,
-        method: "GET",
-        headers: {
-          "Content-type": "application/json",
-        },
-      }).then((record) => {
-        setIsHomeBanner(record.data.data);
-        //console.log(record.data.products);
-      });
+      validateLeadData(uploadForm);
+      await createLead(uploadForm);
+      const newBanner = { ...uploadForm, id: new Date().toISOString() };
+      const response = await axios.post(
+        Paths.EndpointsURL.PostTopForm,
+        newBanner,
+        {
+          headers: { "Content-Type": "application/json" },
+        }
+      );
+      setIsSuccess({ message: response.data.message });
+      resetForm();
+      navigate("/thank-you");
+      setTimeout(() => setIsSuccess(""), 1000);
     } catch (error) {
-      setIsError(error.msg);
-      //console.log(error.msg);
+      handleSubmissionError(error);
     }
   };
 
-  useEffect(() => {
-    displayHomeBanner();
-  }, []);
+  const resetForm = () => {
+    setUploadForm({
+      name: "",
+      phone: "",
+      email: "",
+      message: "",
+    });
+  };
+
+  const handleSubmissionError = (error) => {
+    const errorMessage =
+      error.response?.data?.ExceptionMessage || error.message;
+    const prefix = error.response?.data?.ExceptionMessage
+      ? "LeadSquared Error: "
+      : "Error: ";
+    toast.error(prefix + errorMessage);
+  };
+
   return (
     <>
       <section className="slider_header">
         <Swiper
-          spaceBetween={50}
+          className="heroBannerSlider"
+          spaceBetween={0}
           slidesPerView={1}
           navigation={{
             nextEl: ".button-prev-slide",
@@ -129,19 +134,17 @@ const Home = () => {
           }}
           autoplay={{
             delay: 5000,
-            disableOnInteraction: false,
           }}
           loop={true}
           modules={[Navigation, Pagination, Autoplay]}
         >
-          {isHomeBanner.slice(0, 7).map((banner, index) => {
-            const { bannerImage } = banner;
+          {NewWhyChoose?.slice(0, 2).map((banner, index) => {
+            const { img } = banner;
             return (
               <>
                 <SwiperSlide>
                   <div className="image_slider" key={index}>
-                    <img src={bannerImage} alt="" />
-                    <div className="container"></div>
+                    <img src={img} alt="" />
                   </div>
                 </SwiperSlide>
               </>
@@ -163,25 +166,23 @@ const Home = () => {
               <div className="container">
                 <div className="text">Fill up & Claim the Offer!🎁</div>
                 <div className="inputs">
-                  <div className="input_error">
-                    <div className="input_form">
-                      <img src={user} alt="" />
-                      <input
-                        type="text"
-                        placeholder="Name*"
-                        id="name"
-                        name="name"
-                        value={uploadForm.name}
-                        onChange={handleChange}
-                        autoComplete="off"
-                      />
-                      {isError.name && <p className="error">{isError.name}</p>}
-                    </div>
+                  <div className="input_form">
+                    <img src={user} alt="" />
+                    <input
+                      type="text"
+                      placeholder="Name*"
+                      id="name"
+                      name="name"
+                      value={uploadForm.name}
+                      onChange={handleChange}
+                      autoComplete="off"
+                    />
+                    {isError.name && <p className="error">{isError.name}</p>}
                   </div>
                   <div className="input_form">
                     <img src={phone} alt="" />
                     <input
-                      type="phone"
+                      type="number"
                       placeholder="Phone*"
                       id="phone"
                       name="phone"
@@ -204,11 +205,32 @@ const Home = () => {
                     />
                     {isError.email && <p className="error">{isError.email}</p>}
                   </div>
-                  <div className="submit_container">
-                    <button className="submit">Submit</button>
+                  <div className="textarea_data">
+                    <div className="message_box">
+                      <FaMessage />
+                    </div>
+                    <textarea
+                      type="message"
+                      placeholder="Message*"
+                      id="message"
+                      name="message"
+                      value={uploadForm.message}
+                      onChange={handleChange}
+                      autoComplete="off"
+                    ></textarea>
+                    {isError.message && (
+                      <p className="error">{isError.message}</p>
+                    )}
+                  </div>
+                  <div className="banner_submit_container">
+                    <button className="submit" type="submit">
+                      Submit
+                    </button>
                   </div>
                   {isSuccess.message && (
-                    <p className="success">{isSuccess.message}</p>
+                    <div className="submit_success">
+                      <p className="success">{isSuccess.message}</p>
+                    </div>
                   )}
                 </div>
               </div>
@@ -220,7 +242,8 @@ const Home = () => {
       <section className="header_mobile_section">
         <div className="header_mobile_slider">
           <Swiper
-            spaceBetween={50}
+            className="heroBannerSlider"
+            spaceBetween={0}
             slidesPerView={1}
             navigation={{
               nextEl: ".button-prev-slide",
@@ -230,27 +253,21 @@ const Home = () => {
               clickable: true,
             }}
             autoplay={{
-              delay: 5000,
+              delay: 6000,
               disableOnInteraction: false,
             }}
             loop={true}
             modules={[Navigation, Pagination, Autoplay]}
           >
-            {isHomeBanner.slice(0, 7).map((banner) => {
-              const { bannerImage } = banner;
+            {NewWhyChoose?.slice(0, 2).map((banner) => {
+              const { img } = banner;
               return (
                 <>
                   <SwiperSlide>
                     <div className="header_mobile_offers_slider">
-                      <img src={bannerImage} alt="" />
+                      <img src={img} alt="" />
                       <div className="container">
-                        <div className="header_mobile_offers_content">
-                          {/* <h3>Offer of the Month</h3>
-                          <h1>Discounts up to 40% Subscribe Now & Save</h1>
-                          <button className="header_mobile_offers_btn">
-                            Know More
-                          </button> */}
-                        </div>
+                        <div className="header_mobile_offers_content"></div>
                       </div>
                     </div>
                   </SwiperSlide>
@@ -289,7 +306,7 @@ const Home = () => {
                 <div className="header_input_box">
                   {/* <label for="">phone</label> */}
                   <input
-                    type="phone"
+                    type="number"
                     placeholder="Phone*"
                     id="phone"
                     name="phone"
@@ -312,7 +329,20 @@ const Home = () => {
                   />
                   {isError.email && <p className="error">{isError.email}</p>}
                 </div>
-
+                <div className="header_textarea_form">
+                  {/* <img src={message} alt="" /> */}
+                  <textarea
+                    type="text"
+                    placeholder="Message*"
+                    name="message"
+                    id="message"
+                    onChange={handleChange}
+                    value={uploadForm.message}
+                  ></textarea>
+                  {isError.message && (
+                    <p className="error">{isError.message}</p>
+                  )}
+                </div>
                 <div className="header_input_btn">
                   <button type="submit">Submit</button>
                 </div>
@@ -324,16 +354,13 @@ const Home = () => {
           </div>
         </div>
       </section>
-      <Counter />
-      <Why />
-      <Digital />
-      <Mastermind />
-      <VideoData />
-      <Ournextian />
-      <Feedback />
-      <VisionandMission />
-      <Simplify />
-      <DynamicAccordion />
+      <Suspense>
+        <Mastermind />
+        <Why />
+        <Digital />
+        <VideoData />
+        <Ournextian />
+      </Suspense>
       <ToastContainer />
     </>
   );

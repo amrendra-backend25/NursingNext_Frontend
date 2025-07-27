@@ -1,180 +1,194 @@
 .ournextian_section {
-    padding-top: 3rem;
+  padding-top: 3rem;
 }
 
 .ournextian_section .container {
-    position: relative;
-}
-
-.nextian_title {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    width: calc(90% - 20px);
-    position: absolute;
-    margin-top: 15px;
+  position: relative;
 }
 
 .ournextian_section_slider {
-    padding-top: 5rem;
+  padding-top: 1rem;
 }
 
 .ournextian_section_slider .swiper {
-    position: static;
+  position: static;
 }
 
 .neaxtian_heading h3 {
-    font-size: 28px;
-    font-weight: 700;
-    color: #333;
+  font-size: 28px;
+  font-weight: 700;
+  color: #333;
 }
 
 .neaxtian_heading p {
-    font-size: 16px;
-    font-weight: 400;
-    color: #655959;
-    padding-top: 15px;
-}
-
-.nextian_title .nextian_btn {
-    display: flex;
-    justify-content: flex-end;
-
-}
-
-.nextian_title .nextian_btn a button {
-    background: none;
-    color: #222;
-    font-size: 14px;
-    font-weight: 400;
-    margin-right: -35px;
-    margin-top: 35px;
-    cursor: pointer;
+  font-size: 16px;
+  font-weight: 400;
+  color: #655959;
+  padding-top: 15px;
 }
 
 .ournextian_img img {
-    width: 120px;
-    height: 120px;
-    border-radius: 50%;
-    margin-top: -60px;
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  margin-top: -60px;
 }
 
-.ournextian_section .ournextian_img {
-    display: block;
-    text-align: center;
+.ournextian_img {
+  display: block;
+  text-align: center;
 }
 
 .ournextian_card {
-    margin: 90px 0;
-    border: 1px solid #e8e8e8;
-    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
-    border-radius: 10px;
+  margin: 100px 0;
+  border: 1px solid #e8e8e8;
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+  border-radius: 10px;
 }
 
 .ournextian_title {
-    padding: 0px 20px;
-    min-height: 260px;
+  padding: 0px 20px;
+  min-height: 260px;
 }
 
 .ournextian_title h4 {
-    font-size: 22px;
-    font-weight: 500;
-    line-height: 26px;
-    color: #000;
-    padding-top: 25px;
-    padding-bottom: 8px;
+  font-size: 22px;
+  font-weight: 500;
+  line-height: 26px;
+  color: #000;
+  padding-top: 25px;
+  padding-bottom: 8px;
 }
 
 .ournextian_title span {
-    font-size: 14px;
-    font-weight: 400;
-    color: #707070;
-    text-transform: uppercase;
-    padding-top: 18px;
+  font-size: 14px;
+  font-weight: 400;
+  color: #707070;
+  text-transform: uppercase;
+  padding-top: 18px;
 }
 
 .ournextian_title p {
-    font-size: 13px;
-    font-weight: 400;
-    color: #707070;
-    padding: 25px 0 10px;
-    letter-spacing: 0.4px;
+  font-size: 13px;
+  font-weight: 400;
+  color: #707070;
+  padding: 25px 0 10px;
+  letter-spacing: 0.4px;
+  min-height: 7.5rem;
 }
 
-.ournextian_button {
-    position: absolute;
-    z-index: 10;
-    top: 7%;
-    left: 92%;
-    display: flex;
-    align-items: center;
-    gap: 0.2rem;
-    flex-direction: row-reverse;
-    cursor: pointer;
-
+.proud_nextian_btn button {
+  color: #DD0E0E;
+  font-size: 15px;
+  font-weight: 700;
+  background: transparent;
+  cursor: pointer;
 }
 
-.ournextian_button .button-next-slide {
-    color: #333;
-    width: 30px;
-    height: 30px;
-    border-radius: 50%;
-    background: transparent;
-    border: 1px solid #DFDFDF;
-    display: grid;
-    place-items: center;
-    /* position: absolute;
-    z-index: 10;
-    top: 0%;
-    left: 95%; */
+.ournextian_button_slider .ournextian_left {
+  position: absolute;
+  z-index: 10;
+  top: 3%;
+  left: 95%;
+  display: flex;
+  align-items: center;
+  gap: 0.2rem;
+  flex-direction: row-reverse;
+  cursor: pointer;
 }
 
-.ournextian_button .button-prev-slide {
-    color: #333;
-    width: 30px;
-    height: 30px;
-    border-radius: 50%;
-    background: transparent;
-    border: 1px solid#DFDFDF;
-    display: grid;
-    place-items: center;
-    /* position: absolute;
-    z-index: 10;
-    top: 0%;
-    right: 0%; */
+.ournextian_button_slider .ournextian_left .button-next-slide {
+  color: #333;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background: transparent;
+  border: 1px solid #dfdfdf;
+  display: grid;
+  place-items: center;
 }
+
+.ournextian_button_slider .ournextian_left .button-prev-slide {
+  color: #333;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background: transparent;
+  border: 1px solid#DFDFDF;
+  display: grid;
+  place-items: center;
+}
+
+.ournextian_button_slider .ournextian_right button {
+  position: absolute;
+  top: 4%;
+  right: 5.5%;
+  font-size: 14px;
+  background-color: transparent;
+  cursor: pointer;
+  color: #DD0E0E;
+  font-weight: 600;
+}
+
 
 /*============================Responsive Tablet========================*/
-@media screen and (max-width: 1024px) {
-    .nextian_title {
-        width: calc(90% - 30px);
-        margin-top: 12px;
-    }
+@media (min-width: 1024px) and (max-width: 1291px) {
+  .ournextian_title h4 {
+    font-size: 17px;
+  }
+
+  .ournextian_title p {
+    font-size: 11px;
+  }
+
+  .ournextian_section .container {
+    width: 1000px;
+    max-width: 100%;
+  }
+
+  .ournextian_button_slider .ournextian_right button {
+    right: 6%;
+  }
 }
 
-@media screen and (max-width: 768px) {
-    .ournextian_section .ournextian_button {
-        position: absolute;
-        top: 3%;
-        left: 85%;
-    }
+@media (min-width: 768px) and (max-width: 1023px) {
+  .ournextian_button_slider .ournextian_right button {
+    right: 9%;
+  }
 
-    .nextian_title {
-        margin-top: 14px;
-    }
+  .ournextian_section .container {
+    width: 700px;
+    max-width: 100%;
+  }
 }
 
-@media screen and (max-width: 500px) {
-    .ournextian_section .ournextian_button {
-        position: absolute;
-        top: 3%;
-        left: 78%;
-    }
+@media (min-width: 320px) and (max-width: 767px) {
+  .ournextian_section {
+    padding-top: 4rem;
+  }
 
-    .ournextian_section .neaxtian_heading h3 {
-        font-size: 17px;
-    }
+  .ournextian_section .container {
+    width: 300px;
+    max-width: 100%;
+  }
 
-    .ournextian_section_slider {
-        padding-top: 2rem;
-    }
+  .ournextian_section .neaxtian_heading h3 {
+    font-size: 20px;
+    max-width: 260px;
+  }
+
+  .ournextian_section_slider {
+    padding: 0;
+  }
+
+  .ournextian_button_slider .ournextian_left {
+    left: 80%;
+    top: 0;
+  }
+
+  .ournextian_button_slider .ournextian_right button {
+    top: 7.5%;
+    right: 0%;
+    font-size: 10px;
+  }
 }
